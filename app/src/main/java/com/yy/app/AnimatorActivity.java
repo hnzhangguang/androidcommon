@@ -21,6 +21,7 @@ public class AnimatorActivity extends BaseActivity {
         setContentView(R.layout.activity_animator);
     }
 
+
     @Override
     public void initView() {
 
