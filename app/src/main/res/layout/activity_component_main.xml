@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".components.ComponentMainActivity">
+
+
+    <Button
+        android:id="@+id/btn_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bubbleActivity"
+        android:textAllCaps="false"></Button>
+
+    <Button
+        android:id="@+id/btn_SwipeRefreshLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SwipeRefreshLayout"
+        android:textAllCaps="false"></Button>
+
+
+    <Button
+        android:id="@+id/btn_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fragment"
+        android:textAllCaps="false"></Button>
+
+    <!--src-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_launcher_background"></ImageButton>
+
+    <!--    drawableLeft-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_launcher_background"
+        android:text="@string/app_name" />
+
+
+    <!--  CheckBox 复选框 -->
+    <CheckBox
+        android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meat" />
+
+    <CheckBox
+        android:id="@+id/checkbox_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cheese" />
+
+
+    <!--  单选按钮  -->
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_pirates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pirates" />
+
+        <RadioButton
+            android:id="@+id/radio_ninjas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ninjas" />
+    </RadioGroup>
+
+    <!--    切换按钮:
+    ToggleButton
+    Switch
+    SwitchCompat
+    CompoundButton-->
+
+    <!--微调框-->
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <!--    Spinner
+    SpinnerAdapter
+    AdapterView.OnItemSelectedListener-->
+
+
+</LinearLayout>

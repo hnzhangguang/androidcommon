@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yy.app">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".components.swiperefreshlayout.SwipeRefreshLayoutActivity"></activity>
+        <!-- 向上操作 parentActivityName 的设置 -->
+        <activity
+            android:name=".components.materialdesign.ToolbarActivity"
+            android:parentActivityName=".components.materialdesign.MaterialDesignActivity" /> <!-- BubbleActivity的配置很重要 -->
+        <activity
+            android:name=".components.bubble.BubbleActivity"
+            android:allowEmbedded="true"
+            android:documentLaunchMode="always"
+            android:label="title_activity_bubble"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- material design -->
+        <activity android:name=".components.materialdesign.CoordinatorLayoutActivity" /> <!-- 为activity设置自己的theme -->
+        <activity
+            android:name=".components.materialdesign.MaterialDesignActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 使用默认的theme -->
+        <activity android:name=".components.style.StyleActivity" />
+        <activity android:name=".components.defineview.PieChartActivity" />
+        <activity android:name=".components.cardview.CardViewActivity" />
+        <activity android:name=".components.listview.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".components.listview.ListViewActivity" />
+        <activity android:name=".components.ComponentMainActivity" />
+        <activity android:name=".components.fragment.FragmentActivity" />
+        <activity android:name="function.FunctionActivity" /> <!-- 主界面 -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 从主界面跳转到此界面, parentActivityName添加此界面的父界面是MainActivity -->
+        <activity
+            android:name=".SecondActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.define" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity> <!-- Animator -->
+        <activity android:name=".AnimatorActivity" /> <!-- Anim -->
+        <activity android:name=".AnimActivity" /> <!-- ListActivity -->
+        <activity android:name=".ListsActivity" /> <!-- ListView 控件的使用 -->
+        <activity android:name=".ListViewActivity" /> <!-- action 配置 -->
+        <activity android:name=".ActionActivity">
+            <intent-filter>
+                <action android:name="com.example.project.TRANSMOGRIFY" />
+            </intent-filter>
+        </activity> <!-- Permission 权限 -->
+        <activity android:name=".checkPermissionActivity" /> <!-- 截屏 start -->
+        <activity android:name="function.shortcut.ShortCutMainActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,78 @@
+
+
+优化布局:
+<include/>  <merge/>
+
+
+1,  <include layout="@layout/titlebar"/>
+
+<include android:id="@+id/news_title"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         layout="@layout/title"/>
+注: 如果想要重写include的一些属性,必须重写layout_width和layout_height
+
+2, merge
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"/>
+
+</merge>
+
+
+
+3, ViewStub   -> 延迟加载布局
+<ViewStub
+    android:id="@+id/stub_import"
+    android:inflatedId="@+id/panel_import"
+    android:layout="@layout/progress_overlay"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom" />
+
+findViewById(R.id.stub_import).setVisibility(View.VISIBLE);
+// or
+View importPanel = ((ViewStub) findViewById(R.id.stub_import)).inflate();
+
+4,LinearLayout ,FrameLayout ,RelativeLayout , GridLayout
+RelativeLayout:
+    1, android:layout_alignParentTop
+    2, android:layout_centerVertical
+    3, android:layout_below
+    4, android:layout_toRightOf
+    5, RelativeLayout.LayoutParams ...
+
+    // java实现约束
+    RelativeLayout.LayoutParams layoutParams_tbl_three = (RelativeLayout.LayoutParams) tbl_three.getLayoutParams();
+    layoutParams_tbl_three.getRules()[RelativeLayout.CENTER_IN_PARENT] = 0;
+    layoutParams_tbl_three.getRules()[RelativeLayout.ALIGN_PARENT_LEFT] = 0;
+    layoutParams_tbl_three.addRule(RelativeLayout.CENTER_IN_PARENT);
+    tbl_three.setLayoutParams(layoutParams_tbl_three);
+
+
+
+5,AdapterView
+
+6, 自定义view (分类?)
+
+
+
+7, adapter 视图 :
+notifyDataSetChanged() 方法
+AdapterView.OnItemClickListener 监听
+
+
+8, 基础view
+
+ Button, TextView, EditText, ListView, CheckBox, RadioButton,
+ Gallery, Spinner, and the more special-purpose
+ AutoCompleteTextView, ImageSwitcher,  TextSwitcher
+

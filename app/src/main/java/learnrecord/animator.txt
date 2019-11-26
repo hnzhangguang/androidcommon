@@ -1,0 +1,285 @@
+
+ValueAnimator的认识与使用
+估值器TypeEvaluator的自定义与使用
+插值器TimeInterpolator的自定义与使用
+Path于Animator的结合使用
+ObjectAnimator的自定义与使用
+TimeAnimator的使用
+AnimatorSet动画集合的使用
+Animator家族的监听器介绍与使用
+Animator家族在xml中的使用
+
+
+1.下面是一段ValueAnimator最简单的使用
+
+ValueAnimator animator = ValueAnimator.ofInt(0, 10);
+animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+        Log.e(TAG, animation.getAnimatedValue()+"---");
+    }
+});
+animator.start();
+
+
+2.从中衍生的想法
+public class AnimatorView extends View {
+    private static final String TAG = "AnimatorView";
+
+    private Paint mPaint;//画笔
+    private int mRadius = 100;//小球初始半径
+    private ValueAnimator mAnimator;//动画器
+
+    public AnimatorView(Context context) {
+        this(context, null);
+    }
+
+    public AnimatorView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    private void init() {
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint.setColor(0xff94E1F7);
+
+        mAnimator = ValueAnimator.ofInt(100, 300);
+        mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mRadius= (int) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.translate(400, 400);//移动坐标
+        canvas.drawCircle(0, 0, mRadius, mPaint);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.e(TAG, "onTouchEvent: ");
+                mAnimator.start();//点击开启动画
+                break;
+            case MotionEvent.ACTION_UP:
+        }
+        return super.onTouchEvent(event);
+    }
+}
+
+
+3.常规配置
+mAnimator.setStartDelay(1000);//设置延迟
+mAnimator.setRepeatCount(2);//设置重复执行次数
+// mAnimator.setRepeatMode(ValueAnimator.RESTART);//重新开始100->300 100->300
+mAnimator.setRepeatMode(ValueAnimator.REVERSE);//反转开始100->300 300->100
+mAnimator.setDuration(1000);//设置时长
+
+
+二、ofArgb与ofObject
+
+
+
+
+三、插值器
+1.自定义插值器：sin型先快后慢
+这里的input是从0~1变化的值，插值器就是改变input值的变化情况
+
+public class D_Sin_Inter implements TimeInterpolator {
+    @Override
+    public float getInterpolation(float input) {
+        //input是一个从0~1均匀变化的值
+        //从0到PI/2均匀变化的值
+        float rad = (float) (Math.PI/2 * input);
+        //返回这个弧度的sin值--sin曲线在0~PI/2区域是增长越来越缓慢，小球运动越来越缓慢
+        return (float) (Math.sin(rad));
+    }
+}
+
+2.自定义插值器：sin型先满后快
+
+public class A_Sin_Inter implements TimeInterpolator {
+    @Override
+    public float getInterpolation(float input) {
+        //input是一个从0~1均匀变化的值
+        //从0到PI/2均匀变化的值
+        float rad = (float) (Math.PI/2 * input+Math.PI/2);
+        //返回这个弧度的sin值--sin曲线在PI/2~PI区域是降低越来越快
+        return (float) (1-(Math.sin(rad)));//返回1-
+    }
+}
+
+
+第二节：ValueAnimator之子ObjectAnimator和TimeAnimator：
+
+
+
+
+ValueAnimator和ObjectAnimator的区别在哪?
+1.ValueAnimator需要手动添加监听，手动获取ValueAnimator的数据，手动书写变更逻辑
+2.ObjectAnimator可以不用进行更新监听,核心在`setXxx`里进行，
+也就是每次更新时会自己走setXxx里的方法，这样方便在外部使用来动态改变属性
+3.ValueAnimator的灵活性要好，毕竟自己动手，可以脑洞大开，想怎么玩怎么玩
+4.ObjectAnimator针对有setXxx的属性进行动画，两者的侧重点不同
+5.总的来说ObjectAnimator向于应用(简洁，快速)，ValueAnimator偏向于操作(灵活，多变)
+
+
+三、TimeAnimator
+mAnimator = new TimeAnimator();
+////(自己，运行总时长，每次回调的时间间隔)
+mAnimator.setTimeListener((animation, totalTime, deltaTime) -> {
+    Log.e(TAG, "totalTime:" + totalTime + ",  deltaTime:" + deltaTime);
+    if (totalTime > 300) {
+        animation.pause();
+    }
+});
+
+
+
+
+
+四、AnimatorSet
+
+1.Builder模式的AnimatorSet
+mSet//半径-->移动+渐变-->变色
+        .play(translationX)//移动
+        .with(alpha)//渐变
+        .after(radiusAnimator)//半径
+        .before(colorAnimator);//变色
+
+mSet = new AnimatorSet();
+        translationX = ObjectAnimator//创建实例
+                //(View,属性名,初始化值,结束值)
+                .ofFloat(this, "translationX", 0, 300, 150, 100, 20, 100)
+                .setDuration(3000);//设置时常
+        alpha = ObjectAnimator//创建实例
+                //(View,属性名,初始化值,结束值)
+                .ofFloat(this, "alpha", 1, 0.5f, 1, 0, 1)
+                .setDuration(3000);//设置时常
+        radiusAnimator = ObjectAnimator//创建实例
+                //(View,属性名,初始化值,结束值)
+                .ofInt(this, "Radius", 50, 100, 50, 100, 20, 100)
+                .setDuration(3000);//设置时常
+        colorAnimator = ObjectAnimator//创建实例
+                //(View,属性名,初始化值,结束值)
+                .ofInt(this, "color", 0xff0000ff, 0xffF2BA38, 0xffDD70BC)
+                .setDuration(3000);
+        colorAnimator.setEvaluator(new ArgbEvaluator());//颜色的估值器
+        mSet//半径-->移动+渐变-->变色
+                .play(translationX)
+                .with(alpha)
+                .after(radiusAnimator)
+                .before(colorAnimator);
+
+
+2.AnimatorSet自身方法：
+mSet.playTogether(translationX,alpha,radiusAnimator,colorAnimator);
+mSet.playSequentially(translationX,alpha,radiusAnimator,colorAnimator);
+
+
+
+四、Animator的监听：
+
+1、AnimatorListener：动画监听 (Animator中的监听器两个孩子也都能用)
+//动画开启时回调
+    void onAnimationStart(Animator animation);
+    //动画结束时回调
+    void onAnimationEnd(Animator animation);
+    //动画取消时回调
+    void onAnimationCancel(Animator animation);
+    //重复时回调
+    void onAnimationRepeat(Animator animation);
+
+
+
+五、Animator家族在xml中的使用：
+
+1.Animator标签
+1.1.animator.xml
+
+xml中属性	含义	代码中对应
+duration	播放的时长	setDuration()
+valueType	参数值类型	ofXXX
+valueFrom	初始值	ofXXX(第1参)
+valueTo	结束值	ofXXX(第2参)
+startOffset	延时	startDelay()
+repeatCount	重复次数	setRepeatCount()
+interpolator	插值器	setRepeatMode()
+
+<?xml version="1.0" encoding="utf-8"?>
+<animator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="2000"
+    android:repeatCount="2"
+    android:repeatMode="reverse"
+    android:startOffset="1000"
+    android:valueFrom="0dp"
+    android:valueType="floatType"
+    android:valueTo="200dp">
+</animator>
+
+
+2 .代码中使用：MainActivity
+
+View button = findViewById(R.id.id_btn_go);
+ValueAnimator animator = (ValueAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator);
+
+animator.addUpdateListener(anim->{
+    float animatedValue = (float) anim.getAnimatedValue();
+    button.setTranslationX(animatedValue);
+});
+
+button.setOnClickListener((v)->{
+    animator.start();
+});
+
+
+
+2.set与objectAnimator标签
+
+2.1set_obj_animator.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:ordering="sequentially">
+    <objectAnimator
+        android:duration="1500"
+        android:propertyName="rotationY"
+        android:valueFrom="0"
+        android:valueTo="180"/>
+    <objectAnimator
+        android:duration="1500"
+        android:propertyName="alpha"
+        android:valueFrom="0.3f"
+        android:valueTo="1f"/>
+    <objectAnimator
+        android:duration="1500"
+        android:propertyName="translationX"
+        android:valueFrom="0"
+        android:valueTo="180dp"/>
+</set>
+
+2.2：代码中使用
+View button = findViewById(R.id.id_btn_go);
+Animator set_obj = AnimatorInflater.loadAnimator(this, R.animator.set_obj_animator);
+et_obj.setTarget(button);
+
+button.setOnClickListener((v)->{
+    set_obj.start();
+});
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+
+
+
+进程优先级?
+1, 前台进程
+2, 可见进程
+3, 服务进程
+4, 缓存进程
+
+
+1, 前台进程:
+    1.1 一个正在运行的activity
+    1.2 正在运行 BroadcastReceiver.onReceive() 的BroadcastReceiver
+    1.3 正在运行 Service.onCreate(), Service.onStart(), or Service.onDestroy() 的service
+
+
+2, 可见进程
+    2.1 onPause()的activity
+    2.2 Service.startForeground() 的service
+    2.3 壁纸服务和输入服务等
+
+3, 服务进程
+    3.1 startService() 的service
+    3.2
+
+
+
+
+
+
+
+
+
+
+
+

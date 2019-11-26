@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <include layout="@layout/activity_main"/>
+</merge>
+
+
+
+<!-- 如要创建指向现有布局的别名，请使用包装在 <merge> 中的 <include> 元素。例如： -->

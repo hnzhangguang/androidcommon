@@ -1,0 +1,116 @@
+
+生命周期:
+onCreate() -> 必须实现此回调，其在系统首次创建 Activity 时触发   -> “已创建”状态
+onStart()  -> 调用使 Activity 对用户可见                     ->“已开始”状态
+onResume()  -> “已恢复”状态
+onPause()  ->  “已暂停”状态
+onStop()   ->  "已停止"状态
+onDestroy()  -> "已销毁"状态
+
+
+ <activity> attributes you can use are:
+
+taskAffinity
+launchMode
+allowTaskReparenting
+clearTaskOnLaunch
+alwaysRetainTaskState
+finishOnTaskLaunch
+
+FLAG_ACTIVITY_NEW_TASK
+FLAG_ACTIVITY_CLEAR_TOP
+FLAG_ACTIVITY_SINGLE_TOP
+
+
+
+
+<activity android:allowEmbedded=["true" | "false"]
+          android:allowTaskReparenting=["true" | "false"]
+          android:alwaysRetainTaskState=["true" | "false"]
+          android:autoRemoveFromRecents=["true" | "false"]
+          android:banner="drawable resource"
+          android:clearTaskOnLaunch=["true" | "false"]
+          android:colorMode=[ "hdr" | "wideColorGamut"]
+          android:configChanges=["mcc", "mnc", "locale",
+                                 "touchscreen", "keyboard", "keyboardHidden",
+                                 "navigation", "screenLayout", "fontScale",
+                                 "uiMode", "orientation", "density",
+                                 "screenSize", "smallestScreenSize"]
+          android:directBootAware=["true" | "false"]
+          android:documentLaunchMode=["intoExisting" | "always" |
+                                  "none" | "never"]
+          android:enabled=["true" | "false"]
+          android:excludeFromRecents=["true" | "false"]
+          android:exported=["true" | "false"]
+          android:finishOnTaskLaunch=["true" | "false"]
+          android:hardwareAccelerated=["true" | "false"]
+          android:icon="drawable resource"
+          android:immersive=["true" | "false"]
+          android:label="string resource"
+          android:launchMode=["standard" | "singleTop" |
+                              "singleTask" | "singleInstance"]
+          android:lockTaskMode=["normal" | "never" |
+                              "if_whitelisted" | "always"]
+          android:maxRecents="integer"
+          android:maxAspectRatio="float"
+          android:multiprocess=["true" | "false"]
+          android:name="string"
+          android:noHistory=["true" | "false"]
+          android:parentActivityName="string"
+          android:persistableMode=["persistRootOnly" |
+                                   "persistAcrossReboots" | "persistNever"]
+          android:permission="string"
+          android:process="string"
+          android:relinquishTaskIdentity=["true" | "false"]
+          android:resizeableActivity=["true" | "false"]
+          android:screenOrientation=["unspecified" | "behind" |
+                                     "landscape" | "portrait" |
+                                     "reverseLandscape" | "reversePortrait" |
+                                     "sensorLandscape" | "sensorPortrait" |
+                                     "userLandscape" | "userPortrait" |
+                                     "sensor" | "fullSensor" | "nosensor" |
+                                     "user" | "fullUser" | "locked"]
+          android:showForAllUsers=["true" | "false"]
+          android:stateNotNeeded=["true" | "false"]
+          android:supportsPictureInPicture=["true" | "false"]
+          android:taskAffinity="string"
+          android:theme="resource or theme"
+          android:uiOptions=["none" | "splitActionBarWhenNarrow"]
+          android:windowSoftInputMode=["stateUnspecified",
+                                       "stateUnchanged", "stateHidden",
+                                       "stateAlwaysHidden", "stateVisible",
+                                       "stateAlwaysVisible", "adjustUnspecified",
+                                       "adjustResize", "adjustPan"] >
+    . . .
+</activity>
+
+
+android:allowTaskReparenting
+当下一次将启动 Activity 的任务转至前台时，Activity 是否能从该任务转移至与其有相似性的任务 —“true”表示可以转移，“false”表示仍须留在启动它的任务处。
+
+
+android:launchMode  -> 默认模式是“standard”。
+模式是：
+“standard”
+“singleTop”
+“singleTask”
+“singleInstance”
+
+用例	                                启动模式	            多个实例？                	注释
+大多数 Activity 的正常启动	“standard”	是	                默认。            系统始终会在目标任务中创建新的 Activity 实例，并向其传送 Intent。
+                                    “singleTop”	        视情况而定	     如果目标任务的顶部已存在 Activity 实例，则系统会通过调用该实例的 onNewIntent() 方法向其传送 Intent，而非创建新的 Activity 实例。
+专用启动
+（不建议在一般情况下使用）           	“singleTask”     	否	             系统会在新任务的根位置创建 Activity 并向其传送 Intent。不过，如果已存在 Activity 实例，则系统会调用该实例的 onNewIntent() 方法（而非创建新的 Activity 实例），向其传送 Intent。
+                                    “singleInstance”	否	             与“singleTask"”相同，只是系统不会将任何其他 Activity 启动到包含实例的任务中。该 Activity 始终是其任务中的唯一 Activity。
+
+
+android:multiprocess
+是否可将 Activity 实例启动到启动该实例的组件进程内 —“true”表示可以，“false”表示不可以。默认值为“false”。
+
+android:parentActivityName
+
+
+
+android:screenOrientation
+
+

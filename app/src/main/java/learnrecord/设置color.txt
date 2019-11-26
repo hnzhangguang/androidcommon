@@ -1,0 +1,12 @@
+
+
+系统自带的颜色类
+tx.setTextColor(android.graphics.Color.RED);
+利用数字设置
+tx.setTextColor(0xffff00f);
+利用xml中已经定义好的颜色代码
+tx.setTextColor(getResources().getColor(R.color.red));
+利用16进制 字符串
+tx.setTextColor(Color.parseColor(“#FFFFFF”));
+
+

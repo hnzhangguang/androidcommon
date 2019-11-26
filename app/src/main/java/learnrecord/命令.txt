@@ -1,0 +1,13 @@
+
+
+adb shell install -g MyApp.apk
+
+使用 adb 工具从命令行管理权限：
+按组列出权限和状态：
+$ adb shell pm list permissions -d -g
+授予或撤消一项或多项权限：
+$ adb shell pm [grant|revoke] <permission-name> ...
+
+
+
+

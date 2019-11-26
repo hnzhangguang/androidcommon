@@ -1,0 +1,33 @@
+如果应用在特定配置变更期间无需更新资源，
+    并且因性能限制您需要尽量避免 Activity 重启，则可声明 Activity 自行处理配置变更，从而阻止系统重启 Activity。
+
+
+如要声明由 Activity 处理配置变更，请在清单文件中编辑相应的 <activity> 元素，以包含 android:configChanges 属性，
+    该属性的值表示要处理的配置。android:configChanges 属性文档中列出该属性的可能值。
+    最常用的值包括 "orientation"、"screenSize" 和 "keyboardHidden"。"orientation" 值可在屏幕方向发生变更时阻止重启。
+    "screenSize" 值也可在屏幕方向发生变更时阻止重启，但仅适用于 Android 3.2（API 级别 13）及以上版本的系统。
+    若想在应用中手动处理配置变更，您必须在 android:configChanges 属性中声明 "orientation" 和 "screenSize" 值。
+    "keyboardHidden" 值可在键盘可用性发生变更时阻止重启。您可以在属性中声明多个配置值，方法是用管道 | 字符将其进行分隔。
+
+
+例如，以下清单文件代码所声明的 Activity 可同时处理屏幕方向变更和键盘可用性变更：
+
+<activity android:name=".MyActivity"
+          android:configChanges="orientation|keyboardHidden"
+          android:label="@string/app_name">
+
+
+
+
+ @Override
+ public void onConfigurationChanged(Configuration newConfig) {
+     super.onConfigurationChanged(newConfig);
+
+     // Checks the orientation of the screen
+     if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+         Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+     } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+         Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+     }
+ }
+          

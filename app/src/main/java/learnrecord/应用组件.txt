@@ -1,0 +1,46 @@
+
+
+
+四种不同的应用组件类型：
+
+Activity
+服务
+广播接收器
+内容提供程序
+
+
+activity: Activity 是与用户交互的入口点,它表示拥有界面的单个屏幕。
+service: 服务是一个通用入口点，用于因各种原因使应用在后台保持运行状态。
+    它是一种在后台运行的组件，用于执行长时间运行的操作或为远程进程执行作业。服务不提供界面。
+    例如，当用户使用其他应用时，服务可能会在后台播放音乐或通过网络获取数据，但这不会阻断用户与 Activity 的交互。
+    分类:2种语义服务
+        1, 普通服务: 工作结束服务即结束: 已启动服务会告知系统使其运行至工作完毕 -> 在后台同步一些数据
+        2, 绑定服务: -> 在用户离开应用后继续播放音乐 (JobScheduler , doze ... )
+
+广播接收器:
+    1,分类
+        1.1 系统广播
+        1.2 应用广播
+
+
+内容提供程序:内容提供程序管理一组共享的应用数据，
+            您可以将这些数据存储在文件系统、SQLite 数据库、网络中或者您的应用可访问的任何其他持久化存储位置。
+           -> 例如，Android 系统可提供管理用户联系人信息的内容提供程序。
+
+
+Intent:
+信使:
+    ComponentName comp =new ComponentName("com.npf.chat", "com.npf.chat.ui.ChatActivity");
+    Intent intent =new Intent();
+    intent.setComponent(comp);
+    startActivity(intent);
+
+
+
+每种组件都有不同的启动方法：
+1, 如要启动 Activity，您可以向 startActivity() 或 startActivityForResult() 传递 Intent（当您想让 Activity 返回结果时），或者为其安排新任务。
+2, 在 Android 5.0（API 级别 21）及更高版本中，您可以使用 JobScheduler 类来调度操作。
+    对于早期 Android 版本，您可以通过向 startService() 传递 Intent 来启动服务（或对执行中的服务下达新指令）。
+    您也可通过向将 bindService() 传递 Intent 来绑定到该服务。
+3, 您可以通过向 sendBroadcast()、sendOrderedBroadcast() 或 sendStickyBroadcast() 等方法传递 Intent 来发起广播。
+4, 您可以通过在 ContentResolver 上调用 query()，对内容提供程序执行查询。

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">复习Android</string>
+    <string name="remove_shortcut">remove_shortcut</string>
+    <string name="disable_shortcut">disable_shortcut</string>
+    <string name="add_new_website">add_new_website</string>
+    <string name="existing_shortcuts">existing_shortcuts</string>
+    <string name="enable_shortcut">enable_shortcut</string>
+    <string name="meat">meat</string>
+    <string name="pirates">pirates</string>
+    <string name="cheese">cheese</string>
+    <string name="ninjas">ninjas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
+
+</resources>

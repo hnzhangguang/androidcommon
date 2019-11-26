@@ -1,0 +1,101 @@
+package com.yy.app.components;
+
+import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
+import com.yy.app.R;
+import com.yy.app.base.BaseActivity;
+import com.yy.app.components.bubble.BubbleActivity;
+import com.yy.app.components.fragment.FragmentActivity;
+import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
+
+
+/**
+ * 控件学习主界面
+ */
+public class ComponentMainActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
+
+    Button btn_fragment = null;
+    Button btn_bubble = null;
+    Button btn_SwipeRefreshLayout = null;
+    Spinner spinner = null;
+
+    BaseActivity mActivity = null;
+
+    @Override
+    public void initContentViewXml() {
+        setContentView(R.layout.activity_component_main);
+    }
+
+    @Override
+    public void initView() {
+        super.initView();
+
+        mActivity = this;
+
+        btn_fragment = findViewById(R.id.btn_fragment);
+        btn_bubble = findViewById(R.id.btn_bubble);
+        btn_SwipeRefreshLayout = findViewById(R.id.btn_SwipeRefreshLayout);
+
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+    }
+
+    @Override
+    public void initListener() {
+        super.initListener();
+
+        btn_SwipeRefreshLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, SwipeRefreshLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_bubble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ComponentMainActivity.this, BubbleActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        btn_fragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        添加监听
+        spinner.setOnItemSelectedListener(this);
+
+
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+}

@@ -1,0 +1,5 @@
+
+
+
+1, activity和fragment的通信
+2, fragment 与其他 Fragment 通信

@@ -1,0 +1,21 @@
+
+资源是指代码使用的附加文件和静态内容，例如位图、布局定义、界面字符串、动画说明等。
+
+分组资源类型
+MyProject/
+    src/
+        MyActivity.java
+    res/
+        drawable/
+            graphic.png
+        layout/
+            main.xml
+            info.xml
+        mipmap/
+            icon.png
+        values/
+            strings.xml
+
+
+
+

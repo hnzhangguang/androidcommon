@@ -1,0 +1,47 @@
+
+
+1, Typeface
+
+2, Spans
+SpannableStringBuilder spannable = new SpannableStringBuilder("Text is spantastic!");
+spannable.setSpan(
+    new ForegroundColorSpan(Color.RED),
+    8, // start
+    12, // end
+    Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+);
+
+SpannableString spannable = SpannableString(“Text is spantastic!”);
+spannable.setSpan(
+    new ForegroundColorSpan(Color.RED),
+    8, 12,
+    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+);
+spannable.setSpan(
+    new StyleSpan(Typeface.BOLD),
+    8, spannable.length(),
+    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+);
+
+
+
+SpannableString string = new SpannableString("Text with underline span");
+string.setSpan(new UnderlineSpan(), 10, 19, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+
+SpannableString string = new SpannableString("Text with relative size span");
+string.setSpan(new RelativeSizeSpan(1.5f), 10, 24, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+SpannableString string = new SpannableString("Text with a background color span");
+string.setSpan(new BackgroundColorSpan(color), 12, 28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+
+
+
+
+
+
+
+
