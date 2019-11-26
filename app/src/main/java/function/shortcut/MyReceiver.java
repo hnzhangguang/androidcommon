@@ -21,6 +21,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 
+
+/**
+ *xx
+ */
 public class MyReceiver extends BroadcastReceiver {
     private static final String TAG = ShortCutMainActivity.TAG;
 
