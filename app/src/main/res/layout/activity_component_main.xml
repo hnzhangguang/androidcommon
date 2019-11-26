@@ -29,6 +29,15 @@
         android:text="fragment"
         android:textAllCaps="false"></Button>
 
+    <Button
+        android:id="@+id/btn_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="other"
+        android:textAllCaps="false"></Button>
+
+
+
     <!--src-->
     <ImageButton
         android:layout_width="wrap_content"
