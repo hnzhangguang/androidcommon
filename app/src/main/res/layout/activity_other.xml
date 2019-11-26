@@ -13,6 +13,32 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="36dp"
         android:text="Button"
+        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_snackbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="23dp"
+        android:text="Snackbar"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/toast"
+        app:layout_constraintTop_toBottomOf="@+id/toast" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_floatingAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="564dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </android.support.constraint.ConstraintLayout>

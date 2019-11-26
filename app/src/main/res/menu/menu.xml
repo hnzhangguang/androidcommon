@@ -26,4 +26,21 @@
         android:orderInCategory="100"
         android:title="编辑"
         app:showAsAction="ifRoom" />
+
+
+    <!--    包含子文件的情况 -->
+    <item
+        android:id="@+id/file"
+        android:title="@string/file">
+        <menu>
+            <item
+                android:id="@+id/create_new"
+                android:title="@string/create_new" />
+            <item
+                android:id="@+id/open"
+                android:title="@string/open" />
+        </menu>
+    </item>
+
+
 </menu>

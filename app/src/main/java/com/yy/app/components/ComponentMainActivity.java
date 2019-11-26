@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.yy.app.AnimatorActivity;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.components.bubble.BubbleActivity;
@@ -23,6 +24,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     Button btn_bubble = null;
     Button btn_SwipeRefreshLayout = null;
     Button btn_other = null;
+    Button btn_Animator = null;
     Spinner spinner = null;
 
     BaseActivity mActivity = null;
@@ -41,6 +43,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
         btn_fragment = findViewById(R.id.btn_fragment);
         btn_bubble = findViewById(R.id.btn_bubble);
         btn_other = findViewById(R.id.btn_other);
+        btn_Animator = findViewById(R.id.btn_Animator);
         btn_SwipeRefreshLayout = findViewById(R.id.btn_SwipeRefreshLayout);
 
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -55,6 +58,14 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     @Override
     public void initListener() {
         super.initListener();
+
+        btn_Animator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, AnimatorActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_other.setOnClickListener(new View.OnClickListener() {
             @Override

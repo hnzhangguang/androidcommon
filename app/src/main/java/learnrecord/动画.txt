@@ -1,0 +1,20 @@
+
+
+
+ValueAnimator
+ObjectAnimator
+AnimatorSet
+
+
+
+TimeInterpolator,
+
+LinearInterpolator
+DecelerateInterpolator
+AccelerateDecelerateInterpolator
+
+
+TypeEvaluator, ->IntEvaluator.
+
+
+

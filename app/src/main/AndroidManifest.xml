@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".components.OtherActivity"></activity>
+        <activity android:name=".components.animator.ValueAnimatorActivity"></activity>
+        <activity android:name=".components.OtherActivity" />
         <activity android:name=".components.swiperefreshlayout.SwipeRefreshLayoutActivity" /> <!-- 向上操作 parentActivityName 的设置 -->
         <activity
             android:name=".components.materialdesign.ToolbarActivity"
