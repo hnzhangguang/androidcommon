@@ -23,7 +23,7 @@ import android.util.Log;
 
 
 /**
- *xx
+ *广播
  */
 public class MyReceiver extends BroadcastReceiver {
     private static final String TAG = ShortCutMainActivity.TAG;
