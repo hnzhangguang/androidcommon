@@ -19,6 +19,7 @@ import function.shortcut.ShortCutMainActivity;
 
 /**
  * 主要功能:
+ * 总结Android总入口
  */
 public class MainActivity extends BaseActivity {
 
