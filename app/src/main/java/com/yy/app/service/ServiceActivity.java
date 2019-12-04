@@ -78,7 +78,7 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
     // 绑定成功的时候调用
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
-        Logger.e("ServiceActivity - onServiceConnected");
+        Logger.e("ServiceActivity->onServiceConnected");
         System.out.println("ServiceActivity - onServiceConnected");
     }
 
