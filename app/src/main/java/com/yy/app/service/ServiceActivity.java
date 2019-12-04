@@ -83,7 +83,8 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
     }
 
 
-    // 解绑成功的时候调用
+    //类ServiceConnection中的onServiceDisconnected()方法在正常情况下是不被调用的，
+    // 它的调用时机是当Service服务被异外销毁时，例如内存的资源不足时.
     @Override
     public void onServiceDisconnected(ComponentName name) {
         Logger.e("ServiceActivity - onServiceDisconnected");
