@@ -7,12 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.BaseTextWatcher;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
+import com.yy.app.service.ServiceActivity;
 
 import function.shortcut.ShortCutMainActivity;
 
@@ -28,12 +27,12 @@ public class MainActivity extends BaseActivity {
     // intent extra
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
-    TextView textView; // 界面文本显示
     Button toSecondButton;   // 按钮: 跳转到第二个activity
     Button toMainActivityByIntent;   // 按钮: 跳转到第二个activity
     Button toShortCutButton;
     Button btn_components;
     Button btn_material;
+    Button btn_serviceactivity;
 
 
     @Override
@@ -43,12 +42,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        textView = findViewById(R.id.textView);
         toSecondButton = findViewById(R.id.toSecondButton);
         toMainActivityByIntent = findViewById(R.id.toMainActivityByIntent);
         toShortCutButton = findViewById(R.id.toShortCutButton);
         btn_components = findViewById(R.id.btn_components);
         btn_material = findViewById(R.id.btn_material);
+        btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
     }
 
     @Override
@@ -87,13 +86,14 @@ public class MainActivity extends BaseActivity {
                 sendMessageByIntent(); // action 的使用
             }
         });
-        // 文本改变事件
-        textView.addTextChangedListener(new BaseTextWatcher() {
+        btn_serviceactivity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                super.onTextChanged(charSequence, i, i1, i2);
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                startActivity(intent);
             }
         });
+
     }
 
     @Override

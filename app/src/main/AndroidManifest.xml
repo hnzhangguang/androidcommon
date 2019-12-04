@@ -13,7 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".components.animator.ValueAnimatorActivity"></activity>
+        <activity android:name=".service.ServiceActivity"></activity>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".components.ViewPagerActivity" />
+        <activity android:name=".components.animator.ValueAnimatorActivity" />
         <activity android:name=".components.OtherActivity" />
         <activity android:name=".components.swiperefreshlayout.SwipeRefreshLayoutActivity" /> <!-- 向上操作 parentActivityName 的设置 -->
         <activity
