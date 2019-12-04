@@ -153,6 +153,9 @@ class LoggerPrinter implements Printer {
         if (Utils.isEmpty(message)) {
             message = "Empty/NULL log message";
         }
+        if (logAdapters.size() == 0) {
+            logAdapters.add(new AndroidLogAdapter());
+        }
 
         for (LogAdapter adapter : logAdapters) {
             if (adapter.isLoggable(priority, tag)) {
@@ -181,6 +184,9 @@ class LoggerPrinter implements Printer {
         checkNotNull(msg);
 
         String tag = getTag();
+        if (null == tag) {
+            localTag.set(msg);
+        }
         String message = createMessage(msg, args);
         log(priority, tag, message, throwable);
     }
@@ -200,6 +206,18 @@ class LoggerPrinter implements Printer {
 
     @NonNull
     private String createMessage(@NonNull String message, @Nullable Object... args) {
-        return args == null || args.length == 0 ? message : String.format(message, args);
+
+
+        if (null != args) {
+            int len = args.length;
+            if (len > 0) {
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < len; i++) {
+                    builder.append(args[i]);
+                }
+                return message + " -> " + builder;
+            }
+        }
+        return message + " -> ";
     }
 }
