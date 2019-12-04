@@ -1,5 +1,6 @@
 package com.yy.app.components;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
@@ -252,64 +253,21 @@ public class OtherActivity extends BaseActivity {
 
     public void sp() {
 
-        SharedPreferences sharedPreferences = new SharedPreferences() {
-            @Override
-            public Map<String, ?> getAll() {
-                return null;
-            }
+        // 自己定义前缀
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-            @Nullable
-            @Override
-            public String getString(String key, @Nullable String defValue) {
-                return null;
-            }
+        // 默认是当前应用的包名作为前缀的
+        SharedPreferences sharedPref2 = getPreferences(Context.MODE_PRIVATE);
 
-            @Nullable
-            @Override
-            public Set<String> getStringSet(String key, @Nullable Set<String> defValues) {
-                return null;
-            }
+        // 存储值
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("key", "newValue");
+        editor.commit();
 
-            @Override
-            public int getInt(String key, int defValue) {
-                return 0;
-            }
+        // 获取的时候,有默认值
+        int highScore = sharedPref.getInt("key", 0);
 
-            @Override
-            public long getLong(String key, long defValue) {
-                return 0;
-            }
-
-            @Override
-            public float getFloat(String key, float defValue) {
-                return 0;
-            }
-
-            @Override
-            public boolean getBoolean(String key, boolean defValue) {
-                return false;
-            }
-
-            @Override
-            public boolean contains(String key) {
-                return false;
-            }
-
-            @Override
-            public Editor edit() {
-                return null;
-            }
-
-            @Override
-            public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
-
-            }
-
-            @Override
-            public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
-
-            }
-        };
     }
 
 

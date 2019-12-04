@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.yy.app.base.BaseActivity;
+import com.yy.app.base.Logger;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.service.ServiceActivity;
@@ -90,7 +91,8 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
-                startActivity(intent);
+//                startActivity(intent);
+                Logger.e("mmmm", "test221112");
             }
         });
 

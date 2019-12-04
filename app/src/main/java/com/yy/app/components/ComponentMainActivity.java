@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import com.yy.app.AnimatorActivity;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
+import com.yy.app.components.animator.ValueAnimatorActivity;
 import com.yy.app.components.bubble.BubbleActivity;
 import com.yy.app.components.fragment.FragmentActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
@@ -25,6 +26,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     Button btn_SwipeRefreshLayout = null;
     Button btn_other = null;
     Button btn_Animator = null;
+    Button btn_ViewPager = null;
     Spinner spinner = null;
 
     BaseActivity mActivity = null;
@@ -41,6 +43,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
         mActivity = this;
 
         btn_fragment = findViewById(R.id.btn_fragment);
+        btn_ViewPager = findViewById(R.id.btn_ViewPager);
         btn_bubble = findViewById(R.id.btn_bubble);
         btn_other = findViewById(R.id.btn_other);
         btn_Animator = findViewById(R.id.btn_Animator);
@@ -59,10 +62,18 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     public void initListener() {
         super.initListener();
 
+        btn_ViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_Animator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ComponentMainActivity.this, AnimatorActivity.class);
+                Intent intent = new Intent(ComponentMainActivity.this, ValueAnimatorActivity.class);
                 startActivity(intent);
             }
         });

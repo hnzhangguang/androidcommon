@@ -1,5 +1,7 @@
 package com.yy.app.base;
 
+import android.util.Log;
+
 /**
  * 日志工具类
  */
@@ -12,10 +14,12 @@ public class Logger {
         com.yy.app.lib.logger.Logger.e(TAG, msg);
     }
 
+    public static void e(String tag, String msg) {
+        com.yy.app.lib.logger.Logger.e(tag, msg);
+    }
 
     public static void d(String msg) {
         com.yy.app.lib.logger.Logger.d(TAG, msg);
     }
-
 
 }
