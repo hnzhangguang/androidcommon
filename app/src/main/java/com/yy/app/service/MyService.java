@@ -35,7 +35,6 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Logger.e("MyService - onStartCommand");
-
         return super.onStartCommand(intent, flags, startId);
     }
 
