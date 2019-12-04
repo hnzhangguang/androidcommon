@@ -186,6 +186,7 @@ class LoggerPrinter implements Printer {
         String tag = getTag();
         if (null == tag) {
             localTag.set(msg);
+            tag = getTag();
         }
         String message = createMessage(msg, args);
         log(priority, tag, message, throwable);
