@@ -1,7 +1,10 @@
 package com.yy.app;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +15,8 @@ import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.drawlayout.DrawLayoutActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.service.ServiceActivity;
+
+import java.util.List;
 
 import function.shortcut.ShortCutMainActivity;
 
@@ -133,15 +138,42 @@ public class MainActivity extends BaseActivity {
      * 界面跳转逻辑 (action 方式)
      */
     public void sendMessageByIntent() {
-        // Create the text message with a string
-        Intent sendIntent = new Intent();
-        sendIntent.setAction("android.intent.action.define");
-        sendIntent.setType("text/plain");
-        //intent.putExtra("media_id", "a1b2c3");
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "我是使用Intent action 参数调起的activity");
-        sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);   // 设置不同的launchMode
-        // Start the activity
-        startActivity(sendIntent);
+
+        String action = "android.intent.action.define";
+        boolean actionSupport = isActionSupport(this, action);
+
+        if (actionSupport) {
+            // Create the text message with a string
+            Intent sendIntent = new Intent();
+            sendIntent.setAction("android.intent.action.define");
+//            sendIntent.setType("text/plain");
+            //intent.putExtra("media_id", "a1b2c3");
+//            sendIntent.putExtra(Intent.EXTRA_TEXT, "我是使用Intent action 参数调起的activity");
+            sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);   // 设置不同的launchMode
+            // Start the activity
+            startActivity(sendIntent);
+        }
+
+    }
+
+
+    /**
+     * action: -> 是否存在一个可以启动的activity
+     *
+     * @param context
+     * @param action
+     * @return
+     */
+    private boolean isActionSupport(Context context, String action) {
+        final PackageManager packageManager = context.getPackageManager();
+        final Intent intent = new Intent(action);
+        List<ResolveInfo> resolveInfo =
+                packageManager.queryIntentActivities(intent,
+                        PackageManager.MATCH_DEFAULT_ONLY);
+        if (resolveInfo.size() > 0) {
+            return true;
+        }
+        return false;
     }
 
 

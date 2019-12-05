@@ -8,10 +8,10 @@
 
 
     <Button
-        android:id="@+id/toSecondButton"
+        android:id="@+id/btn_components"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="toSecondButton"
+        android:text="控件(component)"
         android:textAllCaps="false" />
 
     <Button
@@ -28,12 +28,6 @@
         android:text="从下个界面参照带回字段"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_components"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="控件s"
-        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_material"
