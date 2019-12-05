@@ -41,6 +41,7 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         Logger.e("MyService - onDestroy");
+        ServiceActivity.isStart = false;
         super.onDestroy();
     }
 }

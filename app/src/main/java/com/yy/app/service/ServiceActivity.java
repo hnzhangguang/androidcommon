@@ -19,6 +19,7 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
 
 
     Intent intent = null;
+    public static boolean isStart = false;  // 服务是否启动着呢
 
     @Override
     public void initContentViewXml() {
@@ -65,7 +66,11 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
 
             case R.id.btnUnBindService:
 
-                unbindService(this);
+                // 只有服务是启动状态的时候才能解绑,否则会报错的
+                if (isStart) {
+                    unbindService(this);
+                }
+
                 break;
             default:
 
@@ -79,6 +84,7 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
         Logger.e("ServiceActivity->onServiceConnected");
+        isStart = true;
         System.out.println("ServiceActivity - onServiceConnected");
     }
 
