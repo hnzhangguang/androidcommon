@@ -18,8 +18,6 @@ import com.yy.app.service.ServiceActivity;
 
 import java.util.List;
 
-import function.shortcut.ShortCutMainActivity;
-
 
 /**
  * 主要功能:
@@ -33,7 +31,6 @@ public class MainActivity extends BaseActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     Button toMainActivityByIntent;   // 按钮: 跳转到第二个activity
-    Button toShortCutButton;
     Button btn_components;
     Button btn_material;
     Button btn_serviceactivity;
@@ -49,7 +46,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
         toMainActivityByIntent = findViewById(R.id.toMainActivityByIntent);
-        toShortCutButton = findViewById(R.id.toShortCutButton);
         btn_components = findViewById(R.id.btn_components);
         btn_material = findViewById(R.id.btn_material);
         btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
@@ -80,13 +76,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        toShortCutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShortCutMainActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         toMainActivityByIntent.setOnClickListener(new View.OnClickListener() {
             @Override

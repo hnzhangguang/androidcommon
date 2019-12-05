@@ -21,13 +21,6 @@
         android:text="界面跳转逻辑 (action 方式)"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/toSecondButtonRef"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="从下个界面参照带回字段"
-        android:textAllCaps="false" />
-
 
     <Button
         android:id="@+id/btn_material"
@@ -36,13 +29,6 @@
         android:text="material design"
         android:textAllCaps="false" />
 
-
-    <Button
-        android:id="@+id/toShortCutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="到截屏界面"
-        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_serviceactivity"
