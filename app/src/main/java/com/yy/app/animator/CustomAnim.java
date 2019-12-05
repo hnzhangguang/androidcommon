@@ -3,6 +3,8 @@ package com.yy.app.animator;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
+import com.yy.app.base.Logger;
+
 
 /**
  * 自定义动画 animation
@@ -28,10 +30,11 @@ public class CustomAnim extends Animation {
      */
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
-//		System.out.println(interpolatedTime);    // 0~1
+        Logger.e(interpolatedTime);
+//        System.out.println(interpolatedTime);    // 0~1
 //		t.setAlpha(interpolatedTime);   // 透明度动画的实现
 //		t.getMatrix().setTranslate(200*interpolatedTime, 200*interpolatedTime);  // 位移动画的实现
-        t.getMatrix().setTranslate((float) (Math.sin(interpolatedTime * 20) * 50), 0);  // 摇头动画的实现
+        t.getMatrix().setTranslate((float) (Math.sin(interpolatedTime * 10) * 50), 10);  // 摇头动画的实现
         super.applyTransformation(interpolatedTime, t);
     }
 

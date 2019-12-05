@@ -5,11 +5,11 @@
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
+    <!-- androdi 9.0 默认是禁止所有网络请求服务的    android:usesCleartextTraffic="true" -->
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -18,9 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <!--        使用了actionBar 所以需要使用  NoActionBar 的主题 -->
+        <activity android:name=".asynctask.AsyncTaskActivity"></activity>
+        <!-- 使用了actionBar 所以需要使用  NoActionBar 的主题 -->
         <activity
             android:name=".components.drawlayout.DrawLayoutActivity"
             android:theme="@style/AppTheme3" />
@@ -68,6 +69,7 @@
         <activity android:name=".components.ComponentMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.define" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -80,10 +82,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- 从主界面跳转到此界面, parentActivityName添加此界面的父界面是MainActivity -->
-
-
-        <activity android:name="com.yy.app.animator.AnimActivity" />
-
+        <activity android:name=".animator.AnimActivity" />
     </application>
 
 </manifest>

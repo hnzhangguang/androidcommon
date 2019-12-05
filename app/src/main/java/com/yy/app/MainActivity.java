@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.yy.app.animator.AnimActivity;
+import com.yy.app.asynctask.AsyncTaskActivity;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
     Button btn_DrawLayout;
     Button btn_receiver;
     Button btn_animation;
+    Button btn_asynctask;
 
 
     @Override
@@ -54,10 +56,18 @@ public class MainActivity extends BaseActivity {
         btn_receiver = findViewById(R.id.btn_receiver);
         btn_DrawLayout = findViewById(R.id.btn_DrawLayout);
         btn_animation = findViewById(R.id.btn_animation);
+        btn_asynctask = findViewById(R.id.btn_asynctask);
     }
 
     @Override
     public void initListener() {
+        btn_asynctask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AsyncTaskActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

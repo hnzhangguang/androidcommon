@@ -20,6 +20,8 @@ import com.yy.app.base.BaseActivity;
  * 5, set
  * 6, 监听
  * 7, 自定义动画(animation)
+ * 8, v.setAnimation(ca);  和  v.startAnimation(ca);  的区别 startAnimation多了invalidate(true);
+ * 一个startAnimation方法的底层也调用了setAnimation这个方法。但是startAnimation还执行了invalidate(true)，
  */
 public class AnimActivity extends BaseActivity {
 
@@ -29,6 +31,7 @@ public class AnimActivity extends BaseActivity {
     Button btn_scale;
     Button btn_animation_set;
     Button btn_customer;
+    CustomAnim ca;
 
     @Override
     public void initContentViewXml() {
@@ -45,12 +48,17 @@ public class AnimActivity extends BaseActivity {
         btn_animation_set = findViewById(R.id.btn_animation_set);
         btn_customer = findViewById(R.id.btn_customer);
 
+        ca = new CustomAnim();
+        ca.setDuration(1000);
+
         btn_customer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomAnim ca = new CustomAnim();
-                ca.setDuration(1000);
-                v.setAnimation(ca);
+
+
+//                v.setAnimation(ca);
+                v.startAnimation(ca);
+
             }
         });
 
