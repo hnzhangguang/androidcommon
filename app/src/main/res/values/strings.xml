@@ -12,6 +12,8 @@
     <string name="file">文件</string>
     <string name="create_new">创建文件</string>
     <string name="open">打开</string>
+    <string name="open_drawlayout">打开drawlayout</string>
+    <string name="close_drawlayout">关闭drawlayout</string>
     <string name="preference_file_key">preference_file_key</string>
 
     <!-- TODO: Remove or change this placeholder text -->

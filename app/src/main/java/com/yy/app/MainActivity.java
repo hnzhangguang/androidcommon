@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
+import com.yy.app.components.drawlayout.DrawLayoutActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.service.ServiceActivity;
 
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity {
     Button btn_components;
     Button btn_material;
     Button btn_serviceactivity;
+    Button btn_DrawLayout;
     Button btn_receiver;
 
 
@@ -51,6 +53,7 @@ public class MainActivity extends BaseActivity {
         btn_material = findViewById(R.id.btn_material);
         btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
         btn_receiver = findViewById(R.id.btn_receiver);
+        btn_DrawLayout = findViewById(R.id.btn_DrawLayout);
     }
 
     @Override
@@ -59,6 +62,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_DrawLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DrawLayoutActivity.class);
                 startActivity(intent);
             }
         });

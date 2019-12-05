@@ -64,6 +64,13 @@
         android:text="广播activity"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_DrawLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DrawLayout"
+        android:textAllCaps="false" />
+
 
     <TextView
         android:id="@+id/toSecondButtonRefResult"
