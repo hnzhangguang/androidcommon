@@ -52,6 +52,14 @@
         android:textAllCaps="false" />
 
 
+    <Button
+        android:id="@+id/btn_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="animation"
+        android:textAllCaps="false" />
+
+
     <TextView
         android:id="@+id/toSecondButtonRefResult"
         android:layout_width="wrap_content"

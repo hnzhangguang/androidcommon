@@ -9,7 +9,7 @@ import android.widget.Spinner;
 
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.components.animator.ValueAnimatorActivity;
+import com.yy.app.animator.ValueAnimatorActivity;
 import com.yy.app.components.bubble.BubbleActivity;
 import com.yy.app.components.fragment.FragmentActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.yy.app.animator.AnimActivity;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity {
     Button btn_serviceactivity;
     Button btn_DrawLayout;
     Button btn_receiver;
+    Button btn_animation;
 
 
     @Override
@@ -51,10 +53,18 @@ public class MainActivity extends BaseActivity {
         btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
         btn_receiver = findViewById(R.id.btn_receiver);
         btn_DrawLayout = findViewById(R.id.btn_DrawLayout);
+        btn_animation = findViewById(R.id.btn_animation);
     }
 
     @Override
     public void initListener() {
+        btn_animation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AnimActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_material.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

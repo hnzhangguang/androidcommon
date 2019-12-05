@@ -1,4 +1,4 @@
-package com.yy.app.components.animator;
+package com.yy.app.animator;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -16,6 +16,7 @@ import com.yy.app.R;
 public class ValueAnimatorActivity extends AppCompatActivity {
 
     TextView textView4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,9 +100,6 @@ public class ValueAnimatorActivity extends AppCompatActivity {
 //        AnimatorSet animatorSet = new AnimatorSet();
 //        animatorSet.play(bouncer).before(fadeAnim);
 //        animatorSet.start();
-
-
-
 
 
     }
