@@ -27,7 +27,6 @@ public class MainActivity extends BaseActivity {
     // intent extra
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
-    Button toSecondButton;   // 按钮: 跳转到第二个activity
     Button toMainActivityByIntent;   // 按钮: 跳转到第二个activity
     Button toShortCutButton;
     Button btn_components;
@@ -44,7 +43,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        toSecondButton = findViewById(R.id.toSecondButton);
         toMainActivityByIntent = findViewById(R.id.toMainActivityByIntent);
         toShortCutButton = findViewById(R.id.toShortCutButton);
         btn_components = findViewById(R.id.btn_components);
@@ -84,13 +82,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        toSecondButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 界面跳转方法
-                sendMessage(view);
-            }
-        });
+
         toMainActivityByIntent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
