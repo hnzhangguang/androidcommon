@@ -1,4 +1,4 @@
-package com.yy.app.other;
+package com.yy.app.vo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
