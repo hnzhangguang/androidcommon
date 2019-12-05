@@ -29,7 +29,7 @@ public class BlankFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        Logger.e("1, BlankFragment -> onAttach ");
+        Logger.w("1, BlankFragment -> onAttach ");
 
     }
 
@@ -37,7 +37,7 @@ public class BlankFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Logger.e("2, BlankFragment -> onCreate ");
+        Logger.w("2, BlankFragment -> onCreate ");
     }
 
     @Override

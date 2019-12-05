@@ -1,12 +1,14 @@
 package com.yy.app.components.drawlayout;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -178,6 +180,25 @@ public class DrawLayoutActivity extends BaseActivity {
         left_listView.setAdapter(adapter);
 
     }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        String tag = "mmmm";
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {//当前为横屏
+            Log.d(tag, "ORIENTATION_LANDSCAPE=" + Configuration.ORIENTATION_LANDSCAPE);//2
+
+
+        } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {//当前为竖屏
+            Log.d(tag, "ORIENTATION_PORTRAIT=" + Configuration.ORIENTATION_PORTRAIT);//1
+
+        }
+
+
+    }
+
 }
 
 
