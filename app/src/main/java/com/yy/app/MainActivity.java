@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
+import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.service.ServiceActivity;
@@ -34,6 +34,7 @@ public class MainActivity extends BaseActivity {
     Button btn_components;
     Button btn_material;
     Button btn_serviceactivity;
+    Button btn_receiver;
 
 
     @Override
@@ -49,6 +50,7 @@ public class MainActivity extends BaseActivity {
         btn_components = findViewById(R.id.btn_components);
         btn_material = findViewById(R.id.btn_material);
         btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
+        btn_receiver = findViewById(R.id.btn_receiver);
     }
 
     @Override
@@ -91,11 +93,16 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
-//                startActivity(intent);
-                Logger.e("mmmm", "test221112");
+                startActivity(intent);
             }
         });
-
+        btn_receiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ReceiverActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -13,8 +18,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".service.ServiceActivity"></activity>
+        <activity android:name=".broadcastreceiver.ReceiverActivity" />
 
+        <!--        广播-->
+        <receiver android:name=".broadcastreceiver.MyReceiver2">
+            <intent-filter android:priority="10">
+                <action android:name="com.yy.app.broadcastreceiver.intent.myreceiver.action" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceiver.MyReceiver">
+            <intent-filter android:priority="9">
+                <action android:name="com.yy.app.broadcastreceiver.intent.myreceiver.action" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".service.ServiceActivity" />
+
+        <!--        服务-->
         <service
             android:name=".service.MyService"
             android:enabled="true"
