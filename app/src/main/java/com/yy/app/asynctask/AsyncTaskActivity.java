@@ -37,9 +37,9 @@ public class AsyncTaskActivity extends BaseActivity {
     public void initView() {
         super.initView();
 
-        btn_asyncTask = (Button) findViewById(R.id.btn_asyncTask);
-        mImageView = (ImageView) findViewById(R.id.imagview);
-        mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
+        btn_asyncTask = findViewById(R.id.btn_asyncTask);
+        mImageView = findViewById(R.id.imagview);
+        mProgressBar = findViewById(R.id.progressbar);
 
 
     }
