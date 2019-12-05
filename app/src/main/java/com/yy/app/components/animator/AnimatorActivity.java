@@ -1,4 +1,4 @@
-package com.yy.app;
+package com.yy.app.components.animator;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
 public class AnimatorActivity extends BaseActivity {

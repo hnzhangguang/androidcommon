@@ -1,4 +1,4 @@
-package com.yy.app;
+package com.yy.app.permission;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+
+import com.yy.app.R;
 
 
 /**

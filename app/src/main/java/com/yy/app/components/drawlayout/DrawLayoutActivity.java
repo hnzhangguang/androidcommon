@@ -30,6 +30,7 @@ import com.yy.app.base.Logger;
  * 2, fragment -> fragment.setArguments(bundle);
  * 3, main_DrawLayout.closeDrawer(left_listView);
  * 4, 设置图标, menu 等
+ * 5, onConfigurationChanged
  */
 public class DrawLayoutActivity extends BaseActivity {
 

@@ -73,32 +73,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- 从主界面跳转到此界面, parentActivityName添加此界面的父界面是MainActivity -->
-        <activity
-            android:name=".SecondActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <action android:name="android.intent.action.define" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity> <!-- Animator -->
-        <activity android:name=".AnimatorActivity" /> <!-- Anim -->
-        <activity android:name=".AnimActivity" /> <!-- ListActivity -->
-        <activity android:name=".ListsActivity" /> <!-- ListView 控件的使用 -->
-        <activity android:name=".ListViewActivity" /> <!-- action 配置 -->
-        <activity android:name=".ActionActivity">
-            <intent-filter>
-                <action android:name="com.example.project.TRANSMOGRIFY" />
-            </intent-filter>
-        </activity> <!-- Permission 权限 -->
-        <activity android:name=".checkPermissionActivity" /> <!-- 截屏 start -->
+        <!-- Animator -->
+        <activity android:name=".components.animator.AnimatorActivity" /> <!-- Anim -->
+        <activity android:name=".components.animator.AnimActivity" /> <!-- ListActivity -->
+        <!-- ListView 控件的使用 -->
+        <!-- action 配置 -->
+        <!-- Permission 权限 -->
+        <activity android:name=".permission.checkPermissionActivity" /> <!-- 截屏 start -->
         <activity android:name="function.shortcut.ShortCutMainActivity" />
     </application>
 

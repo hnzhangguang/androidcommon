@@ -127,14 +127,14 @@ public class MainActivity extends BaseActivity {
      * @param view
      */
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message); // 可以传递普通的参数(字符串,数字,,,,)
-        intent.putExtras(new Bundle()); // 可以传递bundle对象
-        intent.putExtras(new Intent()); // 可以传递intent对象
-//        startActivity(intent);
-        startActivityForResult(intent, 333);
+//        Intent intent = new Intent(this, SecondActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.editText);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message); // 可以传递普通的参数(字符串,数字,,,,)
+//        intent.putExtras(new Bundle()); // 可以传递bundle对象
+//        intent.putExtras(new Intent()); // 可以传递intent对象
+////        startActivity(intent);
+//        startActivityForResult(intent, 333);
 
     }
 

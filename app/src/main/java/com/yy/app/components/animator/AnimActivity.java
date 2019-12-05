@@ -1,4 +1,4 @@
-package com.yy.app;
+package com.yy.app.components.animator;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
 public class AnimActivity extends BaseActivity {
@@ -19,11 +20,6 @@ public class AnimActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
-
-        ImageView spaceshipImage = (ImageView) findViewById(R.id.spaceshipImage);
-        Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_set);
-        spaceshipImage.startAnimation(hyperspaceJumpAnimation);
 
 
     }

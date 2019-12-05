@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.yy.app.AnimatorActivity;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.components.animator.ValueAnimatorActivity;
