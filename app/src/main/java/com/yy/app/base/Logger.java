@@ -14,6 +14,10 @@ public class Logger {
         com.yy.app.lib.logger.Logger.e(TAG, msg);
     }
 
+    public static void e(Object msg) {
+        com.yy.app.lib.logger.Logger.e(TAG, msg);
+    }
+
     public static void e(String tag, String msg) {
         com.yy.app.lib.logger.Logger.e(tag, msg);
     }

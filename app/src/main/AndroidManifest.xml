@@ -17,7 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".components.drawlayout.DrawLayoutActivity"></activity>
+
+        <!--        使用了actionBar 所以需要使用  NoActionBar 的主题 -->
+        <activity
+            android:name=".components.drawlayout.DrawLayoutActivity"
+            android:theme="@style/AppTheme3" />
         <activity android:name=".broadcastreceiver.ReceiverActivity" /> <!-- 广播 -->
         <receiver android:name=".broadcastreceiver.MyReceiver2">
             <intent-filter android:priority="10">

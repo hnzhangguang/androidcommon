@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_DrawLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:id="@+id/main_DrawLayout"
     tools:context=".components.drawlayout.DrawLayoutActivity"
     tools:openDrawer="start">
 
@@ -12,7 +13,28 @@
     <FrameLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_drawLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/Base.Theme.AppCompat.Light"
+                app:logo="@drawable/ic_launcher_foreground"
+                app:navigationIcon="@drawable/icon_toolbar"
+                app:popupTheme="@style/toolBar_pop_item"
+                app:subtitle="副标题"
+                app:subtitleTextColor="#fff"
+                app:title="标题"
+                app:titleTextColor="#fff" />
+        </LinearLayout>
+    </FrameLayout>
 
     <!--    很重要-->
     <!-- android:layout_gravity="start" 是作用在DrawLayout 的左侧根布局上的-->

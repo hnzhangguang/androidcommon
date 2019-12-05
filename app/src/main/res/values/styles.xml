@@ -28,6 +28,10 @@
     <!--继承-->
     <style name="AppTheme2" parent="BaseAppTheme" />
 
+
+    <style name="AppTheme4" parent="BaseAppTheme" />
+
+
     <!--    <style name="AppTheme4" parent="Theme.appcompat."/>-->
 
 
@@ -39,6 +43,11 @@
     <!--  可以继承不同的parent-->
     <style name="GreenText3" parent="@android:style/TextAppearance">
         <item name="android:textColor">#00FF00</item>
+    </style>
+
+
+    <style name="toolBar_pop_item" parent="Base.Theme.AppCompat.Light">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
 
