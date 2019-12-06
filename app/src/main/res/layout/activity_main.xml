@@ -66,6 +66,34 @@
         android:text="asynctask"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_NetworkActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NetworkActivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_DrawableActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DrawableActivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_EventsActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EventsActivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_activity_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="activityActivity"
+        android:textAllCaps="false" />
+
 
     <TextView
         android:id="@+id/toSecondButtonRefResult"

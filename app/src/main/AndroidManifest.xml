@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-    <!-- androdi 9.0 默认是禁止所有网络请求服务的    android:usesCleartextTraffic="true" -->
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -20,8 +19,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".asynctask.AsyncTaskActivity"></activity>
-        <!-- 使用了actionBar 所以需要使用  NoActionBar 的主题 -->
+        <activity android:name=".activity.ActivityMainActivity"></activity>
+        <activity android:name=".activity.SwitchLayoutTestActivity" />
+        <activity android:name=".activity.SwitchLayoutActivity" />
+        <activity android:name=".event.EventsActivity" />
+        <activity android:name=".data.DataActivity" />
+        <activity android:name=".drawable.DrawableActivity" />
+        <activity android:name=".network.NetworkActivity" />
+        <activity android:name=".asynctask.AsyncTaskActivity" /> <!-- 使用了actionBar 所以需要使用  NoActionBar 的主题 -->
         <activity
             android:name=".components.drawlayout.DrawLayoutActivity"
             android:theme="@style/AppTheme3" />
