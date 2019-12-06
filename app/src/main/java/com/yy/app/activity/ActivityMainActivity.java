@@ -11,6 +11,10 @@ import com.yy.app.MainActivity;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
+
+/**
+ * activity主界面
+ */
 public class ActivityMainActivity extends BaseActivity {
 
     Button btn_switchLayout;
