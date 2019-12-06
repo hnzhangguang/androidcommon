@@ -2,10 +2,16 @@ package com.yy.app.base;
 
 import android.app.Application;
 import android.graphics.Bitmap;
+import android.util.Log;
+
+import com.activeandroid.ActiveAndroid;
+import com.activeandroid.query.Select;
+import com.yy.app.data.bean.Category;
+import com.yy.app.data.bean.Item;
 
 
 /**
- *
+ * 1, ORM  -> ActiveAndroid.initialize(this);
  */
 public class BaseApplication extends Application {
 
@@ -14,6 +20,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ActiveAndroid.initialize(this);   // ORM
         Logger.e("BaseApplication->onCreate");
     }
 
@@ -53,9 +60,8 @@ public class BaseApplication extends Application {
             bitmap = null;
             System.gc();
         }
-
-
     }
+
 
     @Override
     public void onTerminate() {

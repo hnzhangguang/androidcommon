@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.yy.app.activity.ActivityMainActivity;
 import com.yy.app.animator.AnimActivity;
 import com.yy.app.asynctask.AsyncTaskActivity;
 import com.yy.app.base.BaseActivity;
@@ -16,6 +17,9 @@ import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.drawlayout.DrawLayoutActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
+import com.yy.app.drawable.DrawableActivity;
+import com.yy.app.event.EventsActivity;
+import com.yy.app.network.NetworkActivity;
 import com.yy.app.service.ServiceActivity;
 
 import java.util.List;
@@ -40,6 +44,10 @@ public class MainActivity extends BaseActivity {
     Button btn_receiver;
     Button btn_animation;
     Button btn_asynctask;
+    Button btn_NetworkActivity;
+    Button btn_DrawableActivity;
+    Button btn_EventsActivity;
+    Button btn_activity_activity;
 
 
     @Override
@@ -57,10 +65,42 @@ public class MainActivity extends BaseActivity {
         btn_DrawLayout = findViewById(R.id.btn_DrawLayout);
         btn_animation = findViewById(R.id.btn_animation);
         btn_asynctask = findViewById(R.id.btn_asynctask);
+        btn_NetworkActivity = findViewById(R.id.btn_NetworkActivity);
+        btn_DrawableActivity = findViewById(R.id.btn_DrawableActivity);
+        btn_EventsActivity = findViewById(R.id.btn_EventsActivity);
+        btn_activity_activity = findViewById(R.id.btn_activity_activity);
     }
 
     @Override
     public void initListener() {
+        btn_activity_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityMainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_EventsActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_DrawableActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DrawableActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_NetworkActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NetworkActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_asynctask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
