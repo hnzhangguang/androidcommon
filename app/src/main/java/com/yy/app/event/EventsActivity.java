@@ -59,14 +59,14 @@ public class EventsActivity extends BaseActivity {
     }
 
     public void onEvent(MyEvent event) {
-        LogUtil.e("onEvent->" + event);
+        //        LogUtil.e("onEvent->" + event);
         if (event.getType().equals("0")) {
             tv_content.setText(event.getContent());
         }
     }
 
     public void onEventMainThread(MyEvent event) {
-        LogUtil.e("onEventMainThread->" + event);
+        //        LogUtil.e("onEventMainThread->" + event);
 
         if (event.getType().equals("1")) {
             tv_content.setText(event.getContent());
