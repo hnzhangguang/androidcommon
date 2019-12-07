@@ -68,6 +68,7 @@ dependencies {
     api files('libs/activeandroid-3.1-beta.jar')  // ORM
     api files('libs/litepal-2.0.0.jar')  // 大神的
     api files('libs/mylibrary.jar')  // 我的
+    api files('libs/jsoup-1.8.1.jar')   // 解析html文档
     api 'com.github.Cutta:GifView:1.1'
     // 引入aar方式
 //    api(name:'xxxx',ext:'aar')

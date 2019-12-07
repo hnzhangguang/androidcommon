@@ -38,8 +38,7 @@ public class DrawableActivity extends BaseActivity {
 
     Button btn_glide;
     ImageView iv_glide;
-    private static final String photo_url = "http://photocdn.sohu" +
-            ".com/20110927/Img320705637.jpg";
+    private static final String photo_url = "http://photocdn.sohu.com/20110927/Img320705637.jpg";
 
     @Override
     public void initContentViewXml() {
