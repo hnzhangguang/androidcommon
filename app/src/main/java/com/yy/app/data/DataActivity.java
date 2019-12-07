@@ -1,18 +1,21 @@
 package com.yy.app.data;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.activeandroid.query.Select;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.app.logger.LogUtil;
 import com.google.gson.Gson;
 import com.yy.app.R;
 import com.yy.app.data.bean.Book;
 import com.yy.app.data.bean.Category;
 import com.yy.app.data.bean.Item;
-import com.yy.app.data.litepal.Album;
 import com.yy.app.data.litepal.Song;
 
 import org.litepal.LitePal;
@@ -20,13 +23,29 @@ import org.litepal.LitePal;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * litepal  步骤:
+ * 1,
+ */
 public class DataActivity extends AppCompatActivity {
+
+
+    Button btn_litepal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_data);
+
+        btn_litepal = findViewById(R.id.btn_litepal);
+        btn_litepal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LitePal();
+            }
+        });
 
 
     }
@@ -159,7 +178,8 @@ public class DataActivity extends AppCompatActivity {
          * );
          */
 
-        // 5 Upgrade tables  -> Upgrade tables in LitePal is extremely easy. Just modify your models anyway you want:
+        // 5 Upgrade tables  -> Upgrade tables in LitePal is extremely easy. Just modify your models
+        // anyway you want:
         /**
          * public class Album extends LitePalSupport {
          *
@@ -181,52 +201,57 @@ public class DataActivity extends AppCompatActivity {
          */
 
         // 6
-        //A releaseDate field was added and price field was annotated to ignore. Then increase the version number in litepal.xml:
-//        <!--
-//                Define the version of your database. Each time you want
-//        to upgrade your database, the version tag would helps.
-//        Modify the models you defined in the mapping tag, and just
-//        make the version value plus one, the upgrade of database
-//        will be processed automatically without concern.
-//        For example:
-//    <version value="1" />
-//                -->
+        //A releaseDate field was added and price field was annotated to ignore. Then increase the
+        // version number in litepal.xml:
+        //        <!--
+        //                Define the version of your database. Each time you want
+        //        to upgrade your database, the version tag would helps.
+        //        Modify the models you defined in the mapping tag, and just
+        //        make the version value plus one, the upgrade of database
+        //        will be processed automatically without concern.
+        //        For example:
+        //    <version value="1" />
+        //                -->
         //<version value="2" />
 
 
+        SQLiteDatabase db = LitePal.getDatabase();
+
         //       7 , Save data
 
-        Album album = new Album();
-        album.setName("album");
-        album.setPrice(10.99f);
-        album.setCover(getCoverImageBytes());
-        album.save();
-        Song song1 = new Song();
-        song1.setName("song1");
-        song1.setDuration(320);
-        song1.setAlbum(album);
-        song1.save();
-        Song song2 = new Song();
-        song2.setName("song2");
-        song2.setDuration(356);
-        song2.setAlbum(album);
-        song2.save();
+        //        Album album = new Album();
+        //        album.setName("album");
+        //        album.setPrice(10.99f);
+        //        album.setCover(getCoverImageBytes());
+        //        album.save();
+        //        Song song1 = new Song();
+        //        song1.setName("song1");
+        //        song1.setDuration(320);
+        //        song1.setAlbum(album);
+        //        song1.save();
+        //        Song song2 = new Song();
+        //        song2.setName("song2");
+        //        song2.setDuration(356);
+        //        song2.setAlbum(album);
+        //        song2.save();
 
         // 8, Update data
-        Album albumToUpdate = LitePal.find(Album.class, 1);
-        albumToUpdate.setPrice(20.99f); // raise the price
-        albumToUpdate.save();
+        //        Album albumToUpdate = LitePal.find(Album.class, 1);
+        //        albumToUpdate.setPrice(20.99f); // raise the price
+        //        albumToUpdate.save();
 
 
         // Delete data
-//        LitePal.delete(Song.class, id);
-        LitePal.deleteAll(Song.class, "duration > ?", "350");
+        //        LitePal.delete(Song.class, id);
+        //        LitePal.deleteAll(Song.class, "duration > ?", "350");
 
 
         //Query data
-//        Song song = LitePal.find(Song.class, id);
+        //        Song song = LitePal.find(Song.class, id);
         List<Song> allSongs = LitePal.findAll(Song.class);
-        List<Song> songs = LitePal.where("name like ? and duration < ?", "song%", "200").order("duration").find(Song.class);
+        LogUtil.e(allSongs.size());
+        //        List<Song> songs = LitePal.where("name like ? and duration < ?", "song%", "200").order(
+        //                "duration").find(Song.class);
 
     }
 

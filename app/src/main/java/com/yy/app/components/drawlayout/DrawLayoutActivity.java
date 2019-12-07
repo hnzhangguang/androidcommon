@@ -19,9 +19,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
 
 
 /**
@@ -127,7 +127,8 @@ public class DrawLayoutActivity extends BaseActivity {
         });
 
 
-        toggle = new ActionBarDrawerToggle(this, main_DrawLayout, null, R.string.open_drawlayout, R.string.close_drawlayout) {
+        toggle = new ActionBarDrawerToggle(this, main_DrawLayout, null, R.string.open_drawlayout,
+                R.string.close_drawlayout) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -140,7 +141,7 @@ public class DrawLayoutActivity extends BaseActivity {
                 showToast("你已经操作结束~~~");
                 // 是不是 开着的
                 boolean isDrawerOpen = main_DrawLayout.isDrawerOpen(left_listView);
-                Logger.e(isDrawerOpen);
+                LogUtil.e(isDrawerOpen);
             }
         };
 
@@ -176,7 +177,8 @@ public class DrawLayoutActivity extends BaseActivity {
     public void initData() {
         super.initData();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.planets_array));//新建并配置ArrayAapeter
         left_listView.setAdapter(adapter);
 

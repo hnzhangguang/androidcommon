@@ -17,6 +17,7 @@ import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.drawlayout.DrawLayoutActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
+import com.yy.app.data.DataActivity;
 import com.yy.app.drawable.DrawableActivity;
 import com.yy.app.event.EventsActivity;
 import com.yy.app.network.NetworkActivity;
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity {
     Button btn_DrawableActivity;
     Button btn_EventsActivity;
     Button btn_activity_activity;
+    Button btn_Databaseactivity;
 
 
     @Override
@@ -69,10 +71,18 @@ public class MainActivity extends BaseActivity {
         btn_DrawableActivity = findViewById(R.id.btn_DrawableActivity);
         btn_EventsActivity = findViewById(R.id.btn_EventsActivity);
         btn_activity_activity = findViewById(R.id.btn_activity_activity);
+        btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
     }
 
     @Override
     public void initListener() {
+        btn_Databaseactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DataActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_activity_activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,14 +182,14 @@ public class MainActivity extends BaseActivity {
      * @param view
      */
     public void sendMessage(View view) {
-//        Intent intent = new Intent(this, SecondActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message); // 可以传递普通的参数(字符串,数字,,,,)
-//        intent.putExtras(new Bundle()); // 可以传递bundle对象
-//        intent.putExtras(new Intent()); // 可以传递intent对象
-////        startActivity(intent);
-//        startActivityForResult(intent, 333);
+        //        Intent intent = new Intent(this, SecondActivity.class);
+        //        EditText editText = (EditText) findViewById(R.id.editText);
+        //        String message = editText.getText().toString();
+        //        intent.putExtra(EXTRA_MESSAGE, message); // 可以传递普通的参数(字符串,数字,,,,)
+        //        intent.putExtras(new Bundle()); // 可以传递bundle对象
+        //        intent.putExtras(new Intent()); // 可以传递intent对象
+        ////        startActivity(intent);
+        //        startActivityForResult(intent, 333);
 
     }
 
@@ -196,9 +206,9 @@ public class MainActivity extends BaseActivity {
             // Create the text message with a string
             Intent sendIntent = new Intent();
             sendIntent.setAction("android.intent.action.define");
-//            sendIntent.setType("text/plain");
+            //            sendIntent.setType("text/plain");
             //intent.putExtra("media_id", "a1b2c3");
-//            sendIntent.putExtra(Intent.EXTRA_TEXT, "我是使用Intent action 参数调起的activity");
+            //            sendIntent.putExtra(Intent.EXTRA_TEXT, "我是使用Intent action 参数调起的activity");
             sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);   // 设置不同的launchMode
             // Start the activity
             startActivity(sendIntent);

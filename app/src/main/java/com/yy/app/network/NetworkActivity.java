@@ -13,9 +13,9 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
 
 import org.json.JSONObject;
 
@@ -68,7 +68,7 @@ public class NetworkActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 getJSONVolley();
-//                NetWorkImageViewVolley();
+                //                NetWorkImageViewVolley();
             }
         });
     }
@@ -86,7 +86,7 @@ public class NetworkActivity extends BaseActivity {
             public void onErrorResponse(
                     com.android.volley.VolleyError arg0) {
                 System.out.println("对不起，有问题");
-                Logger.e("对不起，有问题: -> " + arg0);
+                LogUtil.e("对不起，有问题: -> " + arg0);
             }
         });
         requestQueue.add(jsonObjectRequest);

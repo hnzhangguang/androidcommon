@@ -3,7 +3,7 @@ package com.yy.app.animator;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.yy.app.base.Logger;
+import com.app.logger.LogUtil;
 
 
 /**
@@ -17,7 +17,7 @@ public class CustomAnim extends Animation {
     @Override
     public void initialize(int width, int height, int parentWidth,
                            int parentHeight) {
-//		System.out.println("init");
+        //		System.out.println("init");
         super.initialize(width, height, parentWidth, parentHeight);
     }
 
@@ -30,10 +30,10 @@ public class CustomAnim extends Animation {
      */
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
-        Logger.e(interpolatedTime);
-//        System.out.println(interpolatedTime);    // 0~1
-//		t.setAlpha(interpolatedTime);   // 透明度动画的实现
-//		t.getMatrix().setTranslate(200*interpolatedTime, 200*interpolatedTime);  // 位移动画的实现
+        LogUtil.e(interpolatedTime);
+        //        System.out.println(interpolatedTime);    // 0~1
+        //		t.setAlpha(interpolatedTime);   // 透明度动画的实现
+        //		t.getMatrix().setTranslate(200*interpolatedTime, 200*interpolatedTime);  // 位移动画的实现
         t.getMatrix().setTranslate((float) (Math.sin(interpolatedTime * 10) * 50), 10);  // 摇头动画的实现
         super.applyTransformation(interpolatedTime, t);
     }

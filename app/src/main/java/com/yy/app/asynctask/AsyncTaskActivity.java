@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -63,14 +63,14 @@ public class AsyncTaskActivity extends BaseActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Logger.e("MyAsyncTask->onPreExecute");
+            LogUtil.e("MyAsyncTask->onPreExecute");
             mProgressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
         // 可变参数 只取出一个参数就是第0位
         protected Bitmap doInBackground(String... params) {
-            Logger.e("MyAsyncTask->doInBackground");
+            LogUtil.e("MyAsyncTask->doInBackground");
             String url = params[0];// 获取传递进来的参数
             Bitmap bitmap = null;
             URLConnection connection;
@@ -93,7 +93,7 @@ public class AsyncTaskActivity extends BaseActivity {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            Logger.e("MyAsyncTask->onPostExecute");
+            LogUtil.e("MyAsyncTask->onPostExecute");
             super.onPostExecute(bitmap);
             mProgressBar.setVisibility(View.GONE);
             mImageView.setImageBitmap(bitmap);

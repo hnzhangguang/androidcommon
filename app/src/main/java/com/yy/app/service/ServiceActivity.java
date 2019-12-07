@@ -7,9 +7,9 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.view.View;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
 
 
 /**
@@ -83,7 +83,7 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
     // 绑定成功的时候调用
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
-        Logger.e("ServiceActivity->onServiceConnected");
+        LogUtil.e("ServiceActivity->onServiceConnected");
         isStart = true;
         System.out.println("ServiceActivity - onServiceConnected");
     }
@@ -93,6 +93,6 @@ public class ServiceActivity extends BaseActivity implements View.OnClickListene
     // 它的调用时机是当Service服务被异外销毁时，例如内存的资源不足时.
     @Override
     public void onServiceDisconnected(ComponentName name) {
-        Logger.e("ServiceActivity - onServiceDisconnected");
+        LogUtil.e("ServiceActivity - onServiceDisconnected");
     }
 }

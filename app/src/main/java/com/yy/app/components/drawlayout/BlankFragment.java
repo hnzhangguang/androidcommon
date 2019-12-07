@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
-import com.yy.app.base.Logger;
 
 /**
  * 1,  fragment 的生命周期,
@@ -29,7 +29,7 @@ public class BlankFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        Logger.w("1, BlankFragment -> onAttach ");
+        LogUtil.w("1, BlankFragment -> onAttach ");
 
     }
 
@@ -37,13 +37,13 @@ public class BlankFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Logger.w("2, BlankFragment -> onCreate ");
+        LogUtil.w("2, BlankFragment -> onCreate ");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Logger.e("3, BlankFragment -> onCreateView ");
+        LogUtil.e("3, BlankFragment -> onCreateView ");
 
         View root = inflater.inflate(R.layout.fragment_blank, container, false);
         textView = root.findViewById(R.id.tv_textView);
@@ -55,7 +55,7 @@ public class BlankFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Logger.e("4, BlankFragment -> onActivityCreated ");
+        LogUtil.e("4, BlankFragment -> onActivityCreated ");
     }
 
 
@@ -63,7 +63,7 @@ public class BlankFragment extends Fragment {
     public void onDetach() {
 
 
-        Logger.e("BlankFragment -> onDetach ");
+        LogUtil.e("BlankFragment -> onDetach ");
         super.onDetach();
     }
 

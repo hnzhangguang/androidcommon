@@ -2,12 +2,11 @@ package com.yy.app.base;
 
 import android.app.Application;
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import com.activeandroid.ActiveAndroid;
-import com.activeandroid.query.Select;
-import com.yy.app.data.bean.Category;
-import com.yy.app.data.bean.Item;
+import com.app.logger.LogUtil;
+
+import org.litepal.LitePal;
 
 
 /**
@@ -20,8 +19,11 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        LitePal.initialize(this);  // LitePal
+
         ActiveAndroid.initialize(this);   // ORM
-        Logger.e("BaseApplication->onCreate");
+        LogUtil.e("BaseApplication->onCreate");
     }
 
 
@@ -32,7 +34,7 @@ public class BaseApplication extends Application {
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        Logger.e("BaseApplication->onLowMemory");
+        LogUtil.e("BaseApplication->onLowMemory");
     }
 
     /**
@@ -50,7 +52,7 @@ public class BaseApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        Logger.e("BaseApplication->onTrimMemory");
+        LogUtil.e("BaseApplication->onTrimMemory");
 
 
         // 先判断是否已经回收
@@ -66,6 +68,6 @@ public class BaseApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        Logger.e("BaseApplication->onTerminate");
+        LogUtil.e("BaseApplication->onTerminate");
     }
 }

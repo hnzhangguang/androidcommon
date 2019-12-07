@@ -4,7 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.yy.app.base.Logger;
+import com.app.logger.LogUtil;
+
 
 public class MyReceiver extends BroadcastReceiver {
 
@@ -13,6 +14,6 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Logger.e("MyReceiver - onReceive :" + intent.getStringExtra("key"));  // 接受传递的值
+        LogUtil.e("MyReceiver - onReceive :" + intent.getStringExtra("key"));  // 接受传递的值
     }
 }

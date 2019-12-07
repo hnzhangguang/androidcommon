@@ -6,15 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.app.logger.LogUtils;
+import com.app.logger.LogUtil;
 import com.app.logger.PrettyFormatStrategy;
 import com.cunoraz.gifview.library.GifView;
 import com.squareup.picasso.Picasso;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
-
-import org.litepal.util.LogUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -69,7 +66,7 @@ public class DrawableActivity extends BaseActivity {
             //            imageView3.setImageBitmap(bm);
             iv_photo.setImageBitmap(bm);
         } catch (IOException e) {
-            Logger.e(e);
+            LogUtil.e(e);
             e.printStackTrace();
         }
 
@@ -145,9 +142,9 @@ public class DrawableActivity extends BaseActivity {
 
                 //                LogUtils.e("aaaa", "fkd");
 
-                LogUtils.w("ddd");
+                LogUtil.w("ddd");
                 PrettyFormatStrategy.methodCount = 3;
-                LogUtils.e("jfkljffj");
+                LogUtil.e("jfkljffj");
 
             }
         });

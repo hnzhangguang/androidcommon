@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-import com.yy.app.base.Logger;
 
 import de.greenrobot.event.EventBus;
 
@@ -59,14 +59,14 @@ public class EventsActivity extends BaseActivity {
     }
 
     public void onEvent(MyEvent event) {
-        Logger.e("onEvent->" + event);
+        LogUtil.e("onEvent->" + event);
         if (event.getType().equals("0")) {
             tv_content.setText(event.getContent());
         }
     }
 
     public void onEventMainThread(MyEvent event) {
-        Logger.e("onEventMainThread->" + event);
+        LogUtil.e("onEventMainThread->" + event);
 
         if (event.getType().equals("1")) {
             tv_content.setText(event.getContent());
