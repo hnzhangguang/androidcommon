@@ -1,5 +1,7 @@
 package com.yy.app.base;
 
+import com.app.logger.LogUtils;
+
 /**
  * 日志工具类
  */
@@ -9,19 +11,19 @@ public class Logger {
     private static final String TAG = "mmmm";
 
     public static void e(String msg) {
-        com.yy.app.lib.logger.Logger.e(TAG, msg);
+        LogUtils.e(msg);
     }
 
     public static void w(String msg) {
-        com.yy.app.lib.logger.Logger.w(TAG, msg);
+        LogUtils.w(TAG, msg);
     }
 
     public static void e(Object msg) {
-        com.yy.app.lib.logger.Logger.e(TAG, msg);
+        LogUtils.e(TAG, msg);
     }
 
     public static void e(String tag, String msg) {
-        com.yy.app.lib.logger.Logger.e(tag, msg);
+        LogUtils.e(tag, msg);
     }
 
 

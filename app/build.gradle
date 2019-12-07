@@ -64,7 +64,6 @@ dependencies {
     api files('libs/eventbus.jar')
     api files('libs/switchlayoutlib.jar')
     api files('libs/picasso-2.4.0.jar') // 图片
-//    api files('libs/glide-3.8.0.jar') // 图片
     api files('libs/glide-4.5.0-sources.jar') // 图片
     api files('libs/activeandroid-3.1-beta.jar')  // ORM
     api files('libs/litepal-2.0.0.jar')  // 大神的
