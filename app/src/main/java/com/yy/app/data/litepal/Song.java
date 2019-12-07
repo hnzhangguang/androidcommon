@@ -10,6 +10,7 @@ public class Song extends LitePalSupport {
     @Column(nullable = false)
     private String name;
 
+
     private int duration;
 
     @Column(ignore = true)
@@ -20,6 +21,10 @@ public class Song extends LitePalSupport {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setDuration(int duration) {
@@ -34,5 +39,16 @@ public class Song extends LitePalSupport {
 
     public void setAlbum(Album album) {
         this.album = album;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "name='" + name + '\'' +
+                ", duration=" + duration +
+                ", uselessField='" + uselessField + '\'' +
+                ", album=" + album +
+                '}';
     }
 }

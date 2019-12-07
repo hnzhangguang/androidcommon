@@ -2,6 +2,7 @@ package com.yy.app.data;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -249,7 +250,29 @@ public class DataActivity extends AppCompatActivity {
         //Query data
         //        Song song = LitePal.find(Song.class, id);
         List<Song> allSongs = LitePal.findAll(Song.class);
-        LogUtil.e(allSongs.size());
+        //        LitePal.deleteAll(Song.class);  // 删除全部数据
+        //        LogUtil.e("1:" + allSongs.size());
+        for (int i = 0; i < 5; i++) {
+            Song song2 = new Song();
+            song2.setName("song" + i);
+            song2.setDuration(356 + i);
+            song2.setAlbum(null);
+            //            song2.save();
+        }
+        allSongs = LitePal.findAll(Song.class);
+        //        LogUtil.e("2:" + allSongs.size());
+        for (Song song : allSongs) {
+            //            if (song.getName().equals("song1")) {
+            //                //song.save();       // 是个异步操作
+            //            }
+        }
+        SystemClock.sleep(2000);
+        allSongs = LitePal.findAll(Song.class);
+        for (Song allSong : allSongs) {
+            LogUtil.e("-> " + allSong);
+        }
+
+
         //        List<Song> songs = LitePal.where("name like ? and duration < ?", "song%", "200").order(
         //                "duration").find(Song.class);
 
