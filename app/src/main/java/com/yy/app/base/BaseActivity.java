@@ -83,11 +83,16 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @param intent
      */
+    @SuppressWarnings("JavaDoc")
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
     }
 
+
+    /**
+     * 物料返回键的时候
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -95,8 +100,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     public void showToast(Object obj) {
-        Toast toast = Toast.makeText(getApplicationContext(), obj + "", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER | Gravity.CENTER, 0, 0);
+        Toast toast = Toast.makeText(getApplicationContext(), obj == null ? "" :
+                obj.toString(), Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }
 }
