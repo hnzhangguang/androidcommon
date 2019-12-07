@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
-        tools:replace="label,allowBackup"
         android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,8 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.ActivityMainActivity"></activity>
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="label,allowBackup">
+        <activity android:name=".data.JsoupActivity"></activity>
+        <activity android:name=".activity.ActivityMainActivity" />
         <activity android:name=".activity.SwitchLayoutTestActivity" />
         <activity android:name=".activity.SwitchLayoutActivity" />
         <activity android:name=".event.EventsActivity" />
