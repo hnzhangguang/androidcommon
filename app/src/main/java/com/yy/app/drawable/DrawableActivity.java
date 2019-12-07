@@ -186,7 +186,7 @@ public class DrawableActivity extends BaseActivity {
             imageView3 = null;
         }
         System.gc();
-        Logger.e("DrawableActivity->onDestroy");
+        //        Logger.e("DrawableActivity->onDestroy");
         super.onDestroy();
     }
 }
