@@ -12,6 +12,7 @@ import android.widget.Toast;
 /**
  * Activity的公共基类
  */
+@SuppressWarnings("JavaDoc")
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
@@ -83,7 +84,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @param intent
      */
-    @SuppressWarnings("JavaDoc")
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
