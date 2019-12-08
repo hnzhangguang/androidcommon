@@ -1,4 +1,4 @@
-package com.yy.app.components.fragment;
+package com.yy.app.activity.fragment;
 
 import android.app.Activity;
 import android.content.Context;

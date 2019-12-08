@@ -1,8 +1,1 @@
 /build
-/.gradle
-/.idea
-/androidcommon.iml
-/gradle.properties
-/gradlew
-/gradlew.bat
-/local.properties

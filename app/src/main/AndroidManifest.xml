@@ -80,7 +80,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".components.fragment.FragmentActivity" />
+        <activity android:name=".activity.fragment.FragmentActivity" />
         <activity android:name="function.FunctionActivity" /> <!-- 主界面 -->
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.yy.app.components.fragment;
+package com.yy.app.activity.fragment;
 
 import android.content.Context;
 import android.net.Uri;

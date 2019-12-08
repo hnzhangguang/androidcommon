@@ -11,7 +11,7 @@ import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.animator.ValueAnimatorActivity;
 import com.yy.app.components.bubble.BubbleActivity;
-import com.yy.app.components.fragment.FragmentActivity;
+import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
 
 
@@ -108,7 +108,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
             }
         });
 
-//        添加监听
+        //        添加监听
         spinner.setOnItemSelectedListener(this);
 
 

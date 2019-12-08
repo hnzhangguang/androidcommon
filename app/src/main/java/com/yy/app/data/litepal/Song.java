@@ -1,7 +1,5 @@
 package com.yy.app.data.litepal;
 
-import android.graphics.drawable.InsetDrawable;
-
 import org.litepal.annotation.Column;
 import org.litepal.crud.LitePalSupport;
 
@@ -10,8 +8,8 @@ public class Song extends LitePalSupport {
     @Column(nullable = false)
     private String name;
 
-
-    private int duration;
+    @Column(nullable = true)
+    private int duration2;
 
     @Column(ignore = true)
     private String uselessField;
@@ -27,8 +25,8 @@ public class Song extends LitePalSupport {
         return name;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setDuration(int duration2) {
+        this.duration2 = duration2;
     }
 
 
@@ -46,7 +44,7 @@ public class Song extends LitePalSupport {
     public String toString() {
         return "Song{" +
                 "name='" + name + '\'' +
-                ", duration=" + duration +
+                "duration2='" + duration2 + '\'' +
                 ", uselessField='" + uselessField + '\'' +
                 ", album=" + album +
                 '}';

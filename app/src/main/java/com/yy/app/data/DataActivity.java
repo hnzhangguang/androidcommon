@@ -255,9 +255,9 @@ public class DataActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             Song song2 = new Song();
             song2.setName("song" + i);
-            song2.setDuration(356 + i);
+            //            song2.setDuration(356 + i);
             song2.setAlbum(null);
-            //            song2.save();
+            song2.save();
         }
         allSongs = LitePal.findAll(Song.class);
         //        LogUtil.e("2:" + allSongs.size());

@@ -1,4 +1,4 @@
-package com.yy.app.components.fragment;
+package com.yy.app.activity.fragment;
 
 import android.net.Uri;
 import android.support.v4.app.Fragment;
@@ -19,7 +19,8 @@ import java.util.List;
  * 2, replace() commit()
  * 3, show() hide() 方式
  */
-public class FragmentActivity extends BaseActivity implements InterfaceFragment, Fragment2.OnFragmentInteractionListener {
+public class FragmentActivity extends BaseActivity implements InterfaceFragment,
+        Fragment2.OnFragmentInteractionListener {
 
     // 方式1
     Button btn_fragment2;
@@ -143,8 +144,10 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
     public void initData() {
         super.initData();
 
-        // 2, Activity 也可使用 findFragmentById() 或 findFragmentByTag()，通过从 FragmentManager 获取对 Fragment 的引用来调用片段中的方法。例如：
-        Fragment1 fragment = (Fragment1) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        // 2, Activity 也可使用 findFragmentById() 或 findFragmentByTag()，通过从 FragmentManager 获取对 Fragment
+        // 的引用来调用片段中的方法。例如：
+        Fragment1 fragment =
+                (Fragment1) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
 
 
     }
