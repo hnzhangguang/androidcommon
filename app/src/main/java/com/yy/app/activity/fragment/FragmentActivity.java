@@ -18,6 +18,7 @@ import java.util.List;
  * 1, add commit()
  * 2, replace() commit()
  * 3, show() hide() 方式
+ * 4, addToBackStack(null) -> 按返回键的时候回到此fragment ;  popBackStack(); -> 回到activity
  */
 public class FragmentActivity extends BaseActivity implements InterfaceFragment,
         Fragment2.OnFragmentInteractionListener {
@@ -79,7 +80,7 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, new Fragment1());
-                fragmentTransaction.addToBackStack(null);  // 添加到返回栈中
+                fragmentTransaction.addToBackStack(null);  // 添加到返回栈中,从下一个fragment可以回退到这个fragment中
                 fragmentTransaction.commit();
             }
         });
@@ -88,7 +89,7 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, new Fragment2());
-                fragmentTransaction.addToBackStack(null); // 添加到返回栈中
+                fragmentTransaction.addToBackStack(null);  // 添加到返回栈中,从下一个fragment可以回退到这个fragment中
                 fragmentTransaction.commit();
             }
         });

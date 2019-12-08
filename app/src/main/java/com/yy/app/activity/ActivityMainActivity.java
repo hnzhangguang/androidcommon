@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.tandong.swichlayout.FlipAnimation;
 import com.yy.app.MainActivity;
 import com.yy.app.R;
+import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.base.BaseActivity;
 
 
@@ -33,6 +34,14 @@ public class ActivityMainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityMainActivity.this, SwitchLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityMainActivity.this, FragmentActivity.class);
                 startActivity(intent);
             }
         });
