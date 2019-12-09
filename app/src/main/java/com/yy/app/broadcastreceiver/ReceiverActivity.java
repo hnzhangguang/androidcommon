@@ -33,6 +33,7 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
         findViewById(R.id.btn_sendMessage).setOnClickListener(this);
         findViewById(R.id.btn_regReceiver).setOnClickListener(this);
         findViewById(R.id.btn_regUnReceiver).setOnClickListener(this);
+        findViewById(R.id.btn_registerReceiver).setOnClickListener(this);
         findViewById(R.id.btn_LocalReceiver).setOnClickListener(this);
 
 
@@ -80,10 +81,16 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
 
                 break;
 
-            case R.id.btn_LocalReceiver:
+            case R.id.btn_registerReceiver:
 
                 // 初始化本地广播
                 initLocalReceiver();
+
+                break;
+
+            case R.id.btn_LocalReceiver:
+
+                sendLocalBoracast();
 
                 break;
             default:
@@ -118,6 +125,20 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+
+    /**
+     * 发送本地广播
+     */
+    public void sendLocalBoracast() {
+
+        Intent intent = new Intent("com.nyl.orderlybroadcast.AnotherBroadcastReceiver");
+        if (null == lm) {
+            lm = LocalBroadcastManager.getInstance(this);
+        }
+        //发送本地广播
+        lm.sendBroadcast(intent);
+
+    }
 
     @Override
     protected void onDestroy() {
