@@ -100,7 +100,7 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
 
     }
 
-    private LocalBroadcastManager lm;
+    private LocalBroadcastManager localBroadcastManager;
     private TestReceiver testReceiver;
 
     /**
@@ -108,11 +108,11 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
      */
     private void initLocalReceiver() {
         //获取实例
-        lm = LocalBroadcastManager.getInstance(this);
+        localBroadcastManager = LocalBroadcastManager.getInstance(this);
         IntentFilter intentFilter = new IntentFilter("com.android.Test");
         testReceiver = new TestReceiver();
         //绑定
-        lm.registerReceiver(testReceiver, intentFilter);
+        localBroadcastManager.registerReceiver(testReceiver, intentFilter);
     }
 
     //本地广播
@@ -131,20 +131,20 @@ public class ReceiverActivity extends BaseActivity implements View.OnClickListen
      */
     public void sendLocalBoracast() {
 
-        Intent intent = new Intent("com.nyl.orderlybroadcast.AnotherBroadcastReceiver");
-        if (null == lm) {
-            lm = LocalBroadcastManager.getInstance(this);
+        Intent intent = new Intent("com.android.Test");
+        if (null == localBroadcastManager) {
+            localBroadcastManager = LocalBroadcastManager.getInstance(this);
         }
         //发送本地广播
-        lm.sendBroadcast(intent);
+        localBroadcastManager.sendBroadcast(intent);
 
     }
 
     @Override
     protected void onDestroy() {
         try {
-            //解绑
-            lm.unregisterReceiver(testReceiver);
+            //解绑本地广播
+            localBroadcastManager.unregisterReceiver(testReceiver);
         } catch (Exception e) {
             LogUtil.e(e);
         }
