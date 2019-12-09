@@ -20,7 +20,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".data.JsoupActivity"></activity>
+        <activity android:name=".data.JsoupActivity" />
         <activity android:name=".activity.ActivityMainActivity" />
         <activity android:name=".activity.SwitchLayoutTestActivity" />
         <activity android:name=".activity.SwitchLayoutActivity" />
@@ -33,7 +33,9 @@
             android:name=".components.drawlayout.DrawLayoutActivity"
             android:theme="@style/AppTheme3" />
         <activity android:name=".broadcastreceiver.ReceiverActivity" /> <!-- 广播 -->
-        <receiver android:name=".broadcastreceiver.MyReceiver2">
+        <receiver
+            android:name=".broadcastreceiver.MyReceiver2"
+            android:exported="true">
             <intent-filter android:priority="10">
                 <action android:name="com.yy.app.broadcastreceiver.intent.myreceiver.action" />
             </intent-filter>
@@ -76,7 +78,7 @@
         <activity android:name=".components.ComponentMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.define" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
