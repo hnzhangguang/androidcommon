@@ -1,12 +1,18 @@
 package com.yy.app.base;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
+
+import com.yy.app.MainActivity;
 
 
 /**
@@ -19,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("zhang", "onCreate: " + this.getClass().getSimpleName());
+        ActivityCollector.addActivity(this);
 
         // 设置此用户界面布局
         initContentViewXml();
@@ -105,4 +112,38 @@ public abstract class BaseActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }
+
+
+    @Override
+    protected void onDestroy() {
+        ActivityCollector.removeActivity(this);
+        super.onDestroy();
+    }
+
+
+    /**
+     * 强制离线广播
+     */
+    class ForceOfflineReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(final Context context, Intent intent) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Warning");
+            builder.setMessage("You are forced to be offline. Please try to login again.");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ActivityCollector.finishAll(); // 销毁所有活动
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent); // 重新启动LoginActivity
+                }
+            });
+            builder.show();
+        }
+
+    }
+
+
 }
