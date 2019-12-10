@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".base.BaseApplication"
@@ -20,7 +21,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".components.dialog.DialogActivity"></activity>
+        <activity android:name="function.geolocation.GeoLocationActivity"></activity>
+        <activity android:name=".components.dialog.DialogActivity" />
         <activity android:name="function.thread.ThreadMainActivity" />
         <activity android:name="function.webview.WebviewActivity" />
         <activity android:name="function.audio_video.AudioVideoActivity" />
@@ -67,12 +69,11 @@
             android:exported="true" />
 
         <activity
-            android:name="com.yy.app.material.MaterialActivity"
+            android:name=".material.MaterialActivity"
             android:theme="@style/AppTheme3" />
         <activity
-            android:name="com.yy.app.material.FruitActivity"
+            android:name=".material.FruitActivity"
             android:theme="@style/AppTheme3" />
-
         <activity android:name=".components.ViewPagerActivity" />
         <activity android:name=".animator.ValueAnimatorActivity" />
         <activity android:name=".components.OtherActivity" />
