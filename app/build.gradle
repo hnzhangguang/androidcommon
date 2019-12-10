@@ -6,11 +6,12 @@ apply plugin: 'com.android.application'
 //Android Pie	9.0	28
 
 android {
-    compileSdkVersion 28
+//    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.yy.app"
-        minSdkVersion 28
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -22,6 +23,21 @@ android {
         }
 
     }
+    signingConfigs {//签名的配置
+        release {
+            storeFile file('thekeystore')
+            storePassword 'yonyou'
+            keyAlias 'caskeystore'
+            keyPassword '123456'
+        }
+        debug {
+            storeFile file('thekeystore')
+            storePassword 'yonyou'
+            keyAlias 'caskeystore'
+            keyPassword '123456'
+        }
+    }
+
 
 //    解决AndroidManifest文件里面报警告⚠️ -> App is not indexable by Google Search
 //    lintOptions {
