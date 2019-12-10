@@ -11,15 +11,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
 import java.io.File;
 
+/**
+ * Audio and  Video 的使用方法
+ */
 public class AudioVideoActivity extends BaseActivity implements View.OnClickListener {
 
     private MediaPlayer mediaPlayer = new MediaPlayer();
+    private VideoView videoView;
 
     @Override
     public void initContentViewXml() {
@@ -36,6 +41,12 @@ public class AudioVideoActivity extends BaseActivity implements View.OnClickList
         play.setOnClickListener(this);
         pause.setOnClickListener(this);
         stop.setOnClickListener(this);
+        Button play2 = (Button) findViewById(R.id.play2);
+        Button pause2 = (Button) findViewById(R.id.pause2);
+        Button replay2 = (Button) findViewById(R.id.replay2);
+        play2.setOnClickListener(this);
+        pause2.setOnClickListener(this);
+        replay2.setOnClickListener(this);
         if (ContextCompat.checkSelfPermission(
                 AudioVideoActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -44,8 +55,15 @@ public class AudioVideoActivity extends BaseActivity implements View.OnClickList
                     1);
         } else {
             initMediaPlayer(); // 初始化MediaPlayer
+            initVideoPath(); // 初始化MediaPlayer
         }
     }
+
+    private void initVideoPath() {
+        File file = new File(Environment.getExternalStorageDirectory(), "movie.mp4");
+        videoView.setVideoPath(file.getPath()); // 指定视频文件的路径
+    }
+
 
     private void initMediaPlayer() {
         try {
@@ -112,6 +130,25 @@ public class AudioVideoActivity extends BaseActivity implements View.OnClickList
                     initMediaPlayer();
                 }
                 break;
+
+
+            case R.id.play2:
+                if (!videoView.isPlaying()) {
+                    videoView.start(); // 开始播放
+                }
+                break;
+            case R.id.pause2:
+                if (videoView.isPlaying()) {
+                    videoView.pause(); // 暂停播放
+                }
+                break;
+            case R.id.replay2:
+                if (videoView.isPlaying()) {
+                    videoView.resume(); // 重新播放
+                }
+                break;
+
+
             default:
                 break;
         }

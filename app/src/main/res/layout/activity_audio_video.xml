@@ -1,32 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="function.audio_video.AudioVideoActivity">
 
     <Button
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:text="play" />
 
     <Button
         android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="pause"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="99dp" />
+        android:text="pause" />
 
     <Button
         android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="stop"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="192dp" />
-</android.support.constraint.ConstraintLayout>
+        android:text="stop" />
+
+
+    <Button
+        android:id="@+id/play2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play2" />
+
+    <Button
+        android:id="@+id/pause2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pause2" />
+
+    <Button
+        android:id="@+id/replay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="replay2" />
+
+
+</LinearLayout>

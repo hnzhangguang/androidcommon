@@ -20,7 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name="function.audio_video.AudioVideoActivity"></activity>
+        <activity android:name="function.thread.ThreadMainActivity"></activity>
+        <activity android:name="function.webview.WebviewActivity" />
+        <activity android:name="function.audio_video.AudioVideoActivity" />
         <activity android:name="function.notification.NotificationActivity" />
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".data.JsoupActivity" />
