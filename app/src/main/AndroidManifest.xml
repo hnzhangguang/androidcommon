@@ -61,6 +61,12 @@
             android:enabled="true"
             android:exported="true" />
 
+        <service
+            android:name="function.coolweather.service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true" />
+
+
         <activity android:name=".components.ViewPagerActivity" />
         <activity android:name=".animator.ValueAnimatorActivity" />
         <activity android:name=".components.OtherActivity" />

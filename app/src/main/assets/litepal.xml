@@ -34,6 +34,9 @@
     <list>
         <mapping class="com.yy.app.data.litepal.Album" />
         <mapping class="com.yy.app.data.litepal.Song" />
+        <mapping class="function.coolweather.db.Province" />
+        <mapping class="function.coolweather.db.City" />
+        <mapping class="function.coolweather.db.County" />
     </list>
 
     <!--
