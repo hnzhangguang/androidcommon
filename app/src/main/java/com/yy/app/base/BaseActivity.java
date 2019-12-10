@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.yy.app.MainActivity;
@@ -19,7 +20,7 @@ import com.yy.app.MainActivity;
  * Activity的公共基类
  */
 @SuppressWarnings("JavaDoc")
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -145,5 +146,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
 
+    }
 }
