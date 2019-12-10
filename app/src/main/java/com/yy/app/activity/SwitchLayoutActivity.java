@@ -11,6 +11,7 @@ import com.yy.app.R;
 
 /**
  * 动画效果库 SwitchLayout 的使用
+ * 1, 学习自定义 Animation
  */
 public class SwitchLayoutActivity extends AppCompatActivity {
 

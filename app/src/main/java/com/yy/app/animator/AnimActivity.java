@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,12 +17,22 @@ import com.yy.app.base.BaseActivity;
  * 1, 透明度动画
  * 2, 缩放
  * 3, 位移
- * 4, 旋转
- * 5, set
+ * 4, 旋转    -> 转缩透位
+ * 5, setAnimation , startAnimation 的区别
  * 6, 监听
  * 7, 自定义动画(animation)
  * 8, v.setAnimation(ca);  和  v.startAnimation(ca);  的区别 startAnimation多了invalidate(true);
  * 一个startAnimation方法的底层也调用了setAnimation这个方法。但是startAnimation还执行了invalidate(true)，
+ * <p>
+ * <p>
+ * 9, 获取屏幕宽高
+ * WindowManager wm = activity.getWindowManager();
+ * int width = wm.getDefaultDisplay().getWidth();
+ * int height = wm.getDefaultDisplay().getHeight();
+ * <p>
+ * 10 ,几种常用的插补器
+ * BounceInterpolator ,AccelerateDecelerateInterpolator,AccelerateInterpolator,DecelerateInterpolator,
+ * LinearInterpolator,CycleInterpolator
  */
 public class AnimActivity extends BaseActivity {
 
@@ -56,8 +67,8 @@ public class AnimActivity extends BaseActivity {
             public void onClick(View v) {
 
 
-//                v.setAnimation(ca);
-                v.startAnimation(ca);
+                //v.setAnimation(ca);  // 只是设置了动画,并没有执行
+                v.startAnimation(ca);  // 设置并执行
 
             }
         });
@@ -65,19 +76,25 @@ public class AnimActivity extends BaseActivity {
         btn_animation_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                AnimationSet as = new AnimationSet(true);
-//        as.setDuration(1000);
-//
-//        AlphaAnimation aa = new AlphaAnimation(0, 1);
-//        aa.setDuration(1000);
-//        as.addAnimation(aa);
-//
-//        TranslateAnimation ta = new TranslateAnimation(200, 0, 200, 0);
-//        ta.setDuration(1000);
-//        as.addAnimation(ta);
+                // 代码实现
+                //        AnimationSet as = new AnimationSet(true);
+                //        as.setDuration(1000);
+                //
+                //        AlphaAnimation aa = new AlphaAnimation(0, 1);
+                //        aa.setDuration(1000);
+                //        as.addAnimation(aa);
+                //
+                //        TranslateAnimation ta = new TranslateAnimation(200, 0, 200, 0);
+                //        ta.setDuration(1000);
+                //        as.addAnimation(ta);
 
 
+                // xml实现
                 Animation a = AnimationUtils.loadAnimation(AnimActivity.this, R.anim.animation_set);
+
+                a.setInterpolator(new LinearInterpolator()); // 设置插补器(LinearInterpolator线性插补器)
+                a.setInterpolator(new CustomInterpolator()); // 使用自定义的插补器
+
 
                 // 动画监听事件
                 a.setAnimationListener(new Animation.AnimationListener() {
@@ -105,11 +122,14 @@ public class AnimActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-//        sa = new ScaleAnimation(0, 1, 0, 1,100,50);
-//        sa = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//        sa.setDuration(1000);
-//                v.setAnimation(sa);
+                // 代码实现
+                //        sa = new ScaleAnimation(0, 1, 0, 1,100,50);
+                //        sa = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f,
+                //        Animation.RELATIVE_TO_SELF, 0.5f);
+                //        sa.setDuration(1000);
+                //                v.setAnimation(sa);
 
+                // xml 实现
                 v.startAnimation(AnimationUtils.loadAnimation(AnimActivity.this, R.anim.scale));
 
 
@@ -133,9 +153,10 @@ public class AnimActivity extends BaseActivity {
             public void onClick(View v) {
 
                 // 旋转动画 代码
-//        ra = new RotateAnimation(0, 360, 100, 50);
-//        ra = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//        ra.setDuration(1000);
+                //        ra = new RotateAnimation(0, 360, 100, 50);
+                //        ra = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation
+                //        .RELATIVE_TO_SELF, 0.5f);
+                //        ra.setDuration(1000);
 
                 // 旋转动画 xml
                 v.startAnimation(AnimationUtils.loadAnimation(AnimActivity.this, R.anim.rotate));
