@@ -51,6 +51,11 @@
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="true" />
+        <service
+            android:name="com.yy.app.service.MyIntentService"
+            android:enabled="true"
+            android:exported="true" />
+
 
         <activity android:name=".components.ViewPagerActivity" />
         <activity android:name=".animator.ValueAnimatorActivity" />
@@ -79,6 +84,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.define" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

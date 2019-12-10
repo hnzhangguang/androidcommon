@@ -228,38 +228,43 @@ public class DataActivity extends AppCompatActivity {
       LogUtil.e("-> " + allSong);
     }
 
-    // 执行自己的sql !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    Cursor sql = LitePal.findBySQL("sql");
-    LitePal.select("name", "author", "pages")
-        .where(" pages > ? ", "400")
-        .order("pages")
-        .limit(5)
-        .offset(2)
-        .find(Song.class);
+    try {
 
-    // 获取总数量
-    int count = LitePal.count(Song.class);
-    final CountExecutor countExecutor = LitePal.countAsync(Song.class);
+      // 执行自己的sql !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      Cursor sql = LitePal.findBySQL("sql");
+      LitePal.select("name", "author", "pages")
+          .where(" pages > ? ", "400")
+          .order("pages")
+          .limit(5)
+          .offset(2)
+          .find(Song.class);
 
-    // 获取某个字段的平均值
-    double average = LitePal.average(Song.class, "age");
+      // 获取总数量
+      int count = LitePal.count(Song.class);
+      final CountExecutor countExecutor = LitePal.countAsync(Song.class);
 
-    int delete = LitePal.delete(Song.class, 1); // 删除id为1的数据
-    int i = LitePal.deleteAll(Song.class, "age=55");
+      // 获取某个字段的平均值
+      double average = LitePal.average(Song.class, "age");
 
-    // 更新
-    int update = LitePal.update(Song.class, new ContentValues(), 2); //
+      int delete = LitePal.delete(Song.class, 1); // 删除id为1的数据
+      int i = LitePal.deleteAll(Song.class, "age=55");
 
-    // 把集合数据一块儿保存
-    LitePal.saveAll(allSongs);
+      // 更新
+      int update = LitePal.update(Song.class, new ContentValues(), 2); //
 
-    // 判断是否存在该条件的数据
-    boolean exist = LitePal.isExist(Song.class, "age = 90");
+      // 把集合数据一块儿保存
+      LitePal.saveAll(allSongs);
 
-    //        List<Song> songs = LitePal.where("name like ? and duration < ?", "song%",
-    // "200").order(
-    //                "duration").find(Song.class);
+      // 判断是否存在该条件的数据
+      boolean exist = LitePal.isExist(Song.class, "age = 90");
 
+      //        List<Song> songs = LitePal.where("name like ? and duration < ?", "song%",
+      // "200").order(
+      //                "duration").find(Song.class);
+
+    } catch (Exception e) {
+      LogUtil.e(e);
+    }
   }
 
   private byte[] getCoverImageBytes() {
