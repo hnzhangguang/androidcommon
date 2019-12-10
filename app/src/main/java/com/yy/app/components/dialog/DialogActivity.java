@@ -1,8 +1,6 @@
 package com.yy.app.components.dialog;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
 import com.yy.app.R;
