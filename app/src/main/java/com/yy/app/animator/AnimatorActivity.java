@@ -179,7 +179,7 @@ public class AnimatorActivity extends BaseActivity {
             public Object evaluate(float fraction, Object startValue, Object endValue) {
                 return null;
             }
-        }, animFoat);
+        }, 0, 200);
 
 
         // set
