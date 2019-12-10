@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="function.notification.NotificationActivity">
+
+    <Button
+        android:id="@+id/send_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send_notice"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <Button
+        android:id="@+id/cancel_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel_notice"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="239dp" />
+</android.support.constraint.ConstraintLayout>

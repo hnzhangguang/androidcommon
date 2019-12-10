@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
+        <activity android:name="function.audio_video.AudioVideoActivity"></activity>
+        <activity android:name="function.notification.NotificationActivity" />
+        <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".data.JsoupActivity" />
         <activity android:name=".activity.ActivityMainActivity" />
         <activity android:name=".activity.SwitchLayoutTestActivity" />
@@ -52,10 +55,9 @@
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name="com.yy.app.service.MyIntentService"
+            android:name=".service.MyIntentService"
             android:enabled="true"
             android:exported="true" />
-
 
         <activity android:name=".components.ViewPagerActivity" />
         <activity android:name=".animator.ValueAnimatorActivity" />
