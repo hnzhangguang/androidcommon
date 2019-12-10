@@ -23,7 +23,9 @@ android {
         }
 
     }
-    signingConfigs {//签名的配置
+
+    //签名的配置
+    signingConfigs {
         release {
             storeFile file('thekeystore')
             storePassword 'yonyou'
