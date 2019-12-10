@@ -66,6 +66,13 @@
             android:enabled="true"
             android:exported="true" />
 
+        <activity
+            android:name="com.yy.app.material.MaterialActivity"
+            android:theme="@style/AppTheme3" />
+        <activity
+            android:name="com.yy.app.material.FruitActivity"
+            android:theme="@style/AppTheme3" />
+
         <activity android:name=".components.ViewPagerActivity" />
         <activity android:name=".animator.ValueAnimatorActivity" />
         <activity android:name=".components.OtherActivity" />

@@ -8,6 +8,13 @@
 
 
     <Button
+        android:id="@+id/btn_MaterialActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MaterialActivity"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/btn_components"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

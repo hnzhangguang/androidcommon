@@ -20,6 +20,7 @@ import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.data.DataActivity;
 import com.yy.app.drawable.DrawableActivity;
 import com.yy.app.event.EventsActivity;
+import com.yy.app.material.MaterialActivity;
 import com.yy.app.network.NetworkActivity;
 import com.yy.app.service.ServiceActivity;
 
@@ -50,6 +51,7 @@ public class MainActivity extends BaseActivity {
     Button btn_EventsActivity;
     Button btn_activity_activity;
     Button btn_Databaseactivity;
+    Button btn_MaterialActivity;
 
 
     @Override
@@ -72,10 +74,18 @@ public class MainActivity extends BaseActivity {
         btn_EventsActivity = findViewById(R.id.btn_EventsActivity);
         btn_activity_activity = findViewById(R.id.btn_activity_activity);
         btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
+        btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
     }
 
     @Override
     public void initListener() {
+        btn_MaterialActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MaterialActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_Databaseactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
