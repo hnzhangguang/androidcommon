@@ -12,6 +12,7 @@ import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.animator.ValueAnimatorActivity;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.components.bubble.BubbleActivity;
+import com.yy.app.components.listview.swipemenulistview.SwipeMenuListViewActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
 import com.yy.app.components.viewpager.FragmentViewPagerActivity;
 import com.yy.app.components.viewpager.ViewPager2Activity;
@@ -30,6 +31,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     Button btn_Animator = null;
     Button btn_ViewPager = null;
     Button btn_tablayout = null;
+    Button btn_swiplistview = null;
     Spinner spinner = null;
 
     BaseActivity mActivity = null;
@@ -45,6 +47,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
 
         mActivity = this;
 
+        btn_swiplistview = findViewById(R.id.btn_swiplistview);
         btn_fragment = findViewById(R.id.btn_fragment);
         btn_ViewPager = findViewById(R.id.btn_viewpager);
         btn_bubble = findViewById(R.id.btn_bubble);
@@ -66,6 +69,14 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     public void initListener() {
         super.initListener();
 
+
+        btn_swiplistview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, SwipeMenuListViewActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_tablayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

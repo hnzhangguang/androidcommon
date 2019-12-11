@@ -102,6 +102,7 @@ dependencies {
     api files('libs/jsoup-1.8.1.jar')   // 解析html文档
     api 'com.github.Cutta:GifView:1.1'
     api 'com.squareup.okhttp3:okhttp:3.4.1'
+    api 'de.hdodenhof:circleimageview:2.1.0'
 //    api 'com.github.bumptech.glide:glide:3.7.0'
     // 引入aar方式
 //    api(name:'xxxx',ext:'aar')

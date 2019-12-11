@@ -12,6 +12,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_swiplistview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="swiplistviewActivity"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_viewpager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
