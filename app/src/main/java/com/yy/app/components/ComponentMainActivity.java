@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.yy.app.R;
-import com.yy.app.base.BaseActivity;
-import com.yy.app.animator.ValueAnimatorActivity;
-import com.yy.app.components.bubble.BubbleActivity;
 import com.yy.app.activity.fragment.FragmentActivity;
+import com.yy.app.animator.ValueAnimatorActivity;
+import com.yy.app.base.BaseActivity;
+import com.yy.app.components.bubble.BubbleActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
+import com.yy.app.components.viewpager.ViewPagerActivity;
 
 
 /**
