@@ -21,7 +21,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".components.TabLayoutActivity"></activity>
+        <activity android:name=".components.listview.swipemenulistview.SwipeMenuListViewActivity"></activity>
+        <activity android:name=".components.TabLayoutActivity" />
         <activity android:name=".components.viewpager.FragmentViewPagerActivity" />
         <activity android:name=".components.viewpager.ViewPager2Activity" />
         <activity android:name=".components.viewpager.ViewPagerActivity" />
