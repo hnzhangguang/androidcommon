@@ -29,6 +29,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     Button btn_other = null;
     Button btn_Animator = null;
     Button btn_ViewPager = null;
+    Button btn_tablayout = null;
     Spinner spinner = null;
 
     BaseActivity mActivity = null;
@@ -50,6 +51,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
         btn_other = findViewById(R.id.btn_other);
         btn_Animator = findViewById(R.id.btn_Animator);
         btn_SwipeRefreshLayout = findViewById(R.id.btn_SwipeRefreshLayout);
+        btn_tablayout = findViewById(R.id.btn_tablayout);
 
         spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -63,6 +65,14 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
     @Override
     public void initListener() {
         super.initListener();
+
+        btn_tablayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ComponentMainActivity.this, TabLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_ViewPager.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -19,4 +19,15 @@ public class Fragment2 extends Fragment {
 
     }
 
+
+    public static Fragment2 newInstance() {
+
+        Bundle args = new Bundle();
+
+        Fragment2 fragment = new Fragment2();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
 }
