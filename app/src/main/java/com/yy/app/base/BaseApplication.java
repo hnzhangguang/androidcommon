@@ -23,7 +23,7 @@ public class BaseApplication extends Application {
         LitePal.initialize(this);  // LitePal
 
         ActiveAndroid.initialize(this);   // ORM
-        LogUtil.e("BaseApplication->onCreate");
+        //        LogUtil.e("BaseApplication->onCreate");
     }
 
 
@@ -52,7 +52,7 @@ public class BaseApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        LogUtil.e("BaseApplication->onTrimMemory");
+        //        LogUtil.e("BaseApplication->onTrimMemory");
 
 
         // 先判断是否已经回收
