@@ -15,4 +15,10 @@
         <attr name="src" format="reference" />
     </declare-styleable>
 
+
+    <declare-styleable name="test">
+        <attr name="text" format="string" />
+        <attr name="testAttr" format="integer" />
+    </declare-styleable>
+
 </resources>

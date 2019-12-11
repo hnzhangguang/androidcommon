@@ -15,6 +15,26 @@ import com.yy.app.R;
 
 /**
  * 自定义饼状图view
+ * <p>
+ * 类型	定义
+ * 自定义组合控件	多个控件组合成为一个新的控件，方便多处复用
+ * 继承系统View控件	继承自TextView等系统控件，在系统控件的基础功能上进行扩展
+ * 继承View	不复用系统控件逻辑，继承View进行功能定义
+ * 继承系统ViewGroup	继承自LinearLayout等系统控件，在系统控件的基础功能上进行扩展
+ * 继承ViewViewGroup	不复用系统控件逻辑，继承ViewGroup进行功能定义
+ * <p>
+ * View的绘制基本由measure()、layout()、draw()这个三个函数完成
+ * 函数	        作用	                相关方法
+ * measure()	测量View的宽高	    measure(),setMeasuredDimension(),onMeasure()
+ * layout()	    计算当前View以及子View的位置	layout(),onLayout(),setFrame()
+ * draw()	    视图的绘制工作	    draw(),onDraw()
+ * <p>
+ * 自定义属性
+ * Android自定义属性可分为以下几步:
+ * 1, 自定义一个View
+ * 2, 编写values/attrs.xml，在其中编写styleable和item等标签元素
+ * 3, 在布局文件中View使用自定义的属性（注意namespace）
+ * 4, 在View的构造方法中通过TypedArray获取
  */
 class PieChart extends View {
 
