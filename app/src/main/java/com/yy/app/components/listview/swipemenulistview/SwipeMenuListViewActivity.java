@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.view.swipelistview.SwipeMenu;
@@ -28,6 +29,7 @@ public class SwipeMenuListViewActivity extends BaseActivity {
     @Override
     public void initContentViewXml() {
         setContentView(R.layout.activity_swipe_menu_list_view);
+        LogUtil.e("1111");
     }
 
 
