@@ -43,7 +43,7 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
         mActivity = this;
 
         btn_fragment = findViewById(R.id.btn_fragment);
-        btn_ViewPager = findViewById(R.id.btn_ViewPager);
+        btn_ViewPager = findViewById(R.id.btn_viewpager);
         btn_bubble = findViewById(R.id.btn_bubble);
         btn_other = findViewById(R.id.btn_other);
         btn_Animator = findViewById(R.id.btn_Animator);

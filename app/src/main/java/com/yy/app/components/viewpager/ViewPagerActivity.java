@@ -55,7 +55,7 @@ public class ViewPagerActivity extends BaseActivity {
             list.add("temp data:" + i);
         }
         // 设置adapter
-        mViewpager.setAdapter(new MyPagerAdapter(this, list));
+        //        mViewpager.setAdapter(new MyPagerAdapter(this, list));
 
 
     }
