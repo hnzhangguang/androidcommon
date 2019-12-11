@@ -13,6 +13,7 @@ import com.yy.app.animator.ValueAnimatorActivity;
 import com.yy.app.base.BaseActivity;
 import com.yy.app.components.bubble.BubbleActivity;
 import com.yy.app.components.swiperefreshlayout.SwipeRefreshLayoutActivity;
+import com.yy.app.components.viewpager.FragmentViewPagerActivity;
 import com.yy.app.components.viewpager.ViewPager2Activity;
 import com.yy.app.components.viewpager.ViewPagerActivity;
 
@@ -67,6 +68,8 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ComponentMainActivity.this, ViewPager2Activity.class);
+                intent = new Intent(ComponentMainActivity.this, ViewPagerActivity.class);
+                intent = new Intent(ComponentMainActivity.this, FragmentViewPagerActivity.class);
                 startActivity(intent);
             }
         });

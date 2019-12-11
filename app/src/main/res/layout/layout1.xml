@@ -6,4 +6,9 @@
     android:orientation="vertical">
 
 
+    <Button
+        android:id="@+id/fragment1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fragment1_btn" />
 </LinearLayout>
