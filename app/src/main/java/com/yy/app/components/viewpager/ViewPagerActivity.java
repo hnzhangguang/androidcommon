@@ -1,10 +1,21 @@
 package com.yy.app.components.viewpager;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.PagerTabStrip;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.ImageSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +29,21 @@ import org.jsoup.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 1, PagerAdapter 的常用有:  FragmentPagerAdapter , FragmentStatePagerAdapter
+ * 1.2 PagerAdapter 的4个实现方法(isViewFromObject(),getCount(),destroyItem(),instantiateItem())
+ * 2, PagerTabStrip与PagerTitleStrip
+ */
 public class ViewPagerActivity extends BaseActivity {
 
 
     ViewPager mViewpager;
+    PagerTitleStrip pagertitle;
+    PagerTabStrip pagerTabStrip;
     private View view1, view2, view3;
     private List<View> viewList;//view数组
+    private List<String> titleList;
+
 
     @Override
     public void initContentViewXml() {
@@ -34,15 +54,22 @@ public class ViewPagerActivity extends BaseActivity {
     public void initView() {
         super.initView();
         mViewpager = findViewById(R.id.mViewpager);
+        //        pagertitle = findViewById(R.id.pagertitle);
+        pagerTabStrip = (PagerTabStrip) findViewById(R.id.pagertab);
+        pagerTabStrip.setTabIndicatorColorResource(R.color.green);  //更改下划线颜色
 
         LayoutInflater inflater = getLayoutInflater();
         view1 = inflater.inflate(R.layout.layout1, null);
         view2 = inflater.inflate(R.layout.layout2, null);
         view3 = inflater.inflate(R.layout.layout3, null);
         viewList = new ArrayList<View>();// 将要分页显示的View装入数组中
+        titleList = new ArrayList<String>();
         viewList.add(view1);
         viewList.add(view2);
         viewList.add(view3);
+        titleList.add("我是白色");
+        titleList.add("我是黄色");
+        titleList.add("我是紫色");
 
         // 第一种方式
         mViewpager.setAdapter(pagerAdapter);
@@ -82,15 +109,44 @@ public class ViewPagerActivity extends BaseActivity {
             return viewList.size();
         }
 
+        // 删除view
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView(viewList.get(position));
         }
 
+        // 添加view
+        @NonNull
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             container.addView(viewList.get(position));
             return viewList.get(position);
+        }
+
+        @NonNull
+        @Override
+        public CharSequence getPageTitle(int position) {
+            //            return titleList.get(position);    // 1, 简单实现title
+
+
+            // 2, 自定义title
+            SpannableStringBuilder ssb = new SpannableStringBuilder(" " + titleList.get(position)); //
+            // space added before text
+            // for
+            Drawable myDrawable = getResources().getDrawable(R.drawable.icon_toolbar);
+            myDrawable.setBounds(0, 0, myDrawable.getIntrinsicWidth(),
+                    myDrawable.getIntrinsicHeight());
+            ImageSpan span = new ImageSpan(myDrawable,
+                    ImageSpan.ALIGN_BASELINE);
+            ForegroundColorSpan fcs = new ForegroundColorSpan(Color.GREEN);// 字体颜色设置为绿色
+            ssb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// 设置图标
+            ssb.setSpan(fcs, 1, ssb.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// 设置字体颜色
+            ssb.setSpan(new RelativeSizeSpan(1.2f), 1, ssb.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            return ssb;
+
+
         }
     };
 
