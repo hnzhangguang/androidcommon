@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.yy.app.components.listview.swipemenulistview.SimpleActivity">
 
-    <com.baoyz.swipemenulistview.SwipeMenuListView
+    <com.yy.app.view.swipelistview.SwipeMenuListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
