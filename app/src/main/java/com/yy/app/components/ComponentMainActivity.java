@@ -73,7 +73,8 @@ public class ComponentMainActivity extends BaseActivity implements AdapterView.O
         btn_swiplistview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ComponentMainActivity.this, SwipeMenuListViewActivity.class);
+                Intent intent = new Intent(ComponentMainActivity.this,
+                        SwipeMenuListViewActivity.class);
                 startActivity(intent);
             }
         });
