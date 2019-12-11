@@ -21,7 +21,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".components.viewpager.ViewPagerActivity"></activity>
+        <activity android:name=".components.viewpager.ViewPager2Activity"></activity>
+        <activity android:name=".components.viewpager.ViewPagerActivity" />
         <activity android:name="function.geolocation.GeoLocationActivity" />
         <activity android:name=".components.dialog.DialogActivity" />
         <activity android:name="function.thread.ThreadMainActivity" />
