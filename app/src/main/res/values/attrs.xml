@@ -17,8 +17,39 @@
 
 
     <declare-styleable name="test">
+        <!--        字符串-->
         <attr name="text" format="string" />
         <attr name="testAttr" format="integer" />
+        <!--        参照类型字段    -->
+        <attr name="background" format="reference" />
+        <attr name="textColor" format="color" />
+        <!--        bool 值字段-->
+        <attr name="focusable" format="boolean" />
+        <!--        尺寸 字段-->
+        <attr name="layout_width" format="dimension" />
+        <!--        浮点值 -->
+        <attr name="fromAlpha" format="float" />
+        <!--        integer：整型值-->
+        <attr name="framesCount" format="integer" />
+        <!--        fraction：百分数 -->
+        <attr name="pivotX" format="fraction" />
+        <!--        enum：枚举值  -->
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <!--         flag：位或运算  -->
+        <attr name="gravity">
+            <flag name="top" value="0x01" />
+            <flag name="bottom" value="0x02" />
+            <flag name="left" value="0x04" />
+            <flag name="right" value="0x08" />
+            <flag name="center_vertical" value="0x16" />
+        </attr>
+        <!--        混合类型：属性定义时可以指定多种类型值 -->
+        <attr name="background2" format="reference|color" />
+
+
     </declare-styleable>
 
 </resources>
