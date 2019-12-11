@@ -6,6 +6,8 @@
     android:background="#ffff00"
     android:orientation="vertical">
 
+
+    <!--    使用自定义imageview 做实验-->
     <com.yy.app.view.CircleImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
