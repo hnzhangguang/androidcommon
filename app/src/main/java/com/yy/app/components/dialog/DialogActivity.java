@@ -111,15 +111,18 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
      */
     private void showTwo() {
 
-        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher).setTitle("最普通dialog")
-                .setMessage("我是最简单的dialog").setPositiveButton("确定（积极）",
+        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher)
+                .setTitle("最普通dialog")
+                .setMessage("我是最简单的dialog")
+                .setPositiveButton("确定（积极）",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //ToDo: 你想做的事情
                                 Toast.makeText(DialogActivity.this, "确定按钮", Toast.LENGTH_LONG).show();
                             }
-                        }).setNegativeButton("取消（消极）", new DialogInterface.OnClickListener() {
+                        })
+                .setNegativeButton("取消（消极）", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //ToDo: 你想做的事情
@@ -130,19 +133,24 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
         builder.create().show();
     }
 
+
     /**
      * 三个按钮的 dialog
      */
     private void showThree() {
-        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher).setTitle("三个按钮dialog")
-                .setMessage("三个按钮dialog").setPositiveButton("确定（积极）",
+        builder = new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
+                .setTitle("三个按钮dialog")
+                .setMessage("三个按钮dialog")
+                .setPositiveButton("确定（积极）",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //ToDo: 你想做的事情
                                 Toast.makeText(DialogActivity.this, "确定按钮", Toast.LENGTH_LONG).show();
                             }
-                        }).setNeutralButton("你猜（中立）", new DialogInterface.OnClickListener() {
+                        })
+                .setNeutralButton("你猜（中立）", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(DialogActivity.this, "你猜按钮", Toast.LENGTH_LONG).show();
@@ -164,7 +172,8 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
      */
     private void showList() {
         final String[] items = {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6"};
-        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher)
+        builder = new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
                 .setTitle("列表dialog")
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
@@ -185,7 +194,8 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
         //默认都未选中
         boolean[] isSelect = {false, false, false, false, false, false};
 
-        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher)
+        builder = new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
                 .setTitle("多选dialog")
                 .setMultiChoiceItems(items, isSelect, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
@@ -224,7 +234,8 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
         //默认选中第一个
         final String[] items = {"单选1", "单选2", "单选3", "单选4", "单选5", "单选6"};
         choice = -1;
-        builder = new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher).setTitle("单选列表")
+        builder = new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher).setTitle("单选列表")
                 .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -293,7 +304,9 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
      */
     private void showInput() {
         final EditText editText = new EditText(this);
-        builder = new AlertDialog.Builder(this).setTitle("输入框dialog").setView(editText)
+        builder = new AlertDialog.Builder(this)
+                .setTitle("输入框dialog")
+                .setView(editText)
                 .setPositiveButton("读取输入框内容", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -314,7 +327,10 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
         final EditText etPassword = view.findViewById(R.id.et_password);
 
         builder =
-                new AlertDialog.Builder(this).setView(view).setTitle("自定义dialog——登录").setIcon(R.mipmap.ic_launcher)
+                new AlertDialog.Builder(this)
+                        .setView(view)
+                        .setTitle("自定义dialog——登录")
+                        .setIcon(R.mipmap.ic_launcher)
                         .setPositiveButton("登录", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
