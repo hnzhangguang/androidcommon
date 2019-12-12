@@ -19,6 +19,10 @@ import com.yy.app.view.swipelistview.SwipeMenuListView;
 
 import java.util.List;
 
+
+/**
+ * 根据不同数据, 创建不同的swipe items
+ */
 public class SwipeMenuListViewActivity extends BaseActivity {
 
     private List<ApplicationInfo> mAppList;
@@ -136,6 +140,11 @@ public class SwipeMenuListViewActivity extends BaseActivity {
         });
     }
 
+
+    /**
+     * 1, getViewTypeCount()  ;
+     * 2, getItemViewType(int position);
+     */
     class AppAdapter extends BaseAdapter {
 
         @Override
