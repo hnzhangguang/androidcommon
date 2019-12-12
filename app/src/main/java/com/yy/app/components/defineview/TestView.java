@@ -56,7 +56,7 @@ public class TestView extends View {
         String text = ta.getString(R.styleable.TestView_testAttr);
         int textAttr = ta.getInteger(R.styleable.TestView_text, -1);
         Log.e("mmmm", "text = " + text + " , textAttr = " + textAttr);
-        ta.recycle();
+        ta.recycle();// 一定注意回收
 
     }
 
