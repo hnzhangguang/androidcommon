@@ -1,6 +1,7 @@
 package com.yy.app.components.listview.recyclerview;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -137,12 +138,12 @@ class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
     }
 
     //    onCreateViewHolder
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_fruit_item,
                 parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     //    onBindViewHolder

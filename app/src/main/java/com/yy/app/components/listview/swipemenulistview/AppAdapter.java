@@ -18,7 +18,7 @@ class AppAdapter extends BaseSwipListAdapter {
 
     private SimpleActivity simpleActivity;
 
-    public AppAdapter(SimpleActivity simpleActivity) {
+    AppAdapter(SimpleActivity simpleActivity) {
         this.simpleActivity = simpleActivity;
     }
 
@@ -34,6 +34,7 @@ class AppAdapter extends BaseSwipListAdapter {
      * @param position
      * @return
      */
+    @SuppressWarnings("JavaDoc")
     @Override
     public ApplicationInfo getItem(int position) {
         return simpleActivity.getAppList().get(position);
@@ -55,18 +56,10 @@ class AppAdapter extends BaseSwipListAdapter {
         ApplicationInfo item = getItem(position);  // 获取实例
         holder.iv_icon.setImageDrawable(item.loadIcon(simpleActivity.getPackageManager()));
         holder.tv_name.setText(item.loadLabel(simpleActivity.getPackageManager()));
-        holder.iv_icon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(simpleActivity, "iv_icon_click", Toast.LENGTH_SHORT).show();
-            }
-        });
-        holder.tv_name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(simpleActivity, "iv_icon_click", Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.iv_icon.setOnClickListener(v -> Toast.makeText(simpleActivity, "",
+                Toast.LENGTH_SHORT).show());
+        holder.tv_name.setOnClickListener(v -> Toast.makeText(simpleActivity, "iv_icon_click",
+                Toast.LENGTH_SHORT).show());
         return convertView;
     }
 
@@ -76,9 +69,9 @@ class AppAdapter extends BaseSwipListAdapter {
         ImageView iv_icon;
         TextView tv_name;
 
-        public ViewHolder(View view) {
-            iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
-            tv_name = (TextView) view.findViewById(R.id.tv_name);
+        ViewHolder(View view) {
+            iv_icon = view.findViewById(R.id.iv_icon);
+            tv_name = view.findViewById(R.id.tv_name);
             view.setTag(this);
         }
     }
@@ -90,11 +83,11 @@ class AppAdapter extends BaseSwipListAdapter {
      * @param position
      * @return
      */
+    @SuppressWarnings("JavaDoc")
     @Override
     public boolean getSwipEnableByPosition(int position) {
-        if (position % 2 == 0) {
-            return false;
-        }
-        return true;
+        return position % 2 != 0;
     }
+
+
 }

@@ -95,24 +95,22 @@ public class SimpleActivity extends BaseActivity {
         mListView.setMenuCreator(creator);
 
         // step 2. listener item click event
-        mListView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
-                ApplicationInfo item = mAppList.get(position);
-                switch (index) {
-                    case 0:
-                        // open
-                        open(item);
-                        break;
-                    case 1:
-                        // delete
-                        //					delete(item);
-                        mAppList.remove(position);
-                        mAdapter.notifyDataSetChanged();
-                        break;
-                }
-                return false;
+        //int position, SwipeMenu menu, int index
+        mListView.setOnMenuItemClickListener((position, menu, index) -> {
+            ApplicationInfo item = mAppList.get(position);
+            switch (index) {
+                case 0:
+                    // open
+                    open(item);
+                    break;
+                case 1:
+                    // delete
+                    //					delete(item);
+                    mAppList.remove(position);
+                    mAdapter.notifyDataSetChanged();
+                    break;
             }
+            return false;
         });
 
 
@@ -155,15 +153,10 @@ public class SimpleActivity extends BaseActivity {
         //		listView.setCloseInterpolator(new BounceInterpolator());
 
         // test item long click
-        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                           int position, long id) {
-                Toast.makeText(getApplicationContext(), position + " long click", Toast
-                        .LENGTH_SHORT).show();
-                return false;
-            }
+        mListView.setOnItemLongClickListener((parent, view, position, id) -> {
+            Toast.makeText(getApplicationContext(), position + " long click", Toast
+                    .LENGTH_SHORT).show();
+            return false;
         });
 
     }
@@ -180,6 +173,7 @@ public class SimpleActivity extends BaseActivity {
             intent.setData(Uri.fromParts("package", item.packageName, null));
             startActivity(intent);
         } catch (Exception e) {
+            LogUtil.e(e);
         }
     }
 
@@ -187,7 +181,7 @@ public class SimpleActivity extends BaseActivity {
     /**
      * 根据 ApplicationInfo 信息启动对应的 app
      *
-     * @param item
+     * @param item 要打开的应用信息对象
      */
     private void open(ApplicationInfo item) {
         // open app
