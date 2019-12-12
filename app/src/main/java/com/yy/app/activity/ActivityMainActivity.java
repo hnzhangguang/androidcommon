@@ -8,6 +8,7 @@ import com.yy.app.R;
 import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.activity.fragmenttabhost.FragmentTabHostActivity;
 import com.yy.app.activity.tabhost.MainTabhostActivity;
+import com.yy.app.activity.tabhost.TabLayoutViewPagerActivity;
 import com.yy.app.base.BaseActivity;
 
 
@@ -19,6 +20,7 @@ public class ActivityMainActivity extends BaseActivity {
     Button btn_switchLayout;
     Button btn_tabhost;
     Button btn_fragment_tabhost;
+    Button btn_TabLayoutViewPager;
 
     @Override
     public void initContentViewXml() {
@@ -30,9 +32,17 @@ public class ActivityMainActivity extends BaseActivity {
     public void initView() {
         super.initView();
         btn_tabhost = findViewById(R.id.btn_tabhost);
+        btn_TabLayoutViewPager = findViewById(R.id.btn_TabLayoutViewPager);
         btn_switchLayout = findViewById(R.id.btn_switchLayout);
         btn_fragment_tabhost = findViewById(R.id.btn_fragment_tabhost);
 
+        btn_TabLayoutViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityMainActivity.this, TabLayoutViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_tabhost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
