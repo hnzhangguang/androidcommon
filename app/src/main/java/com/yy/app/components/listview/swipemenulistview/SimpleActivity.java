@@ -1,29 +1,9 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 baoyongzhang <baoyz94@gmail.com>
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 package com.yy.app.components.listview.swipemenulistview;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -36,14 +16,12 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.logger.LogUtil;
 import com.yy.app.R;
-import com.yy.app.view.swipelistview.BaseSwipListAdapter;
+import com.yy.app.base.BaseActivity;
 import com.yy.app.view.swipelistview.SwipeMenu;
 import com.yy.app.view.swipelistview.SwipeMenuCreator;
 import com.yy.app.view.swipelistview.SwipeMenuItem;
@@ -53,9 +31,13 @@ import java.util.List;
 
 /**
  * SwipeMenuListView
- * Created by baoyz on 15/6/29.
+ * 1, getPackageManager().getInstalledApplications(0); // 获取手机上已安装应用信息 -> ApplicationInfo对象
+ * 2, mListView.setMenuCreator(creator); // 添加滑动出现的items
+ * 3,setOnSwipeListener() ; // 监听滑动开始和滑动结束
+ * 4,mListView.setOnMenuItemClickListener(); // 滑动条目的监听事件
+ * 5,
  */
-public class SimpleActivity extends Activity {
+public class SimpleActivity extends BaseActivity {
 
     private List<ApplicationInfo> mAppList;
     private AppAdapter mAdapter;
@@ -70,7 +52,7 @@ public class SimpleActivity extends Activity {
 
         mListView = (SwipeMenuListView) findViewById(R.id.listView);
 
-        mAdapter = new AppAdapter();
+        mAdapter = new AppAdapter(this);
         mListView.setAdapter(mAdapter);
 
         // step 1. create a MenuCreator
@@ -133,17 +115,26 @@ public class SimpleActivity extends Activity {
             }
         });
 
-        // set SwipeListener
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showToast(parent.getAdapter().getItem(position));
+            }
+        });
+        // 监听滑动开始和滑动结束
         mListView.setOnSwipeListener(new SwipeMenuListView.OnSwipeListener() {
 
             @Override
             public void onSwipeStart(int position) {
                 // swipe start
+                LogUtil.e("swipe start");
             }
 
             @Override
             public void onSwipeEnd(int position) {
                 // swipe end
+                LogUtil.e("onSwipeEnd");
             }
         });
 
@@ -151,10 +142,12 @@ public class SimpleActivity extends Activity {
         mListView.setOnMenuStateChangeListener(new SwipeMenuListView.OnMenuStateChangeListener() {
             @Override
             public void onMenuOpen(int position) {
+                LogUtil.e("onMenuOpen:" + position);   // position 为下标从0开始的条目
             }
 
             @Override
             public void onMenuClose(int position) {
+                LogUtil.e("onMenuClose:" + position);
             }
         });
 
@@ -175,6 +168,11 @@ public class SimpleActivity extends Activity {
 
     }
 
+    @Override
+    public void initContentViewXml() {
+
+    }
+
     private void delete(ApplicationInfo item) {
         // delete app
         try {
@@ -185,6 +183,12 @@ public class SimpleActivity extends Activity {
         }
     }
 
+
+    /**
+     * 根据 ApplicationInfo 信息启动对应的 app
+     *
+     * @param item
+     */
     private void open(ApplicationInfo item) {
         // open app
         Intent resolveIntent = new Intent(Intent.ACTION_MAIN, null);
@@ -207,68 +211,6 @@ public class SimpleActivity extends Activity {
         }
     }
 
-    class AppAdapter extends BaseSwipListAdapter {
-
-        @Override
-        public int getCount() {
-            return mAppList.size();
-        }
-
-        @Override
-        public ApplicationInfo getItem(int position) {
-            return mAppList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                convertView = View.inflate(getApplicationContext(),
-                        R.layout.item_list_app, null);
-                new ViewHolder(convertView);
-            }
-            ViewHolder holder = (ViewHolder) convertView.getTag();
-            ApplicationInfo item = getItem(position);
-            holder.iv_icon.setImageDrawable(item.loadIcon(getPackageManager()));
-            holder.tv_name.setText(item.loadLabel(getPackageManager()));
-            holder.iv_icon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(SimpleActivity.this, "iv_icon_click", Toast.LENGTH_SHORT).show();
-                }
-            });
-            holder.tv_name.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(SimpleActivity.this, "iv_icon_click", Toast.LENGTH_SHORT).show();
-                }
-            });
-            return convertView;
-        }
-
-        class ViewHolder {
-            ImageView iv_icon;
-            TextView tv_name;
-
-            public ViewHolder(View view) {
-                iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
-                tv_name = (TextView) view.findViewById(R.id.tv_name);
-                view.setTag(this);
-            }
-        }
-
-        @Override
-        public boolean getSwipEnableByPosition(int position) {
-            if (position % 2 == 0) {
-                return false;
-            }
-            return true;
-        }
-    }
 
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
@@ -295,5 +237,10 @@ public class SimpleActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public List<ApplicationInfo> getAppList() {
+        return mAppList;
     }
 }

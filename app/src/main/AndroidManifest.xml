@@ -41,6 +41,7 @@
         <activity android:name=".data.DataActivity" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity android:name=".network.NetworkActivity" />
+        <activity android:name="com.yy.app.components.listview.swipemenulistview.SimpleActivity" />
         <activity android:name=".asynctask.AsyncTaskActivity" /> <!-- 使用了actionBar 所以需要使用  NoActionBar 的主题 -->
         <activity
             android:name=".components.drawlayout.DrawLayoutActivity"
