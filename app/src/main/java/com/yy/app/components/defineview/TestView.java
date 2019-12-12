@@ -52,9 +52,9 @@ public class TestView extends View {
      * @param context
      */
     public void init(Context context, @Nullable AttributeSet attrs) {
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.test);
-        String text = ta.getString(R.styleable.test_testAttr);
-        int textAttr = ta.getInteger(R.styleable.test_text, -1);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TestView);
+        String text = ta.getString(R.styleable.TestView_testAttr);
+        int textAttr = ta.getInteger(R.styleable.TestView_text, -1);
         Log.e("mmmm", "text = " + text + " , textAttr = " + textAttr);
         ta.recycle();
 

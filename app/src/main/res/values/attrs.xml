@@ -16,7 +16,7 @@
     </declare-styleable>
 
 
-    <declare-styleable name="test">
+    <declare-styleable name="TestView">
         <!--        字符串-->
         <attr name="text" format="string" />
         <attr name="testAttr" format="integer" />
