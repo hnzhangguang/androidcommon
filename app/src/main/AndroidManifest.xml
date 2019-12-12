@@ -22,6 +22,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
         <activity
+            android:name=".activity.tabhost.MainTabhostActivity"
+            android:theme="@style/AppTheme3" />
+        <activity
             android:name=".activity.fragmenttabhost.FragmentTabHostActivity"
             android:theme="@style/AppTheme3" />
         <activity android:name=".components.listview.swipemenulistview.SwipeMenuListViewActivity" />

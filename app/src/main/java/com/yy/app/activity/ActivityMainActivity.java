@@ -7,6 +7,7 @@ import android.widget.Button;
 import com.yy.app.R;
 import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.activity.fragmenttabhost.FragmentTabHostActivity;
+import com.yy.app.activity.tabhost.MainTabhostActivity;
 import com.yy.app.base.BaseActivity;
 
 
@@ -16,6 +17,7 @@ import com.yy.app.base.BaseActivity;
 public class ActivityMainActivity extends BaseActivity {
 
     Button btn_switchLayout;
+    Button btn_tabhost;
     Button btn_fragment_tabhost;
 
     @Override
@@ -27,8 +29,17 @@ public class ActivityMainActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
+        btn_tabhost = findViewById(R.id.btn_tabhost);
         btn_switchLayout = findViewById(R.id.btn_switchLayout);
         btn_fragment_tabhost = findViewById(R.id.btn_fragment_tabhost);
+
+        btn_tabhost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityMainActivity.this, MainTabhostActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_fragment_tabhost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

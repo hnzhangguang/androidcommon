@@ -9,6 +9,7 @@
 
     <color name="titleColor">#757575</color>
     <color name="titleColorSelected">#F54D33</color>
+    <color name="tourrecord_tab_txt_color">#F99443</color>
 
 
 </resources>
