@@ -21,7 +21,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".components.listview.swipemenulistview.SwipeMenuListViewActivity"></activity>
+        <activity
+            android:name=".activity.fragmenttabhost.FragmentTabHostActivity"
+            android:theme="@style/AppTheme3" />
+        <activity android:name=".components.listview.swipemenulistview.SwipeMenuListViewActivity" />
         <activity android:name=".components.TabLayoutActivity" />
         <activity android:name=".components.viewpager.FragmentViewPagerActivity" />
         <activity android:name=".components.viewpager.ViewPager2Activity" />
@@ -41,7 +44,7 @@
         <activity android:name=".data.DataActivity" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity android:name=".network.NetworkActivity" />
-        <activity android:name="com.yy.app.components.listview.swipemenulistview.SimpleActivity" />
+        <activity android:name=".components.listview.swipemenulistview.SimpleActivity" />
         <activity android:name=".asynctask.AsyncTaskActivity" /> <!-- 使用了actionBar 所以需要使用  NoActionBar 的主题 -->
         <activity
             android:name=".components.drawlayout.DrawLayoutActivity"
