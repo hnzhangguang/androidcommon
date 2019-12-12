@@ -20,6 +20,11 @@ import java.util.Random;
 /**
  * RecyclerView 的使用
  * https://www.jianshu.com/p/b4bb52cdbeb7
+ * <p>
+ * 1, setHasFixedSize(true) 的作用?
+ * 2, layoutManager 的分类: (LinearLayoutManager,GridLayoutManager,StaggeredGridLayoutManager)
+ * 3, RecyclerView.Adapter: RecyclerView.ViewHolder, onCreateViewHolder(),onBindViewHolder(),
+ * getItemCount()
  */
 public class RecyclerViewActivity extends AppCompatActivity {
 
@@ -33,8 +38,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         initFruits();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+
+        //当我们确定Item的改变不会影响RecyclerView的宽高的时候可以设置setHasFixedSize(true)
+        // ，并通过Adapter的增删改插方法去刷新RecyclerView，而不是通过notifyDataSetChanged()
+        // 。（其实可以直接设置为true，当需要改变宽高的时候就用notifyDataSetChanged()去整体刷新一下）
         recyclerView.setHasFixedSize(true);
 
         // 1, LinearLayoutManager
