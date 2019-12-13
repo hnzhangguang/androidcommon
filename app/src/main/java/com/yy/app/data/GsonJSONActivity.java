@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * litepal 步骤: 1,
  */
-public class DataActivity extends AppCompatActivity {
+public class GsonJSONActivity extends AppCompatActivity {
 
     Button btn_litepal;
 

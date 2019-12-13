@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".data.DataActivity">
+    tools:context=".data.GsonJSONActivity">
 
     <Button
         android:id="@+id/btn_Gson"

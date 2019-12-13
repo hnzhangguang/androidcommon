@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -25,6 +24,7 @@ import java.util.Objects;
 
 /**
  * 1,DiskLruCache 的使用
+ * 1, 缓存图片
  */
 public class DataCache extends AppCompatActivity {
 

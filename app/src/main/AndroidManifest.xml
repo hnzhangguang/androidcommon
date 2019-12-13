@@ -45,7 +45,7 @@
         <activity android:name=".activity.SwitchLayoutTestActivity" />
         <activity android:name=".activity.SwitchLayoutActivity" />
         <activity android:name=".event.EventsActivity" />
-        <activity android:name=".data.DataActivity" />
+        <activity android:name=".data.GsonJSONActivity" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity android:name=".network.NetworkActivity" />
         <activity android:name=".components.listview.swipemenulistview.SimpleActivity" />

@@ -17,7 +17,7 @@ import com.yy.app.broadcastreceiver.ReceiverActivity;
 import com.yy.app.components.ComponentMainActivity;
 import com.yy.app.components.drawlayout.DrawLayoutActivity;
 import com.yy.app.components.materialdesign.MaterialDesignActivity;
-import com.yy.app.data.DataActivity;
+import com.yy.app.data.GsonJSONActivity;
 import com.yy.app.drawable.DrawableActivity;
 import com.yy.app.event.EventsActivity;
 import com.yy.app.material.MaterialActivity;
@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity {
         btn_Databaseactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DataActivity.class);
+                Intent intent = new Intent(MainActivity.this, GsonJSONActivity.class);
                 startActivity(intent);
             }
         });

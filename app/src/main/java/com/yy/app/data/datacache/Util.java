@@ -8,7 +8,9 @@ import java.io.StringWriter;
 import java.nio.charset.Charset;
 
 /**
- * Junk drawer of utility methods.
+ * 操作文件工具类
+ * 1, 删除某个文件夹及其下面的文件
+ * 2, 关闭流
  */
 final class Util {
     static final Charset US_ASCII = Charset.forName("US-ASCII");
