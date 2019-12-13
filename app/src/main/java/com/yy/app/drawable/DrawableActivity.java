@@ -8,6 +8,11 @@ import android.widget.ImageView;
 
 import com.app.logger.LogUtil;
 import com.app.logger.PrettyFormatStrategy;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.cunoraz.gifview.library.GifView;
 import com.squareup.picasso.Picasso;
 import com.yy.app.R;
@@ -23,6 +28,7 @@ import uk.co.senab.photoview.PhotoView;
  * 图片主界面
  * ,1 PhotoView
  * 2, gifView
+ * 3, glide ->
  */
 public class DrawableActivity extends BaseActivity {
 
@@ -168,6 +174,35 @@ public class DrawableActivity extends BaseActivity {
                 Picasso.with(DrawableActivity.this)
                         .load(photo_url)
                         .error(R.drawable.add).into(iv_picasso);
+            }
+        });
+    }
+
+
+    public void test() {
+
+        //
+        Glide.with(this).load("").asBitmap().listener(new RequestListener<String, Bitmap>() {
+            @Override
+            public boolean onException(Exception e, String s, Target<Bitmap> target, boolean b) {
+                // 加载失败
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Bitmap bitmap, String s, Target<Bitmap> target, boolean b,
+                                           boolean b1) {
+                if (target != null) {
+
+                }
+                return false;
+            }
+        }).into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                if (bitmap != null) {
+                    // 此时拿到了bitmap对象!!!!
+                }
             }
         });
     }

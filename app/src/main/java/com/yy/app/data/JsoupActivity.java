@@ -1,8 +1,8 @@
 package com.yy.app.data;
 
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.yy.app.R;
@@ -58,10 +58,10 @@ public class JsoupActivity extends AppCompatActivity {
 
         // html文本，url，本地html
         Document doc = Jsoup.parse(html);
-        doc.title();
-        Elements eles = doc.getElementsByTag("a");
+        String title = doc.title(); // 获取html 的title
+        Elements eles = doc.getElementsByTag("a"); // 获取所有标签
         for (Element link : eles) {
-            String linkHref = link.attr("href");
+            String linkHref = link.attr("href"); // a标签里面的href属性的值
             String text = link.text();
         }
         Elements elements = doc.select("a[href]");
@@ -78,14 +78,12 @@ public class JsoupActivity extends AppCompatActivity {
         try {
             Document doc2 = Jsoup.connect(url).get();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         try {
             Document doc3 = Jsoup.connect(url).data("key", "value")
                     .timeout(3000).post();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -94,7 +92,6 @@ public class JsoupActivity extends AppCompatActivity {
         try {
             Document doc4 = Jsoup.parse(input, "utf-8", "http://baidu.com");
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         // ../baidu.png -> http://baidu.com/baidu.png
