@@ -18,6 +18,26 @@ import java.util.ArrayList;
 
 /**
  * 滑动刷新 SwipeRefreshLayout
+ * <p>
+ * <p>
+ * swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+ *
+ * @Override public void onRefresh() {
+ * //这里获取数据的逻辑
+ * swipeRefreshLayout.setRefreshing(false);
+ * }
+ * });
+ * <p>
+ * //设置进度View样式的大小，只有两个值DEFAULT和LARGE，表示默认和较大
+ * swipeRefreshLayout.setSize(DEFAULT);
+ * //设置触发下拉刷新的距离
+ * swipeRefreshLayout.setDistanceToTriggerSync(300);
+ * //设置动画样式下拉的起始点和结束点，scale 是指设置是否需要放大或者缩小动画。
+ * swipeRefreshLayout.setProgressViewOffset(boolean scale, int start, int end)
+ * //设置动画样式下拉的结束点，scale 是指设置是否需要放大或者缩小动画
+ * swipeRefreshLayout.setProgressViewEndTarget(boolean scale, int end);
+ * //如果自定义了swipeRefreshLayout，可以通过这个回调方法决定是否可以滑动。
+ * setOnChildScrollUpCallback(@Nullable OnChildScrollUpCallback callback)
  */
 public class SwipeRefreshLayoutActivity extends BaseActivity {
 
