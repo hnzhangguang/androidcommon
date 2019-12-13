@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 
@@ -38,6 +39,8 @@ import java.util.ArrayList;
  * swipeRefreshLayout.setProgressViewEndTarget(boolean scale, int end);
  * //如果自定义了swipeRefreshLayout，可以通过这个回调方法决定是否可以滑动。
  * setOnChildScrollUpCallback(@Nullable OnChildScrollUpCallback callback)
+ * <p>
+ * handler的使用防止内存泄漏!!!!
  */
 public class SwipeRefreshLayoutActivity extends BaseActivity {
 
@@ -48,16 +51,29 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
     ArrayList<String> array = new ArrayList<>();
     ArrayList<String> datalist = new ArrayList<>();
     int index = 20; //最开始加载的数据
-    Handler hand = new Handler() {
+
+    MyHandler handler = new MyHandler(this);
+
+    static class MyHandler extends Handler {
+        WeakReference<SwipeRefreshLayoutActivity> mactivity;
+
+        public MyHandler(SwipeRefreshLayoutActivity activity) {
+            mactivity = new WeakReference<SwipeRefreshLayoutActivity>(activity);
+        }
+
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == 1) {
-                adapter.notifyDataSetChanged();
-                swipe.setRefreshing(false);//刷新完毕 ，图标消失
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 100:
+                    //在这里面处理msg
+                    //通过mactivity.get()获取Activity的引用(即上下文context)
+                    break;
+                default:
+                    break;
             }
         }
-    };
-
+    }
 
     @Override
     public void initContentViewXml() {
@@ -90,7 +106,7 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
                     datalist.add(array.get(i));
                 }
                 index = indexMax;
-                hand.sendEmptyMessageDelayed(1, 3000);
+                handler.sendEmptyMessageDelayed(1, 3000);
             }
         });
         if (Build.VERSION.SDK_INT >= 23) {
@@ -146,5 +162,9 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
 
 
 }
+
+
+
+
 
 
