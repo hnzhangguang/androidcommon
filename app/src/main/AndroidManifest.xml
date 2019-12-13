@@ -21,7 +21,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".activity.tabhost.TabLayoutViewPagerActivity"></activity>
+        <activity android:name=".network.OkhttpActivity"></activity>
+        <activity android:name=".activity.tabhost.TabLayoutViewPagerActivity" />
         <activity
             android:name=".activity.tabhost.MainTabhostActivity"
             android:theme="@style/AppTheme3" />
