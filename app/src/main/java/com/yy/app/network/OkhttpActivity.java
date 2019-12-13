@@ -29,6 +29,9 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.BufferedSink;
 
+/**
+ * okhttp 的使用说明
+ */
 public class OkhttpActivity extends BaseActivity {
 
 
