@@ -10,6 +10,9 @@ import com.yy.app.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FragmentPagerAdapter 的使用
+ */
 public class FragmentViewPagerActivity extends AppCompatActivity {
 
     @Override

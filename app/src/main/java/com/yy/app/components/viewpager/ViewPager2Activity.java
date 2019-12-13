@@ -2,6 +2,7 @@ package com.yy.app.components.viewpager;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
@@ -59,7 +60,10 @@ public class ViewPager2Activity extends BaseActivity {
         //初始化指示器位置
         initCursorPos();
 
+        // viewpager adapter
         viewPager.setAdapter(new MyPagerAdapter(viewList));
+
+        // change事件监听
         viewPager.setOnPageChangeListener(new MyPageChangeListener());
 
     }
@@ -115,9 +119,13 @@ public class ViewPager2Activity extends BaseActivity {
                     break;
             }
             currIndex = arg0;
+
+            // animation 不为null 的时候才往下执行
+            assert animation != null;
             animation.setFillAfter(true);// True:图片停在动画结束位置
             animation.setDuration(300);
             cursor.startAnimation(animation);
+
         }
 
         @Override
@@ -142,25 +150,22 @@ public class ViewPager2Activity extends BaseActivity {
 
         @Override
         public boolean isViewFromObject(View arg0, Object arg1) {
-            // TODO Auto-generated method stub
             return arg0 == arg1;
         }
 
         @Override
         public int getCount() {
-            // TODO Auto-generated method stub
             return mListViews.size();
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            // TODO Auto-generated method stub
             container.removeView(mListViews.get(position));
         }
 
+        @NonNull
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            // TODO Auto-generated method stub
             container.addView(mListViews.get(position));
 
             return mListViews.get(position);

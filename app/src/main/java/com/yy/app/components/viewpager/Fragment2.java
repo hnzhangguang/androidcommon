@@ -15,15 +15,10 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout2, container, false);
         return view;
-
-
     }
 
-
     public static Fragment2 newInstance() {
-
         Bundle args = new Bundle();
-
         Fragment2 fragment = new Fragment2();
         fragment.setArguments(args);
         return fragment;

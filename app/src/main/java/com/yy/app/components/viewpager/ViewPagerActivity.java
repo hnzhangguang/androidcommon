@@ -4,13 +4,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -24,15 +21,14 @@ import android.widget.TextView;
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
 
-import org.jsoup.Connection;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 1, PagerAdapter 的常用有:  FragmentPagerAdapter , FragmentStatePagerAdapter
  * 1.2 PagerAdapter 的4个实现方法(isViewFromObject(),getCount(),destroyItem(),instantiateItem())
- * 2, PagerTabStrip与PagerTitleStrip
+ * <p>
+ * 2, PagerTabStrip 与 PagerTitleStrip 的使用
  */
 public class ViewPagerActivity extends BaseActivity {
 

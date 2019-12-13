@@ -55,10 +55,10 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
     MyHandler handler = new MyHandler(this);
 
     static class MyHandler extends Handler {
-        WeakReference<SwipeRefreshLayoutActivity> mactivity;
+        WeakReference<SwipeRefreshLayoutActivity> weakReference;
 
         public MyHandler(SwipeRefreshLayoutActivity activity) {
-            mactivity = new WeakReference<SwipeRefreshLayoutActivity>(activity);
+            weakReference = new WeakReference<SwipeRefreshLayoutActivity>(activity);
         }
 
         @Override
@@ -66,6 +66,9 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 100:
+                    if (null != weakReference && weakReference.get() != null) {
+                        weakReference.get().updateData();
+                    }
                     //在这里面处理msg
                     //通过mactivity.get()获取Activity的引用(即上下文context)
                     break;
@@ -74,6 +77,12 @@ public class SwipeRefreshLayoutActivity extends BaseActivity {
             }
         }
     }
+
+    // handler 调用到这里面
+    private void updateData() {
+        adapter.notifyDataSetChanged();
+    }
+
 
     @Override
     public void initContentViewXml() {
