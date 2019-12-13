@@ -1,6 +1,5 @@
 package com.yy.app.components.materialdesign;
 
-import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -23,17 +22,9 @@ public class MaterialDesignActivity extends BaseActivity {
     Toolbar toolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
     public void initContentViewXml() {
 
         setContentView(R.layout.activity_material_design);
-
-
     }
 
 
@@ -46,7 +37,6 @@ public class MaterialDesignActivity extends BaseActivity {
         //设置为使用自己的布局中的toolbar控件
         setSupportActionBar(toolbar);
 
-
         // 2, 修改toolbar 的属性
         //修改toolbar的属性
         // 设置正标题
@@ -58,10 +48,8 @@ public class MaterialDesignActivity extends BaseActivity {
         // 设置(Log)标题与左边按钮之间图标
         toolbar.setLogo(R.mipmap.ic_launcher);
 
-
         // 3, 通过ActionBar来修改属性
         ActionBar supportActionBar = getSupportActionBar();
-
 
         // Toolbar点击的回调
         // 点击左侧按钮监听
@@ -112,7 +100,8 @@ public class MaterialDesignActivity extends BaseActivity {
         //2, 使用加载xml文件的方式创建
         getMenuInflater().inflate(R.menu.menu, menu);
         //添加子菜单
-        menu.addSubMenu(0, 1, 0, "submenu").setIcon(R.mipmap.ic_launcher).addSubMenu(0, 2, 0, "submenu1");
+        menu.addSubMenu(0, 1, 0, "submenu").setIcon(R.mipmap.ic_launcher).addSubMenu(0, 2, 0,
+                "submenu1");
         return super.onCreateOptionsMenu(menu);
 
 
