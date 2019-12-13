@@ -63,6 +63,7 @@ public class TabLayoutActivity extends BaseActivity implements Fragment2.OnFragm
         titles.add("fragment3");
         titles.add("fragment4");
         titles.add("fragment5");
+        // 设置adapter
         viewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

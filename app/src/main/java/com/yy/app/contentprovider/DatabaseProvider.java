@@ -53,6 +53,7 @@ public class DatabaseProvider extends ContentProvider {
                         db.query("Book", projection, "id = ?", new String[]{bookId}, null, null,
                                 sortOrder);
                 break;
+
             case CATEGORY_DIR:
                 cursor = db.query("Category", projection, selection, selectionArgs, null, null,
                         sortOrder);
