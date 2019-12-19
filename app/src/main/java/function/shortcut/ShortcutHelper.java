@@ -203,8 +203,6 @@ public class ShortcutHelper {
     }
 
     private ShortcutInfo.Builder setSiteInformation(ShortcutInfo.Builder b, Uri uri) {
-        // TODO Get the actual site <title> and use it.
-        // TODO Set the current locale to accept-language to get localized title.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             b.setShortLabel(uri.getHost());
             b.setLongLabel(uri.toString());
