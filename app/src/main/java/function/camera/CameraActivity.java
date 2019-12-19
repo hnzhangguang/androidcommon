@@ -1,6 +1,7 @@
 package function.camera;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
 import android.content.Intent;
@@ -28,6 +29,7 @@ import com.yy.app.R;
 import java.io.File;
 import java.io.IOException;
 
+@SuppressLint("Registered")
 public class CameraActivity extends AppCompatActivity {
     public static final int TAKE_PHOTO = 1;
 
@@ -120,7 +122,9 @@ public class CameraActivity extends AppCompatActivity {
                         // 将拍摄的照片显示出来
                         Bitmap bitmap =
                                 BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                        picture.setImageBitmap(bitmap);
+                        if (bitmap != null) {
+                            picture.setImageBitmap(bitmap);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
