@@ -1,2 +1,2 @@
-include ':app', ':mytest'
+include ':app', ':mytest', ':my2'
 //':BaiduLocationDemo'
