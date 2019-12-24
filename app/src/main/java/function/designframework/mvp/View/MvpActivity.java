@@ -36,7 +36,7 @@ public class MvpActivity extends AppCompatActivity implements IStudentView, View
         bt_add.setOnClickListener(this);
         bt_delete.setOnClickListener(this);
 
-        //中间者类
+        //中间者类,持有view实例
         presenter = new StudentPresenter(this);
         //查询学生
         presenter.queryStudent();
