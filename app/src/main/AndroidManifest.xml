@@ -128,6 +128,7 @@
             </intent-filter>
         </activity> <!-- 从主界面跳转到此界面, parentActivityName添加此界面的父界面是MainActivity -->
         <activity android:name=".animator.AnimActivity" />
+        <activity android:name="function.designframework.mvp.View.MvpActivity" />
     </application>
 
 </manifest>

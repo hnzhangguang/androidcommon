@@ -20,10 +20,10 @@ public class BookModel {
      * 模拟本地数据库
      */
     static {
-        list.add(new Book("Java从入门到精通", R.drawable.ic_action_about));
-        list.add(new Book("Android从入门到精通", R.drawable.ic_action_about));
-        list.add(new Book("Java从入门到精通", R.drawable.ic_action_about));
-        list.add(new Book("Android从入门到精通", R.drawable.ic_action_about));
+        list.add(new Book("Java从入门到精通", R.drawable.java));
+        list.add(new Book("Android从入门到精通", R.drawable.android));
+        list.add(new Book("Java从入门到精通", R.drawable.java));
+        list.add(new Book("Android从入门到精通", R.drawable.android));
     }
 
     /**

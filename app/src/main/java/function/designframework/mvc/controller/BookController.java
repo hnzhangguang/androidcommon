@@ -26,7 +26,7 @@ public class BookController {
      * @param listener
      */
     public void add(onAddBookListener listener) {
-        mode.addBook("JavaWeb从入门到精通", R.drawable.ic_action_about);
+        mode.addBook("JavaWeb从入门到精通", R.drawable.javaweb);
         if (listener != null) {
             listener.onComplete();
         }

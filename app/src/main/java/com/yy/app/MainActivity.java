@@ -27,6 +27,7 @@ import com.yy.app.service.ServiceActivity;
 import java.util.List;
 
 import function.designframework.mvc.view.MvcActivity;
+import function.designframework.mvp.View.MvpActivity;
 
 
 /**
@@ -55,6 +56,7 @@ public class MainActivity extends BaseActivity {
     Button btn_Databaseactivity;
     Button btn_MaterialActivity;
     Button btn_mvc;
+    Button btn_mvp;
 
 
     @Override
@@ -79,10 +81,18 @@ public class MainActivity extends BaseActivity {
         btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
         btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
         btn_mvc = findViewById(R.id.btn_mvc);
+        btn_mvp = findViewById(R.id.btn_mvp);
     }
 
     @Override
     public void initListener() {
+        btn_mvp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MvpActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_mvc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
