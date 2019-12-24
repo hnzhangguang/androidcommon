@@ -1,118 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/btn_MaterialActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MaterialActivity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_components"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="控件(component)"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/toMainActivityByIntent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="界面跳转逻辑 (action 方式)"
-        android:textAllCaps="false" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/btn_material"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="material design"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_MaterialActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MaterialActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_components"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="控件(component)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/toMainActivityByIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="界面跳转逻辑 (action 方式)"
+            android:textAllCaps="false" />
 
 
-    <Button
-        android:id="@+id/btn_serviceactivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="服务activity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_receiver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="广播activity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_DrawLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DrawLayout"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="material design"
+            android:textAllCaps="false" />
 
 
-    <Button
-        android:id="@+id/btn_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="animation"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_serviceactivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务activity"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_asynctask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="asynctask"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="广播activity"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_NetworkActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NetworkActivity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_DrawableActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DrawableActivity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_EventsActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EventsActivity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_activity_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="activityActivity"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_Databaseactivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Databaseactivity"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_DrawLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DrawLayout"
+            android:textAllCaps="false" />
 
 
-    <TextView
-        android:id="@+id/toSecondButtonRefResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent" />
+        <Button
+            android:id="@+id/btn_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="animation"
+            android:textAllCaps="false" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_asynctask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asynctask"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_NetworkActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NetworkActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_DrawableActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DrawableActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_EventsActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EventsActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_activity_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="activityActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_Databaseactivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Databaseactivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_mvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MvcActivity"
+            android:textAllCaps="false" />
+
+
+        <TextView
+            android:id="@+id/toSecondButtonRefResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+
+</ScrollView>

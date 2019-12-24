@@ -26,6 +26,8 @@ import com.yy.app.service.ServiceActivity;
 
 import java.util.List;
 
+import function.designframework.mvc.view.MvcActivity;
+
 
 /**
  * 主要功能:
@@ -52,6 +54,7 @@ public class MainActivity extends BaseActivity {
     Button btn_activity_activity;
     Button btn_Databaseactivity;
     Button btn_MaterialActivity;
+    Button btn_mvc;
 
 
     @Override
@@ -75,10 +78,18 @@ public class MainActivity extends BaseActivity {
         btn_activity_activity = findViewById(R.id.btn_activity_activity);
         btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
         btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
+        btn_mvc = findViewById(R.id.btn_mvc);
     }
 
     @Override
     public void initListener() {
+        btn_mvc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MvcActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_MaterialActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
