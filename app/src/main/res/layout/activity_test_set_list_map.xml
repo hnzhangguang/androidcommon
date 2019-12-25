@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/iterator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iterator"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ListIterator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ListIterator"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/foreach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="foreach"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/Hashtable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hashtable"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/fastjson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fastjson"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/hashset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hashset"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/LinkedHashSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinkedHashSet"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/TreeSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TreeSet"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/EnumSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EnumSet"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ArrayList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ArrayList"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/Stack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stack"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/LinkedList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinkedList"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ArrayDeque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ArrayDeque"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>

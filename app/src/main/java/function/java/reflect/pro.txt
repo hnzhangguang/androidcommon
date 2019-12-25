@@ -1,0 +1,2 @@
+className=com.android.java.reflect.Student
+methodName=show1
