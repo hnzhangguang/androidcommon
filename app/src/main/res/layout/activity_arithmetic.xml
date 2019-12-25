@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/兔子总数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="兔子总数" />
+
+        <Button
+            android:id="@+id/素数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="素数" />
+
+        <Button
+            android:id="@+id/水仙花数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水仙花数" />
+
+        <Button
+            android:id="@+id/分解质因数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="分解质因数" />
+
+        <Button
+            android:id="@+id/最大公约数和最小公倍数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="最大公约数和最小公倍数" />
+
+        <Button
+            android:id="@+id/几个数相加"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="几个数相加" />
+
+        <Button
+            android:id="@+id/完数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="完数" />
+
+        <Button
+            android:id="@+id/一球从100米高度自由落下"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="一球从100米高度自由落下" />
+
+        <Button
+            android:id="@+id/一个数字中无重复数字的三位数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="一个数字中无重复数字的三位数" />
+
+        <Button
+            android:id="@+id/完全平方数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="完全平方数" />
+
+        <Button
+            android:id="@+id/猴子吃桃问题"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="猴子吃桃问题" />
+
+        <Button
+            android:id="@+id/乒乓球队进行比赛"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="乒乓球队进行比赛" />
+
+        <Button
+            android:id="@+id/打印图案菱形"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打印图案菱形" />
+
+        <Button
+            android:id="@+id/前20项之和"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="前20项之和" />
+
+        <Button
+            android:id="@+id/阶乘的和"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="阶乘的和" />
+
+        <Button
+            android:id="@+id/利用递归方法求5的阶乘"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="利用递归方法求5的阶乘" />
+
+        <Button
+            android:id="@+id/打印出杨辉三角形"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打印出杨辉三角形" />
+
+        <Button
+            android:id="@+id/有n个人围成一圈顺序排号"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="有n个人围成一圈顺序排号" />
+
+
+    </LinearLayout>
+</ScrollView>
