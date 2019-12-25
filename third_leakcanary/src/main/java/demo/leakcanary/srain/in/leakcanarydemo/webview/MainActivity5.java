@@ -1,10 +1,10 @@
 package demo.leakcanary.srain.in.leakcanarydemo.webview;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
 import demo.leakcanary.srain.in.leakcanarydemo.ExampleApplication;
 import demo.leakcanary.srain.in.leakcanarydemo.R;
 

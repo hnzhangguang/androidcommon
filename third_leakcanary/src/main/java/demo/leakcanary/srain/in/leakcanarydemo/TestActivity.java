@@ -1,11 +1,12 @@
 package demo.leakcanary.srain.in.leakcanarydemo;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class TestActivity extends Activity {
+
+public class TestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

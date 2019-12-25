@@ -1,8 +1,8 @@
 package demo.leakcanary.srain.in.leakcanarydemo.innerclass;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import demo.leakcanary.srain.in.leakcanarydemo.ExampleApplication;
 import demo.leakcanary.srain.in.leakcanarydemo.R;
 

@@ -2,9 +2,9 @@ package demo.leakcanary.srain.in.leakcanarydemo.test;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import demo.leakcanary.srain.in.leakcanarydemo.ExampleApplication;
 import demo.leakcanary.srain.in.leakcanarydemo.R;
 
