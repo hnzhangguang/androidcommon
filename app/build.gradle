@@ -57,9 +57,10 @@ android {
     // aar
     repositories {
         flatDir {
-            dirs 'libs'
+            dirs 'libs'  // aar目录
         }
     }
+
 
     dexOptions {
         incremental = true
@@ -85,7 +86,7 @@ android {
         // Android较高版本会要求一些东西,容易warning出现, 下面是为了消灭掉警告⚠️
         disable 'GoogleAppIndexingWarning'
     }
-    
+
 //    解决AndroidManifest文件里面报警告⚠️ -> App is not indexable by Google Search
 //    lintOptions {
 //        disable 'GoogleAppIndexingWarning'
@@ -132,4 +133,11 @@ dependencies {
     //    api(name:'xxxx',ext:'aar')
     implementation files('libs/okio-2.4.0.jar')
     implementation files('libs/okhttp-3.12.0.jar')
+
+
+    // 加载aar 的方式
+//    debugImplementation(name: 'leakcanary-android-1.5.4', ext: 'aar')
+//    releaseImplementation(name: 'leakcanary-android-no-op-1.5.4', ext: 'aar')
+
+
 }
