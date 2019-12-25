@@ -1,2 +1,2 @@
-include ':app', ':mytest', ':new_module'
+include ':app', ':mytest', ':new_module', 'app_common'
 //':BaiduLocationDemo'
