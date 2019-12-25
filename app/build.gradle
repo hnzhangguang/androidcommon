@@ -88,9 +88,12 @@ android {
 
     }
 
+
     lintOptions {
         //设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
         abortOnError false
+        // Android较高版本会要求一些东西,容易warning出现, 下面是为了消灭掉警告⚠️
+        disable 'GoogleAppIndexingWarning'
     }
 
 

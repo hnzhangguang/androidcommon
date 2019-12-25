@@ -19,6 +19,8 @@
         <activity android:name=".test.MainTestActivity">
 
             <intent-filter>
+                <!--       这一句最好加上, 不然老是报警告⚠️   -->
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
