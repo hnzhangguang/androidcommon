@@ -8,6 +8,8 @@ import com.app.logger.LogUtil;
 
 import org.litepal.LitePal;
 
+import function.crash.CrashHandler;
+
 
 /**
  * 1, ORM  -> ActiveAndroid.initialize(this);
@@ -24,6 +26,12 @@ public class BaseApplication extends Application {
 
         ActiveAndroid.initialize(this);   // ORM
         //        LogUtil.e("BaseApplication->onCreate");
+
+
+        // 收集错误信息
+        CrashHandler.getInstance().init(this);
+
+
     }
 
 

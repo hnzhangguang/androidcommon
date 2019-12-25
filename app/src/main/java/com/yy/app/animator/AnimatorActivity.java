@@ -31,6 +31,8 @@ import com.yy.app.base.BaseActivity;
  * //                objectAnimator1.setRepeatCount(2); // 重复次数,infinite时,动画无限重复
  * //                objectAnimator1.setRepeatMode(ValueAnimator.RESTART);// 设置重复播放动画模式(ValueAnimator
  * // .RESTART(默认):正序重放,ValueAnimator.REVERSE:倒序回放)
+ * <p>
+ * button.animate().alpha(0).y(100).rotationX(360).scaleX(0.5f).scaleY(0.5f).setDuration(1000).start();
  */
 public class AnimatorActivity extends BaseActivity {
 
@@ -189,5 +191,20 @@ public class AnimatorActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
 
+        Button button = null;
+        switch (v.getId()) {
+            case R.id.back_button:
+                button.animate().alpha(0).y(100).rotationX(360).scaleX(0.5f).scaleY(0.5f).setDuration(1000).start();
+                break;
+            case R.id.backdrop:
+                button.animate().alpha(1).start();
+                break;
+        }
+
+
+    }
 }
