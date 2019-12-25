@@ -47,13 +47,6 @@ android {
         }
     }
 
-
-//    解决AndroidManifest文件里面报警告⚠️ -> App is not indexable by Google Search
-//    lintOptions {
-//        disable 'GoogleAppIndexingWarning'
-//    }
-
-
     buildTypes {
         release {
             minifyEnabled false
@@ -68,14 +61,12 @@ android {
         }
     }
 
-
     dexOptions {
         incremental = true
         dexInProcess false    // 加快构建速度:是作为单独的进程运行dx编译器，还是在Gradle守护进程JVM中运行。
         javaMaxHeapSize "4g" //此处可根据电脑本身配置 数值越大 当然越快
         preDexLibraries = false
         maxProcessCount = 4
-
 
 //        电脑配置高的话可以放开下面的配置
 //        javaMaxHeapSize "4g"
@@ -84,7 +75,6 @@ android {
 //        dexInProcess false
 //        maxProcessCount = 4
 //        threadCount = 4
-
 
     }
 
@@ -95,6 +85,11 @@ android {
         // Android较高版本会要求一些东西,容易warning出现, 下面是为了消灭掉警告⚠️
         disable 'GoogleAppIndexingWarning'
     }
+    
+//    解决AndroidManifest文件里面报警告⚠️ -> App is not indexable by Google Search
+//    lintOptions {
+//        disable 'GoogleAppIndexingWarning'
+//    }
 
 
 }
