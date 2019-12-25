@@ -2,8 +2,7 @@ package com.litesuits.android.async;
 
 import android.os.Handler;
 import android.os.Looper;
-
-import com.litesuits.android.log.Log;
+import android.util.Log;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -61,7 +60,7 @@ public class AsyncExecutor {
                 try {
                     get();
                 } catch (InterruptedException e) {
-                    Log.e(TAG, e);
+                    Log.e(TAG, e + "");
                     worker.abort();
                     postCancel(worker);
                     e.printStackTrace();
@@ -73,7 +72,7 @@ public class AsyncExecutor {
                 } catch (CancellationException e) {
                     worker.abort();
                     postCancel(worker);
-                    Log.e(TAG, e);
+                    Log.e(TAG, e + "");
                     e.printStackTrace();
                 }
             }
