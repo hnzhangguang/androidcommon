@@ -2,7 +2,6 @@ package com.yy.app.animator;
 
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
@@ -33,6 +32,12 @@ import com.yy.app.base.BaseActivity;
  * 10 ,几种常用的插补器
  * BounceInterpolator ,AccelerateDecelerateInterpolator,AccelerateInterpolator,DecelerateInterpolator,
  * LinearInterpolator,CycleInterpolator
+ * <p>
+ * Intent intent = new Intent();
+ * intent.setClass(AnimActivity.this, SlideSecondActivity.class);
+ * startActivity(intent);
+ * //设置切换动画，从右边进入，左边退出
+ * overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
  */
 public class AnimActivity extends BaseActivity {
 
