@@ -1,2 +1,3 @@
 include ':app', ':mytest', ':new_module', 'app_common', 'design_DesignPattern'
 //':BaiduLocationDemo'
+include 'third_leakcanary'
