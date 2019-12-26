@@ -20,7 +20,24 @@
   后台：Activity完全处于后台所在的进程。
   空：没有任何Activity存在的进程，优先级也是最低的。
 
-//
+//Activity的启动模式有哪些？特性如何
+  1, startand
+     注意:ApplicationContext 去启动standard模式的Activity就会报错，这是因为standard模式的Actiivty默认会进入启动它的Activity所属的任务栈中，但是由于非Activity类型的Context(如ApplicationContext)并没有所谓的任务栈，所以这就会出现错误
+  2,栈顶复用模式：SingleTop
+  3,栈内复用模式：SingleTask
+  4,单实例模式：SingleInstance
+
+注意：
+前台任务栈：就是指和用户正在交互的应用程序所在的任务栈。
+后台任务栈：就是指处于后台的应用程序所在的任务栈。
+
+
+
+
+
+
+
+
 
 
 
