@@ -34,14 +34,6 @@
 
 
         <Button
-            android:id="@+id/btn_material"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="material design"
-            android:textAllCaps="false" />
-
-
-        <Button
             android:id="@+id/btn_serviceactivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

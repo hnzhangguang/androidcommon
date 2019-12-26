@@ -1,5 +1,6 @@
 package com.yy.app.components.materialdesign;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
+import com.yy.app.material.MaterialActivity;
 
 /**
  * 材料设计布局
@@ -65,6 +67,14 @@ public class MaterialDesignActivity extends BaseActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 showToast("toolbar的Menu回调:" + item.getTitle());
                 return false;
+            }
+        });
+
+        findViewById(R.id.material_list).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MaterialDesignActivity.this, MaterialActivity.class);
+                startActivity(intent);
             }
         });
 

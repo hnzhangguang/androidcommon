@@ -20,7 +20,6 @@ import com.yy.app.components.materialdesign.MaterialDesignActivity;
 import com.yy.app.data.GsonJSONActivity;
 import com.yy.app.drawable.DrawableActivity;
 import com.yy.app.event.EventsActivity;
-import com.yy.app.material.MaterialActivity;
 import com.yy.app.network.NetworkActivity;
 import com.yy.app.service.ServiceActivity;
 
@@ -43,7 +42,6 @@ public class MainActivity extends BaseActivity {
 
     Button toMainActivityByIntent;   // 按钮: 跳转到第二个activity
     Button btn_components;
-    Button btn_material;
     Button btn_serviceactivity;
     Button btn_DrawLayout;
     Button btn_receiver;
@@ -68,7 +66,6 @@ public class MainActivity extends BaseActivity {
     public void initView() {
         toMainActivityByIntent = findViewById(R.id.toMainActivityByIntent);
         btn_components = findViewById(R.id.btn_components);
-        btn_material = findViewById(R.id.btn_material);
         btn_serviceactivity = findViewById(R.id.btn_serviceactivity);
         btn_receiver = findViewById(R.id.btn_receiver);
         btn_DrawLayout = findViewById(R.id.btn_DrawLayout);
@@ -103,7 +100,7 @@ public class MainActivity extends BaseActivity {
         btn_MaterialActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MaterialActivity.class);
+                Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
                 startActivity(intent);
             }
         });
@@ -156,13 +153,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        btn_material.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
-                startActivity(intent);
-            }
-        });
+
         btn_DrawLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
