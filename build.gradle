@@ -4,9 +4,9 @@ buildscript {
 
     repositories {
         google()
-        
+
         // 解决ERROR: Could not find com.android.tools.build:gradle:3.5.3.
-        jcenter()//使用jcenter库  
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
