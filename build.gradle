@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
 
-        // 解决ERROR: Could not find com.android.tools.build:gradle:3.5.3.
+        //1, 解决ERROR: Could not find com.android.tools.build:gradle:3.5.3.
         jcenter()
     }
     dependencies {
@@ -19,7 +19,7 @@ buildscript {
 //为所有的工程的repositories配置为jcenters
 allprojects {
     repositories {
-        google()
+        google()  //2, 解决Could not find com.android.tools.build:aapt2:3.2.1
         jcenter()
     }
 }
