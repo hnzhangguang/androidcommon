@@ -1,9 +1,10 @@
 package net.designpattern.adapter;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import net.sxkeji.shixindesignpattern.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 /**

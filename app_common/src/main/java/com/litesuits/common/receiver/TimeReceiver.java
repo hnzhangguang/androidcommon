@@ -4,9 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
-
-import com.litesuits.android.log.Log;
 
 /**
  * 时间广播
@@ -22,14 +19,14 @@ public class TimeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Log.isPrint) {
-            Log.i(TAG, "action: " + intent.getAction());
-            Log.d(TAG, "intent : ");
-            Bundle bundle = intent.getExtras();
-            for (String key : bundle.keySet()) {
-                Log.d(TAG, key + " : " + bundle.get(key));
-            }
-        }
+        //        if (Log.isPrint) {
+        //            Log.i(TAG, "action: " + intent.getAction());
+        //            Log.d(TAG, "intent : ");
+        //            Bundle bundle = intent.getExtras();
+        //            for (String key : bundle.keySet()) {
+        //                Log.d(TAG, key + " : " + bundle.get(key));
+        //            }
+        //        }
         if (Intent.ACTION_TIME_TICK.equals(intent.getAction())) {
             if (timeListener != null) {
                 timeListener.onTimeTick();

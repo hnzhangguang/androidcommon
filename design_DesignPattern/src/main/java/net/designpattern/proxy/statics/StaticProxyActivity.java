@@ -1,11 +1,12 @@
 package net.designpattern.proxy.statics;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import net.sxkeji.shixindesignpattern.R;
 import net.designpattern.proxy.BuyHouse;
 import net.designpattern.proxy.BuyHouseImpl;
+import net.sxkeji.shixindesignpattern.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class StaticProxyActivity extends AppCompatActivity {
 

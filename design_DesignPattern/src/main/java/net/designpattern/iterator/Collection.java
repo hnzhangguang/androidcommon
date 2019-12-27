@@ -1,7 +1,5 @@
 package net.designpattern.iterator;
 
-import java.util.Iterator;
-
 public interface Collection {
 
     public Iterator iterator();

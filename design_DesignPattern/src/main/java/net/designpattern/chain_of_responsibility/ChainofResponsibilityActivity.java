@@ -1,9 +1,10 @@
 package net.designpattern.chain_of_responsibility;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import net.sxkeji.shixindesignpattern.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ChainofResponsibilityActivity extends AppCompatActivity {
 

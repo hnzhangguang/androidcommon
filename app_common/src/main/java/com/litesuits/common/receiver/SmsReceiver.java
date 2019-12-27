@@ -7,11 +7,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
-
-import com.litesuits.android.log.Log;
+import android.util.Log;
 
 import java.util.List;
 
@@ -35,13 +33,13 @@ public class SmsReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         try {
-            if (Log.isPrint) {
-                Log.i(TAG, "收到广播：" + intent.getAction());
-                Bundle bundle = intent.getExtras();
-                for (String key : bundle.keySet()) {
-                    Log.i(TAG, key + " : " + bundle.get(key));
-                }
-            }
+            //            if (Log.isPrint) {
+            //                Log.i(TAG, "收到广播：" + intent.getAction());
+            //                Bundle bundle = intent.getExtras();
+            //                for (String key : bundle.keySet()) {
+            //                    Log.i(TAG, key + " : " + bundle.get(key));
+            //                }
+            //            }
             Object[] pdus = (Object[]) intent.getExtras().get("pdus");
             String fromAddress = null;
             String serviceCenterAddress = null;

@@ -1,13 +1,15 @@
 package net.designpattern;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import net.designpattern.adapter.SampleAdapter;
 import net.sxkeji.shixindesignpattern.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ListView mListView;
@@ -20,14 +22,20 @@ public class MainActivity extends AppCompatActivity {
             "适配器模式 : 农村小伙娶乌克兰美女", "观察者模式 : 一支穿云箭，千军万马来相见",
             "最熟悉的陌生人：ListView 中的观察者模式"
     };
-    private String[] mLinksArray = {"http://blog.csdn.net/u011240877/article/details/52177033", "http://blog.csdn" +
+    private String[] mLinksArray = {"http://blog.csdn.net/u011240877/article/details/52177033", "http" +
+            "://blog.csdn" +
             ".net/u011240877/article/details/52187631",
-            "http://blog.csdn.net/u011240877/article/details/52187810", "(http://blog.csdn.net/u011240877/article/details/52194373",
+            "http://blog.csdn.net/u011240877/article/details/52187810", "(http://blog.csdn" +
+            ".net/u011240877/article/details/52194373",
             "http://blog.csdn.net/u011240877/article/details/52213659",
-            "http://blog.csdn.net/u011240877/article/details/46988219", "http://blog.csdn.net/u011240877/article/details/52264283",
-            "http://blog.csdn.net/u011240877/article/details/52334547", "http://blog.csdn.net/u011240877/article/details/52346671",
-            "http://blog.csdn.net/u011240877/article/details/52493408", "http://blog.csdn.net/u011240877/article/details/52601040",
-            "http://blog.csdn.net/u011240877/article/details/52683558", "http://blog.csdn.net/u011240877/article/details/52683711"};
+            "http://blog.csdn.net/u011240877/article/details/46988219", "http://blog.csdn" +
+            ".net/u011240877/article/details/52264283",
+            "http://blog.csdn.net/u011240877/article/details/52334547", "http://blog.csdn" +
+            ".net/u011240877/article/details/52346671",
+            "http://blog.csdn.net/u011240877/article/details/52493408", "http://blog.csdn" +
+            ".net/u011240877/article/details/52601040",
+            "http://blog.csdn.net/u011240877/article/details/52683558", "http://blog.csdn" +
+            ".net/u011240877/article/details/52683711"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

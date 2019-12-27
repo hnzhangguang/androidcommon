@@ -5,7 +5,7 @@ public class MyCollection implements Collection {
     public String string[] = {"A", "B", "C", "D", "E"};
 
     @Override
-    public java.util.Iterator iterator() {
+    public Iterator iterator() {
         return new MyIterator(this);
     }
 
