@@ -7,6 +7,10 @@ import com.yy.app.R;
 
 
 /**
+ * 目的:
+ * 减少布局层次结构.
+ * <p>
+ * <p>
  * 主要学习约束布局的使用:
  * app:layout_constraintLeft_toLeftOf="parent"
  * <p>
