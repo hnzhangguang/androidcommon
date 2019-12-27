@@ -20,7 +20,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name="function.designframework.mvc.view.MvcActivity"></activity>
+        <activity android:name=".components.ConstraintActivity"></activity>
+        <activity android:name="function.designframework.mvc.view.MvcActivity" />
         <activity android:name=".network.OkhttpActivity" />
         <activity android:name=".activity.tabhost.TabLayoutViewPagerActivity" />
         <activity
