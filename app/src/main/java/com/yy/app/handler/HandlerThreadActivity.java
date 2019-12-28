@@ -20,6 +20,10 @@ import java.net.URL;
 
 /**
  * HandlerThread 的使用
+ * <p>
+ * 创建了两个Handler，一个用于更新UI线程的uiHandler,
+ * 一个是用于异步下载图片的childHandler。最终的结果是childHandler会每个隔1秒钟通过sendEmptyMessageDelayed方法去通知ChildCallback
+ * 的回调函数handleMessage方法去下载图片并告诉mUIHandler去更新UI界面，以上便是HandlerThread常规使用。
  */
 public class HandlerThreadActivity extends AppCompatActivity {
 
