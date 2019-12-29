@@ -5,11 +5,11 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -41,18 +41,22 @@ public class NotificationActivity extends AppCompatActivity {
 
 
         // 1, 设置点击后跳转
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        intent.setClass(this, NotificationResultActivity.class);
+        Intent intent = new Intent("android.intent.action.com.yy.app");
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        //        intent.setClass(this, NotificationResultActivity.class);
+        intent.setComponent(new ComponentName(this.getPackageName(), "com.yy.app.notification" +
+                ".NotificationResultActivity"));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
 
 
         // 2
-        PendingIntent pendingIntent = PendingIntent.getActivity(this
-                , (int) SystemClock.uptimeMillis()
-                , intent
-                , PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivities(
+                this,
+                0,
+                makeIntentStack(this),
+                PendingIntent.FLAG_CANCEL_CURRENT);
+
 
         // 3
         NotificationManager notificationManager =
@@ -106,6 +110,14 @@ public class NotificationActivity extends AppCompatActivity {
         notificationManager.notify(NOTIFICATIONS_ID, builder.build());
 
 
+    }
+
+    Intent[] makeIntentStack(Context context) {
+        Intent[] intents = new Intent[2];
+        intents[0] = Intent.makeRestartActivityTask(new ComponentName(context,
+                NotificationActivity.class));
+        intents[1] = new Intent(context, NotificationResultActivity.class);
+        return intents;
     }
 
 

@@ -20,7 +20,14 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-        <activity android:name=".notification.NotificationResultActivity"></activity>
+        <activity android:name=".notification.NotificationResultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.com.yy.app" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".dialog.DialogActivity" /> <!-- 注册内容提供者 -->
         <provider
