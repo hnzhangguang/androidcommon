@@ -21,6 +21,7 @@ import com.yy.app.data.GsonJSONActivity;
 import com.yy.app.drawable.DrawableActivity;
 import com.yy.app.event.EventsActivity;
 import com.yy.app.network.NetworkActivity;
+import com.yy.app.notification.NotificationActivity;
 import com.yy.app.service.ServiceActivity;
 
 import java.util.List;
@@ -53,6 +54,7 @@ public class MainActivity extends BaseActivity {
     Button btn_activity_activity;
     Button btn_Databaseactivity;
     Button btn_MaterialActivity;
+    Button btn_notification;
     Button btn_mvc;
     Button btn_mvp;
 
@@ -77,12 +79,20 @@ public class MainActivity extends BaseActivity {
         btn_activity_activity = findViewById(R.id.btn_activity_activity);
         btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
         btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
+        btn_notification = findViewById(R.id.btn_notification);
         btn_mvc = findViewById(R.id.btn_mvc);
         btn_mvp = findViewById(R.id.btn_mvp);
     }
 
     @Override
     public void initListener() {
+        btn_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_mvp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

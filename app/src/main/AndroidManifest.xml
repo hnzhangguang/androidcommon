@@ -20,13 +20,14 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="label,allowBackup">
-
-        <!--        注册内容提供者 -->
+        <activity android:name=".notification.NotificationResultActivity"></activity>
+        <activity android:name=".notification.NotificationActivity" />
+        <activity android:name=".dialog.DialogActivity" /> <!-- 注册内容提供者 -->
         <provider
-            android:name="com.yy.app.contentprovider.csdn.DatabaseProvider"
+            android:name=".contentprovider.csdn.DatabaseProvider"
             android:authorities="com.yy.app.provider" />
 
-        <activity android:name=".components.ConstraintActivity"></activity>
+        <activity android:name=".components.ConstraintActivity" />
         <activity android:name="function.designframework.mvc.view.MvcActivity" />
         <activity android:name=".network.OkhttpActivity" />
         <activity android:name=".activity.tabhost.TabLayoutViewPagerActivity" />
