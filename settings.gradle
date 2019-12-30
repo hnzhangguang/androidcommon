@@ -1,3 +1,4 @@
-include ':app', ':mytest', ':new_module', 'app_common', ':FloatWindowPermission'
+include ':app', ':mytest', ':new_module', 'app_common'
 //':BaiduLocationDemo','design_DesignPattern'
 include 'third_leakcanary'
+include ':FloatWindowPermission'  // 悬浮窗
