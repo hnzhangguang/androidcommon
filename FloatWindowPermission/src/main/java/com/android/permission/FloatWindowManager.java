@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 /**
  * Description:
  *
- * @author zhaozp
+ * @author
  * @since 2016-10-17
  */
 
@@ -39,7 +39,7 @@ public class FloatWindowManager {
 
     private static volatile FloatWindowManager instance;
 
-    private boolean isWindowDismiss = true;
+    private boolean isWindowDismiss = true;   // window 是否已经dismiss
     private WindowManager windowManager = null;
     private WindowManager.LayoutParams mParams = null;
     private AVCallFloatView floatView = null;
@@ -64,6 +64,12 @@ public class FloatWindowManager {
         }
     }
 
+    /**
+     * 判断是否有权限(根据不同版本)
+     *
+     * @param context
+     * @return
+     */
     private boolean checkPermission(Context context) {
         //6.0 版本之后由于 google 增加了对悬浮窗权限的管理，所以方式就统一了
         if (Build.VERSION.SDK_INT < 23) {
@@ -277,6 +283,11 @@ public class FloatWindowManager {
         void confirmResult(boolean confirm);
     }
 
+    /**
+     * 显示对应的window
+     *
+     * @param context
+     */
     private void showWindow(Context context) {
         if (!isWindowDismiss) {
             Log.e(TAG, "view is already added here");

@@ -11,9 +11,7 @@ import com.android.permission.FloatWindowManager;
 
 /**
  * Description:
- *
- * @author zhaozp
- * @since 2016-10-17
+ * Android 悬浮窗权限各机型各系统适配大全
  */
 
 public class FloatWindowActivity extends Activity {

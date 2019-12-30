@@ -21,8 +21,8 @@ import com.android.floatwindowpermission.R;
 /**
  * Description:
  *
- * @author zhaozp
- * @since 2016-05-19
+ * @author
+ * @since
  */
 public class AVCallFloatView extends FrameLayout {
     private static final String TAG = "AVCallFloatView";
