@@ -59,18 +59,21 @@ public class FragmentTabHostActivity extends AppCompatActivity {
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
 
+        // viewPager数据实体对象集
         mFragmentList = new ArrayList<Fragment>();
 
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         mTabHost.getTabWidget().setDividerDrawable(null);
 
         for (int i = 0; i < mFragment.length; i++) {
+            // 每一个item就是一个tabSpec对象
             TabHost.TabSpec tabSpec = mTabHost.newTabSpec(mTitles[i]).setIndicator(getTabView(i));
             mTabHost.addTab(tabSpec, mClass[i], null);
             mFragmentList.add(mFragment[i]);
             mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.WHITE);
         }
 
+        // viewPager设置adapter
         mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

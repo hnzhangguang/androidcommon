@@ -12,6 +12,8 @@ import android.widget.Button;
 import com.yy.app.activity.ActivityMainActivity;
 import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.activity.fragmenttabhost.FragmentTabHostActivity;
+import com.yy.app.activity.tabhost.MainTabhostActivity;
+import com.yy.app.activity.tabhost.TabLayoutViewPagerActivity;
 import com.yy.app.animator.AnimActivity;
 import com.yy.app.asynctask.AsyncTaskActivity;
 import com.yy.app.base.BaseActivity;
@@ -61,6 +63,8 @@ public class MainActivity extends BaseActivity {
     Button btn_mvp;
     Button btn_fragment11;
     Button btn_FragmentTabHostActivity;
+    Button btn_Tabhost;
+    Button btn_TabLayoutViewPager;
 
 
     @Override
@@ -86,12 +90,28 @@ public class MainActivity extends BaseActivity {
         btn_notification = findViewById(R.id.btn_notification);
         btn_fragment11 = findViewById(R.id.btn_fragment11);
         btn_FragmentTabHostActivity = findViewById(R.id.btn_FragmentTabHostActivity);
+        btn_TabLayoutViewPager = findViewById(R.id.btn_TabLayoutViewPager);
+        btn_Tabhost = findViewById(R.id.btn_Tabhost);
         btn_mvc = findViewById(R.id.btn_mvc);
         btn_mvp = findViewById(R.id.btn_mvp);
     }
 
     @Override
     public void initListener() {
+        btn_Tabhost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainTabhostActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_TabLayoutViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TabLayoutViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_FragmentTabHostActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
