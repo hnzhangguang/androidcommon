@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.yy.app.activity.ActivityMainActivity;
 import com.yy.app.activity.fragment.FragmentActivity;
+import com.yy.app.activity.fragmenttabhost.FragmentTabHostActivity;
 import com.yy.app.animator.AnimActivity;
 import com.yy.app.asynctask.AsyncTaskActivity;
 import com.yy.app.base.BaseActivity;
@@ -59,6 +60,7 @@ public class MainActivity extends BaseActivity {
     Button btn_mvc;
     Button btn_mvp;
     Button btn_fragment11;
+    Button btn_FragmentTabHostActivity;
 
 
     @Override
@@ -83,12 +85,20 @@ public class MainActivity extends BaseActivity {
         btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
         btn_notification = findViewById(R.id.btn_notification);
         btn_fragment11 = findViewById(R.id.btn_fragment11);
+        btn_FragmentTabHostActivity = findViewById(R.id.btn_FragmentTabHostActivity);
         btn_mvc = findViewById(R.id.btn_mvc);
         btn_mvp = findViewById(R.id.btn_mvp);
     }
 
     @Override
     public void initListener() {
+        btn_FragmentTabHostActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FragmentTabHostActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_fragment11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -62,6 +62,13 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+
+                // 先获取到所有的fragment实例,然后移除掉, 否则会持续累加
+                List<Fragment> fragments = supportFragmentManager.getFragments();
+                for (Fragment fragment : fragments) {
+                    fragmentTransaction.remove(fragment);
+                }
+
                 fragmentTransaction.add(R.id.fragment_container, new Fragment1());
                 fragmentTransaction.commit();
             }
@@ -70,6 +77,12 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+
+                // 先获取到所有的fragment实例,然后移除掉,否则会持续累加
+                List<Fragment> fragments = supportFragmentManager.getFragments();
+                for (Fragment fragment : fragments) {
+                    fragmentTransaction.remove(fragment);
+                }
                 fragmentTransaction.add(R.id.fragment_container, new Fragment2());
                 fragmentTransaction.commit();
             }
@@ -128,6 +141,7 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
         boolean isFound = false;
         for (int i = 0; i < fragments.size(); i++) {
             Fragment fragm = fragments.get(i);
+            // 找到让其显示,否则隐藏
             if (fragment.equals(fragm)) {
                 ft.show(fragm).commit();
                 isFound = true;
@@ -135,6 +149,7 @@ public class FragmentActivity extends BaseActivity implements InterfaceFragment,
                 ft.hide(fragm);
             }
         }
+        // 如果在已有fragment实例中没有找到要显示的fragment,就添加并显示
         if (!isFound) {
             ft.add(R.id.fragment_container, fragment).commit();
         }

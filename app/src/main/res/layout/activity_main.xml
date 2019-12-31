@@ -173,6 +173,13 @@
                 android:text="fragmentActivity"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_FragmentTabHostActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FragmentTabHostActivity"
+                android:textAllCaps="false" />
+
 
         </LinearLayout>
 
