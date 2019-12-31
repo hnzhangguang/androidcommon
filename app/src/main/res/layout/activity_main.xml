@@ -11,105 +11,140 @@
         android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/btn_MaterialActivity"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MaterialActivity"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_components"
-            android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_MaterialActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MaterialActivity"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_components"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="控件(component)"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/toMainActivityByIntent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="界面跳转逻辑 (action 方式)"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="控件(component)"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/toMainActivityByIntent"
-            android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_serviceactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="服务activity"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="广播activity"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通知activity"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_DrawLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DrawLayout"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="界面跳转逻辑 (action 方式)"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
 
-        <Button
-            android:id="@+id/btn_serviceactivity"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="animation"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_asynctask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="asynctask"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_NetworkActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NetworkActivity"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_DrawableActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DrawableActivity"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="服务activity"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_receiver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="广播activity"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_EventsActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EventsActivity"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btn_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="通知activity"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_activity_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="activityActivity"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btn_DrawLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DrawLayout"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_Databaseactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Databaseactivity"
+                android:textAllCaps="false" />
 
 
-        <Button
-            android:id="@+id/btn_animation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="animation"
-            android:textAllCaps="false" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_asynctask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="asynctask"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_NetworkActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NetworkActivity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_DrawableActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DrawableActivity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_EventsActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EventsActivity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_activity_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="activityActivity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_Databaseactivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Databaseactivity"
-            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_mvc"
