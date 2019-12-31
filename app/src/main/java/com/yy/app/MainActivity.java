@@ -57,6 +57,7 @@ public class MainActivity extends BaseActivity {
     Button btn_notification;
     Button btn_mvc;
     Button btn_mvp;
+    Button btn_fragment11;
 
 
     @Override
@@ -80,12 +81,20 @@ public class MainActivity extends BaseActivity {
         btn_Databaseactivity = findViewById(R.id.btn_Databaseactivity);
         btn_MaterialActivity = findViewById(R.id.btn_MaterialActivity);
         btn_notification = findViewById(R.id.btn_notification);
+        btn_fragment11 = findViewById(R.id.btn_fragment11);
         btn_mvc = findViewById(R.id.btn_mvc);
         btn_mvp = findViewById(R.id.btn_mvp);
     }
 
     @Override
     public void initListener() {
+        btn_fragment11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
