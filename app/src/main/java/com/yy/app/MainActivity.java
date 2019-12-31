@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.yy.app.activity.ActivityMainActivity;
+import com.yy.app.activity.fragment.FragmentActivity;
 import com.yy.app.animator.AnimActivity;
 import com.yy.app.asynctask.AsyncTaskActivity;
 import com.yy.app.base.BaseActivity;
