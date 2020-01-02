@@ -3,7 +3,6 @@ package com.yy.app.components;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -23,9 +22,6 @@ import android.widget.Toast;
 
 import com.yy.app.R;
 import com.yy.app.base.BaseActivity;
-
-import java.util.Map;
-import java.util.Set;
 
 
 /**
@@ -185,10 +181,10 @@ public class OtherActivity extends BaseActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.create_new:
-//                创建文件....
+                //                创建文件....
                 return true;
             case R.id.open:
-//                打开文件
+                //                打开文件
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -221,13 +217,14 @@ public class OtherActivity extends BaseActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        AdapterView.AdapterContextMenuInfo info =
+                (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.create_new:
                 //...
                 return true;
             case R.id.open:
-//                ...
+                //                ...
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -269,10 +266,6 @@ public class OtherActivity extends BaseActivity {
         int highScore = sharedPref.getInt("key", 0);
 
     }
-
-
-
-
 
 
 }

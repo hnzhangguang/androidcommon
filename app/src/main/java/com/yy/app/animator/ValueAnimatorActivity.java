@@ -90,16 +90,16 @@ public class ValueAnimatorActivity extends AppCompatActivity {
 
 
         AnimatorSet bouncer = new AnimatorSet();
-//        bouncer.play(animX).before(animY);
-//        bouncer.play(squashAnim1).with(squashAnim2);
-//        bouncer.play(squashAnim1).with(stretchAnim1);
-//        bouncer.play(squashAnim1).with(stretchAnim2);
-//        bouncer.play(bounceBackAnim).after(stretchAnim2);
-//        ValueAnimator fadeAnim = ObjectAnimator.ofFloat(newBall, "alpha", 1f, 0f);
-//        fadeAnim.setDuration(250);
-//        AnimatorSet animatorSet = new AnimatorSet();
-//        animatorSet.play(bouncer).before(fadeAnim);
-//        animatorSet.start();
+        //        bouncer.play(animX).before(animY);
+        //        bouncer.play(squashAnim1).with(squashAnim2);
+        //        bouncer.play(squashAnim1).with(stretchAnim1);
+        //        bouncer.play(squashAnim1).with(stretchAnim2);
+        //        bouncer.play(bounceBackAnim).after(stretchAnim2);
+        //        ValueAnimator fadeAnim = ObjectAnimator.ofFloat(newBall, "alpha", 1f, 0f);
+        //        fadeAnim.setDuration(250);
+        //        AnimatorSet animatorSet = new AnimatorSet();
+        //        animatorSet.play(bouncer).before(fadeAnim);
+        //        animatorSet.start();
 
 
     }
